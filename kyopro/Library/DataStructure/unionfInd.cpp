@@ -4,9 +4,9 @@ struct unionfind {
 
 	unionfind(ll n) : par(n), siz(n) {
 		for (ll i = 0; i < n; ++i) {
-			//‘S•”ª‚Å‰Šú‰»
+			//å…¨éƒ¨æ ¹ã§åˆæœŸåŒ–
 			par[i] = i;
-			//ƒTƒCƒY‚Í1
+			//ã‚µã‚¤ã‚ºã¯1
 			siz[i] = 1;
 		}
 	}
@@ -15,19 +15,19 @@ struct unionfind {
 		par.resize(n);
 		siz.resize(n);
 		for (ll i = 0; i < n; ++i) {
-			//‘S•”ª‚Å‰Šú‰»
+			//å…¨éƒ¨æ ¹ã§åˆæœŸåŒ–
 			par[i] = i;
-			//ƒTƒCƒY‚Í1
+			//ã‚µã‚¤ã‚ºã¯1
 			siz[i] = 1;
 		}
 	}
 
-	//ª‚ð•Ô‚·
+	//æ ¹ã‚’è¿”ã™
 	ll find(ll a) {
 		return par[a] == a ? a : par[a] = find(par[a]);
 	}
 
-	//‚­‚Á‚Â‚¯‚éBŒ³‚©‚ç“¯‚¶‚¾‚Á‚½‚çfalse‚ð•Ô‚·
+	//ãã£ã¤ã‘ã‚‹ã€‚å…ƒã‹ã‚‰åŒã˜ã ã£ãŸã‚‰falseã‚’è¿”ã™
 	bool unite(ll a, ll b) {
 		ll x = find(a), y = find(b);
 		if (x == y)return false;
@@ -46,17 +46,17 @@ struct unionfind {
 		return true;
 	}
 
-	//“¯‚¶W‡‚©”»’è‚·‚é
+	//åŒã˜é›†åˆã‹åˆ¤å®šã™ã‚‹
 	bool same(ll a, ll b) {
 		return find(a) == find(b);
 	}
 
-	//ƒTƒCƒY‚ð•Ô‚·
+	//ã‚µã‚¤ã‚ºã‚’è¿”ã™
 	ll size(ll a) {
 		return siz[find(a)];
 	}
 
-	//“¯‚¶W‡‚É‘®‚·—t‚ð“Z‚ß‚Ä•Ô‚·
+	//åŒã˜é›†åˆã«å±žã™è‘‰ã‚’çºã‚ã¦è¿”ã™
 	vector<ll> leaf(ll a) {
 		vector<ll> x;
 		ll n = par.size();
