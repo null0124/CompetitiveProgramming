@@ -25,9 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Source.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Library\Graph\dijkstra.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
@@ -83,6 +80,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Library\Math\GCD+LCM.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\unionifnd_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Source.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
