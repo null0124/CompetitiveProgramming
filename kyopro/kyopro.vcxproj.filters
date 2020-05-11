@@ -79,6 +79,9 @@
     <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
       <Filter>Library\Algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="Library\template\template.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

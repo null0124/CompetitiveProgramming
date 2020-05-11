@@ -1,4 +1,6 @@
 
+
+
 template<typename T>
 //0-indexed/“à•”“I‚É 1-indexed
 struct BIT {

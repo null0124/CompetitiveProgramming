@@ -1,3 +1,5 @@
+
+
 //st ‚ª true ‚ÌA‹·‹`’P’²‘‰Á
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
