@@ -25,59 +25,59 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="Source\Source.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="BIT.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="lazysegtree.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="segtree.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="SparseTable.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="dijkstra.cpp">
+    <ClCompile Include="Library\Graph\dijkstra.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="dijkstra_path.cpp">
+    <ClCompile Include="Library\Graph\dijkstra_path.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="eulertour.cpp">
+    <ClCompile Include="Library\Graph\eulertour.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="istree.cpp">
+    <ClCompile Include="Library\Graph\LCA.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="LCA.cpp">
+    <ClCompile Include="Library\Graph\LCA_weighted.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="UnionFInd.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="WarshallFloyd.cpp">
+    <ClCompile Include="Library\Graph\istree.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="LCA_weighted.cpp">
+    <ClCompile Include="Library\Graph\WarshallFloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="LIS_dp.cpp">
-      <Filter>Library\Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="is_prime.cpp">
+    <ClCompile Include="Library\Math\is_prime.cpp">
       <Filter>Library\Math</Filter>
     </ClCompile>
-    <ClCompile Include="nCr.cpp">
+    <ClCompile Include="Library\Math\nCr.cpp">
       <Filter>Library\Math</Filter>
     </ClCompile>
-    <ClCompile Include="prime_factor.cpp">
+    <ClCompile Include="Library\Math\prime_factor.cpp">
       <Filter>Library\Math</Filter>
     </ClCompile>
-    <ClCompile Include="modint.cpp">
+    <ClCompile Include="Library\Others\modint.cpp">
       <Filter>Library\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\BIT.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\lazysegtree.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\segtree.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\SparseTable.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\UnionFInd.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
+      <Filter>Library\Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
