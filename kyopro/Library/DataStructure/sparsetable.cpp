@@ -7,14 +7,14 @@ struct sparsetable {
 	vector<int> a;
 	int n;
 
-	// “n‚·”z—ñ, ƒTƒCƒY
+	// æ¸¡ã™é…åˆ—, ã‚µã‚¤ã‚º
 	sparsetable(const vector<T> a, int siz) : n(siz), a(a) {
 		logtable.assign(n + 1, 0);
 		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
 		table.assign(n, vector<T>(logtable[n] + 1, 0));
 	}
 
-	//ƒŠƒXƒgƒo[ƒWƒ‡ƒ“
+	//ãƒªã‚¹ãƒˆãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	sparsetable(initializer_list<T> init) {
 		a = init[0];
 		n = init[1];
@@ -23,7 +23,7 @@ struct sparsetable {
 		table.assign(n, vector<T>(logtable[n] + 1, 0));
 	}
 
-	//”z—ñ‚Æ‘å‚«‚³‚ğ“n‚µ‚Ä‰Šú‰»
+	//é…åˆ—ã¨å¤§ãã•ã‚’æ¸¡ã—ã¦åˆæœŸåŒ–
 	void init(const vector<T> aa, int siz) {
 		a = aa;
 		n = siz;
@@ -32,7 +32,7 @@ struct sparsetable {
 		table.assign(n, vector<T>(logtable[n] + 1, 0));
 	}
 
-	//\’z O(n log n)
+	//æ§‹ç¯‰ O(n log n)
 	void build() {
 		for (int k = 0; (1 << k) <= n; ++k) {
 			for (int i = 0; i + (1 << k) <= n; ++i) {
@@ -42,7 +42,7 @@ struct sparsetable {
 		}
 	}
 
-	//[l, r) ‚Ì RMQ O(1)
+	//[l, r) ã® RMQ O(1)
 	int query(int l, int r) {
 		int k = logtable[r - l];
 		return (a[table[l][k]] < a[table[r - (1 << k)][k]] ? table[l][k] : table[r - (1 << k)][k]);
