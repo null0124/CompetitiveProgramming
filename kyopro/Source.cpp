@@ -109,7 +109,7 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-	puts("Hello World!");
+	
 
 	Please AC;
 }

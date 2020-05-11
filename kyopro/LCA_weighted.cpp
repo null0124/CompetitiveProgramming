@@ -1,11 +1,13 @@
-void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+//èdÇ›ïtÇ´
+
+void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<pair<int, int>>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);
 	for (const auto& aa : graph[now]) {
-		if (aa != bef) {
+		if (aa.first != bef) {
 			++cnt;
-			eulertour(aa, now, cnt, graph, d + 1, vs, depth, id);
+			eulertour(aa.first, now, cnt, graph, d + aa.second, vs, depth, id);
 			++cnt;
 			depth.emplace_back(d);
 			vs.emplace_back(now);
@@ -21,7 +23,7 @@ struct LCA {
 	int n, root;
 
 	//ñÿ,Å@ëÂÇ´Ç≥, ç™
-	LCA(vector<vector<int>> tree, int n, int root) : tree(tree), n(n), root(root) {
+	LCA(vector<vector<pair<int, int>>> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
 		eulertour(root, -1, cnt, tree, d, vs, depth, id);
@@ -39,4 +41,3 @@ struct LCA {
 		return depth[id[n]];
 	}
 };
-
