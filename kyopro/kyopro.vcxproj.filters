@@ -43,9 +43,6 @@
     <ClCompile Include="Library\Graph\istree.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Library\Graph\WarshallFloyd.cpp">
-      <Filter>Library\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="Library\Math\is_prime.cpp">
       <Filter>Library\Math</Filter>
     </ClCompile>
@@ -67,12 +64,6 @@
     <ClCompile Include="Library\DataStructure\segtree.cpp">
       <Filter>Library\DataStructure</Filter>
     </ClCompile>
-    <ClCompile Include="Library\DataStructure\SparseTable.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
-    <ClCompile Include="Library\DataStructure\UnionFInd.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
     <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
       <Filter>Library\Algorithm</Filter>
     </ClCompile>
@@ -87,6 +78,15 @@
     </ClCompile>
     <ClCompile Include="Source\Source.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\sparsetable.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\unionfInd.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Graph\warshallfloyd.cpp">
+      <Filter>Library\Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
