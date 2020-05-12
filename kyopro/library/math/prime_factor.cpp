@@ -1,4 +1,4 @@
-//‘fˆö”•ª‰ğ
+ï»¿//ç´ å› æ•°åˆ†è§£
 map< int64_t, int > prime_factor(int64_t n) {
 	map< int64_t, int > ret;
 	for (int64_t i = 2; i * i <= n; i++) {

@@ -1,4 +1,4 @@
-//‘f””»’è
+ï»¿//ç´ æ•°åˆ¤å®š
 bool is_prime(ll x) {
 	if (x == 1)return false;
 	for (ll i = 2; i * i <= x; i++) {

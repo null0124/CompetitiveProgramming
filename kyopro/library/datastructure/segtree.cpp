@@ -1,19 +1,19 @@
-
-//ƒZƒO–Ø/0-indexed/”ñÄ‹A/(‘å‚«‚³, ’PˆÊŒ³)‚Å‰Šú‰»
+ï»¿
+//ã‚»ã‚°æœ¨/0-indexed/éå†å¸°/(å¤§ãã•, å˜ä½å…ƒ)ã§åˆæœŸåŒ–
 template<typename T>
 struct segtree {
-	//–Ø‚ğ”z—ñ‚Å‚ ‚ç‚í‚µ‚½‚à‚Ì
+	//æœ¨ã‚’é…åˆ—ã§ã‚ã‚‰ã‚ã—ãŸã‚‚ã®
 	vector<T> seg;
-	//–Ø‚Ì1/2‚Ì‘å‚«‚³
+	//æœ¨ã®1/2ã®å¤§ãã•
 	int siz;
-	//’PˆÊŒ³
+	//å˜ä½å…ƒ
 	const T e;
-	//”äŠrŠÖ”‚ÌŒ^
+	//æ¯”è¼ƒé–¢æ•°ã®å‹
 	using F = function<T(T, T)>;
-	//ƒ}[ƒW‚·‚éŠÖ”
+	//ãƒãƒ¼ã‚¸ã™ã‚‹é–¢æ•°
 	const F f;
 
-	//n ‚Ì‘å‚«‚³, a (’PˆÊŒ³) ‚Å segtree ‚ğ‰Šú‰»‚·‚é
+	//n ã®å¤§ãã•, a (å˜ä½å…ƒ) ã§ segtree ã‚’åˆæœŸåŒ–ã™ã‚‹
 	segtree(int n, const T a, const F f) : e(a), f(f) {
 		siz = 1;
 		while (siz < n)siz <<= 1;
@@ -21,25 +21,25 @@ struct segtree {
 		--siz;
 	}
 
-	//k (0-indexed) ”Ô–Ú‚É t ‚ğ‘ã“ü
+	//k (0-indexed) ç•ªç›®ã« t ã‚’ä»£å…¥
 	void set(int k, const T& t) {
 		seg[k + siz] = t;
 	}
 
-	//f ‚É‚æ‚Á‚Ä–Ø‚ğ\’z
+	//f ã«ã‚ˆã£ã¦æœ¨ã‚’æ§‹ç¯‰
 	void build() {
 		for (int i = siz - 1; i >= 0; --i) seg[i] = f(seg[i * 2 + 1], seg[i * 2 + 2]);
 	}
 
-	//i ”Ô–Ú‚Ì—v‘f‚ğ•Ô‚·
+	//i ç•ªç›®ã®è¦ç´ ã‚’è¿”ã™
 	T operator[](const int i) {
 		return seg[i + siz];
 	}
 
-	//k ”Ô–Ú‚Ì’l‚ğ a ‚ÉXV
+	//k ç•ªç›®ã®å€¤ã‚’ a ã«æ›´æ–°
 	void update(int k, T a) {
 		k += siz;
-		//•K—v‚Å‚ ‚ê‚Î‚±‚±‚ğ•Ï‚¦‚é
+		//å¿…è¦ã§ã‚ã‚Œã°ã“ã“ã‚’å¤‰ãˆã‚‹
 		seg[k] = a;
 		while (k > 0) {
 			k = ((k - 1) >> 1);
@@ -47,7 +47,7 @@ struct segtree {
 		}
 	}
 
-	//[a, b) ‚É‚Â‚¢‚Ä f ‚µ‚½Œ‹‰Ê‚ğ•Ô‚·
+	//[a, b) ã«ã¤ã„ã¦ f ã—ãŸçµæœã‚’è¿”ã™
 	T query(int a, int b) {
 		T l = e, r = e;
 		for (a += siz, b += siz; a < b; a >>= 1, b >>= 1) {
@@ -57,11 +57,11 @@ struct segtree {
 		return f(l, r);
 	}
 
-	//[start, end) ‚É‚Â‚¢‚ÄA[l, r) ‚ğ’²‚×‚È‚ª‚ç k ”Ô–Ú‚ª check ‚ğ–‚½‚·‚©“ñ•ª’Tõ ÅŒã‚ª true ‚È‚ç left, false ‚È‚ç right f‚Ì‹t‰‰Z
+	//[start, end) ã«ã¤ã„ã¦ã€[l, r) ã‚’èª¿ã¹ãªãŒã‚‰ k ç•ªç›®ãŒ check ã‚’æº€ãŸã™ã‹äºŒåˆ†æ¢ç´¢ æœ€å¾ŒãŒ true ãªã‚‰ left, false ãªã‚‰ right fã®é€†æ¼”ç®—
 	template<typename C>
 	int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const function<T(T, T)> revf) {
 		//cerr << checknum << '\n';
-		//”ÍˆÍŠO‚Ü‚½‚Í‚»‚±‚ª‚·‚Å‚É–‚½‚³‚È‚¢‚Æ‚«
+		//ç¯„å›²å¤–ã¾ãŸã¯ãã“ãŒã™ã§ã«æº€ãŸã•ãªã„ã¨ã
 		//cerr << k << ',' << checknum << '\n';
 		if (start <= l && r <= end && !check(seg[k], checknum)) {
 			checknum = revf(checknum, seg[k]);
@@ -70,22 +70,22 @@ struct segtree {
 		if ((r <= start || l >= end)) {
 			return -1;
 		}
-		//Šù‚É—t
+		//æ—¢ã«è‘‰
 		if (k >= siz) {
 			return k - siz;
 		}
 		int res;
 		if (b) {
-			//¶‘¤‚ğ’²‚×‚é
+			//å·¦å´ã‚’èª¿ã¹ã‚‹
 			res = find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
-			//¶‘¤‚ª“K‚µ‚Ä‚½‚ç‚»‚ê‚ª“š‚¦
+			//å·¦å´ãŒé©ã—ã¦ãŸã‚‰ãã‚ŒãŒç­”ãˆ
 			if (res != -1)return (res);
 			return find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 		}
 		else {
-			//‰E‘¤‚ğ’²‚×‚é
+			//å³å´ã‚’èª¿ã¹ã‚‹
 			res = find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
-			//‰E‘¤‚ª“K‚µ‚Ä‚½‚ç‚»‚ê‚ª“š‚¦
+			//å³å´ãŒé©ã—ã¦ãŸã‚‰ãã‚ŒãŒç­”ãˆ
 			if (res != -1)return (res);
 			return find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 		}

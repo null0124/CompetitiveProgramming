@@ -1,38 +1,38 @@
-//ƒZƒO–Ø/0-indexed/”ñÄ‹A/n ‚Ì‘å‚«‚³, a (’PˆÊŒ³), –{‘Ì‚Ìƒ}[ƒWŠÖ”, ’x‰„ƒm[ƒh‚Ì’PˆÊŒ³, ’x‰„ƒm[ƒh‚Ìƒ}[ƒWŠÖ”, ’x‰„ƒm[ƒh‚Æ–{‘Ì‚Ìƒ}[ƒWŠÖ” ‚Å segtree ‚ğ‰Šú‰»‚·‚é
+ï»¿//ã‚»ã‚°æœ¨/0-indexed/éå†å¸°/n ã®å¤§ãã•, a (å˜ä½å…ƒ), æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•°, é…å»¶ãƒãƒ¼ãƒ‰ã®å˜ä½å…ƒ, é…å»¶ãƒãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¸é–¢æ•°, é…å»¶ãƒãƒ¼ãƒ‰ã¨æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•° ã§ segtree ã‚’åˆæœŸåŒ–ã™ã‚‹
 template<typename T, typename U>
 struct lazysegtree {
-	//–Ø‚ğ”z—ñ‚Å‚ ‚ç‚í‚µ‚½‚à‚Ì
+	//æœ¨ã‚’é…åˆ—ã§ã‚ã‚‰ã‚ã—ãŸã‚‚ã®
 	vector<T> seg;
-	//’x‰„ƒm[ƒh
+	//é…å»¶ãƒãƒ¼ãƒ‰
 	vector<U> lazy;
-	//ƒTƒCƒYƒm[ƒh
+	//ã‚µã‚¤ã‚ºãƒãƒ¼ãƒ‰
 	vector<int> size;
-	//’x‰„ƒm[ƒh‚Ìƒtƒ‰ƒOŠÇ—
+	//é…å»¶ãƒãƒ¼ãƒ‰ã®ãƒ•ãƒ©ã‚°ç®¡ç†
 	vector<bool> flag;
-	//–Ø‚Ì1/2‚Ì‘å‚«‚³
+	//æœ¨ã®1/2ã®å¤§ãã•
 	int siz, height;
-	//–{‘Ì‚Ì’PˆÊŒ³
+	//æœ¬ä½“ã®å˜ä½å…ƒ
 	const T se;
-	//’x‰„ƒm[ƒh‚Ì’PˆÊŒ³
+	//é…å»¶ãƒãƒ¼ãƒ‰ã®å˜ä½å…ƒ
 	const U le;
-	//–{‘Ì‚Ìƒ}[ƒWŠÖ”‚ÌŒ^
+	//æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•°ã®å‹
 	using F = function<T(T, T)>;
-	//’x‰„ƒm[ƒh‚Ìƒ}[ƒWŠÖ”‚ÌŒ^
+	//é…å»¶ãƒãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¸é–¢æ•°ã®å‹
 	using F2 = function<U(U, U)>;
-	//’x‰„ƒm[ƒh‚Æ–{‘Ì‚Ìƒ}[ƒWŠÖ”‚ÌŒ^
+	//é…å»¶ãƒãƒ¼ãƒ‰ã¨æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•°ã®å‹
 	using F3 = function<T(T, U)>;
-	//ƒTƒCƒY‚ğg‚Á‚½‰‰Z‚ğ‚·‚éŠÖ”‚ÌŒ^
+	//ã‚µã‚¤ã‚ºã‚’ä½¿ã£ãŸæ¼”ç®—ã‚’ã™ã‚‹é–¢æ•°ã®å‹
 	using F4 = function<U(U, int)>;
-	//–{‘Ì“¯m‚ğƒ}[ƒW‚·‚éŠÖ”
+	//æœ¬ä½“åŒå£«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹é–¢æ•°
 	const F f;
-	//’x‰„ƒm[ƒh“¯m‚ğƒ}[ƒW‚·‚éŠÖ”
+	//é…å»¶ãƒãƒ¼ãƒ‰åŒå£«ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹é–¢æ•°
 	const F2 f2;
-	//’x‰„ƒm[ƒh‚Æ–{‘Ì‚ğƒ}[ƒW‚·‚éŠÖ”
+	//é…å»¶ãƒãƒ¼ãƒ‰ã¨æœ¬ä½“ã‚’ãƒãƒ¼ã‚¸ã™ã‚‹é–¢æ•°
 	const F3 f3;
-	//ƒTƒCƒY‚ğg‚Á‚½‰‰Z‚ğ‚·‚éŠÖ”
+	//ã‚µã‚¤ã‚ºã‚’ä½¿ã£ãŸæ¼”ç®—ã‚’ã™ã‚‹é–¢æ•°
 	const F4 f4;
 
-	//n ‚Ì‘å‚«‚³, a (’PˆÊŒ³), –{‘Ì‚Ìƒ}[ƒWŠÖ”, ’x‰„ƒm[ƒh‚Ì’PˆÊŒ³, ’x‰„ƒm[ƒh‚Ìƒ}[ƒWŠÖ”, ’x‰„ƒm[ƒh‚Æ–{‘Ì‚Ìƒ}[ƒWŠÖ”, ƒTƒCƒY‚ğg‚Á‚½‰‰Z‚ğ‚·‚éŠÖ” ‚Å segtree ‚ğ‰Šú‰»‚·‚é
+	//n ã®å¤§ãã•, a (å˜ä½å…ƒ), æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•°, é…å»¶ãƒãƒ¼ãƒ‰ã®å˜ä½å…ƒ, é…å»¶ãƒãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¸é–¢æ•°, é…å»¶ãƒãƒ¼ãƒ‰ã¨æœ¬ä½“ã®ãƒãƒ¼ã‚¸é–¢æ•°, ã‚µã‚¤ã‚ºã‚’ä½¿ã£ãŸæ¼”ç®—ã‚’ã™ã‚‹é–¢æ•° ã§ segtree ã‚’åˆæœŸåŒ–ã™ã‚‹
 	lazysegtree(int n, const T se, const F f, const U le, const F2 f2, const F3 f3, const F4 f4) : se(se), f(f), le(le), f2(f2), f3(f3), f4(f4) {
 		siz = 1;
 		height = 0;
@@ -44,12 +44,12 @@ struct lazysegtree {
 		--siz;
 	}
 
-	//k (0-indexed) ”Ô–Ú‚É t ‚ğ‘ã“ü
+	//k (0-indexed) ç•ªç›®ã« t ã‚’ä»£å…¥
 	void set(int k, const T& t) {
 		seg[k + siz] = t;
 	}
 
-	//f ‚É‚æ‚Á‚Ä–Ø‚ğ\’z
+	//f ã«ã‚ˆã£ã¦æœ¨ã‚’æ§‹ç¯‰
 	void build() {
 		for (int i = siz - 1; i >= 0; --i) {
 			seg[i] = f(seg[i * 2 + 1], seg[i * 2 + 2]);
@@ -57,17 +57,17 @@ struct lazysegtree {
 		}
 	}
 
-	//i ”Ô–Ú‚Ì—v‘f‚ğ•Ô‚·
+	//i ç•ªç›®ã®è¦ç´ ã‚’è¿”ã™
 	T operator[](const int i) {
 		return query(i, i + 1);
 	}
 
-	//k ”Ô–Ú‚Ì’x‰„ƒm[ƒh‚ğ“`”d‚·‚é
+	//k ç•ªç›®ã®é…å»¶ãƒãƒ¼ãƒ‰ã‚’ä¼æ’­ã™ã‚‹
 	inline T merge(int k) {
 		return (!flag[k] ? seg[k] : f3(seg[k], f4(lazy[k], size[k])));
 	}
 
-	//q‚É“`”d
+	//å­ã«ä¼æ’­
 	inline void eval(int k) {
 		if (flag[k]) {
 			lazy[k * 2 + 1] = f2(lazy[k * 2 + 1], lazy[k]);
@@ -92,10 +92,10 @@ struct lazysegtree {
 		}
 	}
 
-	//k ”Ô–Ú‚Ì’l‚ğ a ‚ÉXV
+	//k ç•ªç›®ã®å€¤ã‚’ a ã«æ›´æ–°
 	void update(int k, T a) {
 		k += siz;
-		//•K—v‚Å‚ ‚ê‚Î‚±‚±‚ğ•Ï‚¦‚é
+		//å¿…è¦ã§ã‚ã‚Œã°ã“ã“ã‚’å¤‰ãˆã‚‹
 		seg[k] = a;
 		while (k > 0) {
 			k = ((k - 1) >> 1);
@@ -103,7 +103,7 @@ struct lazysegtree {
 		}
 	}
 
-	//[l, r) ‚Ì’l‚ğ a ‚ÉXV
+	//[l, r) ã®å€¤ã‚’ a ã«æ›´æ–°
 	void update(int l, int r, T a) {
 		int x = l + siz, y = r + siz - 1;
 		topdown(x);
@@ -124,7 +124,7 @@ struct lazysegtree {
 		bottomup(y);
 	}
 
-	//[a, b) ‚É‚Â‚¢‚Ä f ‚µ‚½Œ‹‰Ê‚ğ•Ô‚·
+	//[a, b) ã«ã¤ã„ã¦ f ã—ãŸçµæœã‚’è¿”ã™
 	T query(int a, int b) {
 		topdown(a += siz);
 		topdown(b += siz - 1);
@@ -137,11 +137,11 @@ struct lazysegtree {
 	}
 
 
-	////[start, end) ‚É‚Â‚¢‚ÄA[l, r) ‚ğ’²‚×‚È‚ª‚ç k ”Ô–Ú‚ª check ‚ğ–‚½‚·‚©“ñ•ª’Tõ ÅŒã‚ª true ‚È‚ç left, false ‚È‚ç right f‚Ì‹t‰‰Z
+	////[start, end) ã«ã¤ã„ã¦ã€[l, r) ã‚’èª¿ã¹ãªãŒã‚‰ k ç•ªç›®ãŒ check ã‚’æº€ãŸã™ã‹äºŒåˆ†æ¢ç´¢ æœ€å¾ŒãŒ true ãªã‚‰ left, false ãªã‚‰ right fã®é€†æ¼”ç®—
 	//template<typename C>
 	//int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const function<T(T, T)> revf) {
 	//	//cerr << checknum << '\n';
-	//	//”ÍˆÍŠO‚Ü‚½‚Í‚»‚±‚ª‚·‚Å‚É–‚½‚³‚È‚¢‚Æ‚«
+	//	//ç¯„å›²å¤–ã¾ãŸã¯ãã“ãŒã™ã§ã«æº€ãŸã•ãªã„ã¨ã
 	//	//cerr << k << ',' << checknum << '\n';
 	//	if (start <= l && r <= end && !check(seg[k], checknum)) {
 	//		checknum = revf(checknum, seg[k]);
@@ -150,22 +150,22 @@ struct lazysegtree {
 	//	if ((r <= start || l >= end)) {
 	//		return -1;
 	//	}
-	//	//Šù‚É—t
+	//	//æ—¢ã«è‘‰
 	//	if (k >= siz) {
 	//		return k - siz;
 	//	}
 	//	int res;
 	//	if (b) {
-	//		//¶‘¤‚ğ’²‚×‚é
+	//		//å·¦å´ã‚’èª¿ã¹ã‚‹
 	//		res = find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
-	//		//¶‘¤‚ª“K‚µ‚Ä‚½‚ç‚»‚ê‚ª“š‚¦
+	//		//å·¦å´ãŒé©ã—ã¦ãŸã‚‰ãã‚ŒãŒç­”ãˆ
 	//		if (res != -1)return (res);
 	//		return find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 	//	}
 	//	else {
-	//		//‰E‘¤‚ğ’²‚×‚é
+	//		//å³å´ã‚’èª¿ã¹ã‚‹
 	//		res = find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
-	//		//‰E‘¤‚ª“K‚µ‚Ä‚½‚ç‚»‚ê‚ª“š‚¦
+	//		//å³å´ãŒé©ã—ã¦ãŸã‚‰ãã‚ŒãŒç­”ãˆ
 	//		if (res != -1)return (res);
 	//		return find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 	//	}

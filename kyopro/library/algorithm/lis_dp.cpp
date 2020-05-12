@@ -1,4 +1,4 @@
-
+﻿
 
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);

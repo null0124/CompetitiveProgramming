@@ -1,4 +1,4 @@
-struct eulertour {
+﻿struct eulertour {
 
 	vector<int> depth, child;
 

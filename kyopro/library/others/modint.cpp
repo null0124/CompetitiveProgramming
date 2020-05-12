@@ -1,4 +1,4 @@
-template<int mod>
+﻿template<int mod>
 struct modint {
 	int val;
 

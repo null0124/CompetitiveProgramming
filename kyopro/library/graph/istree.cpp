@@ -1,4 +1,4 @@
-void dfs(const vector<vector<int>>& tree, vector<bool>& flag, const int& now, bool& f) {
+ï»¿void dfs(const vector<vector<int>>& tree, vector<bool>& flag, const int& now, bool& f) {
 	if (f)return;
 	flag[now] = true;
 	int cnt = 0;
@@ -16,7 +16,7 @@ void dfs(const vector<vector<int>>& tree, vector<bool>& flag, const int& now, bo
 }
 
 //depends on unionfind
-//ƒOƒ‰ƒt(˜AŒ‹‚Å‚È‚­‚Ä‚æ‚¢)‚ÉŠÜ‚Ü‚ê‚é tree ‚Ì”‚ğ•Ô‚·/graph(—×ÚƒŠƒXƒg)/’¸“_”
+//ã‚°ãƒ©ãƒ•(é€£çµã§ãªãã¦ã‚ˆã„)ã«å«ã¾ã‚Œã‚‹ tree ã®æ•°ã‚’è¿”ã™/graph(éš£æ¥ãƒªã‚¹ãƒˆ)/é ‚ç‚¹æ•°
 int istree(const vector<vector<int>>& graph, const int& n) {
 	unionfind uni(n);
 	rep(i, n) {

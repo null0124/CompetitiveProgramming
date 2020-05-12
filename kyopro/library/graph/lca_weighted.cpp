@@ -1,4 +1,4 @@
-//d‚İ•t‚«
+ï»¿//é‡ã¿ä»˜ã
 
 void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<pair<int, int>>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
@@ -22,7 +22,7 @@ struct LCA {
 	sparsetable<int> table{ tmp, 0 };
 	int n, root;
 
-	//–Ø,@‘å‚«‚³, ª
+	//æœ¨,ã€€å¤§ãã•, æ ¹
 	LCA(vector<vector<pair<int, int>>> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
@@ -31,7 +31,7 @@ struct LCA {
 		table.build();
 	}
 
-	//LCA ‚Å‚ ‚é’¸“_‚ğ•Ô‚·
+	//LCA ã§ã‚ã‚‹é ‚ç‚¹ã‚’è¿”ã™
 	int query(int l, int r) {
 		if (id[l] > id[r])swap(l, r);
 		return vs[table.query(id[l], id[r] + 1)];
