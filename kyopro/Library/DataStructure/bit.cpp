@@ -2,20 +2,20 @@
 
 
 template<typename T>
-//0-indexed/“à•”“I‚É 1-indexed
+//0-indexed/å†…éƒ¨çš„ã« 1-indexed
 struct BIT {
 	vector<T> tree;
-	//‰Šú‰»
+	//åˆæœŸåŒ–
 	BIT(int n) : tree(n) {
 		tree.assign(n + 1, 0);
 	}
 
 	int LSB(int n) { return (n & (-n)); }
 
-	//[0, n) ‚Ì sum ‚ğ•Ô‚·/0-indexed
+	//[0, n) ã® sum ã‚’è¿”ã™/0-indexed
 	T sum(int n) {
 		T ret = 0;
-		//À‚Í 1-indexed ‚¾‚ª”¼ŠJ‹æŠÔ‚È‚Ì‚ÅŒ©‚½–Ú‚ª‚»‚Ì‚Ü‚Ü
+		//å®Ÿã¯ 1-indexed ã ãŒåŠé–‹åŒºé–“ãªã®ã§è¦‹ãŸç›®ãŒãã®ã¾ã¾
 		for (; n >= 0; n -= LSB(n)) {
 			ret += tree[n];
 			if (!n)break;
@@ -24,12 +24,12 @@ struct BIT {
 	}
 
 
-	//[i, j) ‚Ì sum ‚ğ•Ô‚·/0-indexed
+	//[i, j) ã® sum ã‚’è¿”ã™/0-indexed
 	T sum(int i, int j) {;
 		return sum(j) - sum(i);
 	}
 
-	//n ”Ô–Ú‚É x ‚ğ‘«‚·
+	//n ç•ªç›®ã« x ã‚’è¶³ã™
 	void add(int n, T x) {
 		int siz = tree.size();
 		for (++n; n < siz; n += LSB(n))tree[n] += x;
