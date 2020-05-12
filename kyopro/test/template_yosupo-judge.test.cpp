@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
-#include "..\Library\template\template.cpp"
+#include "../Library/template/template.cpp"
 
 int main() {
 

@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
-#include "..\Library\template\template.cpp"
+#include "../Library/template/template.cpp"
 
-#include "..\Library\DataStructure\unionfind.cpp"
+#include "../Library/DataStructure/unionfind.cpp"
 
 int main() {
 	int n, q;
