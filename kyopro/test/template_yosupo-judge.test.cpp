@@ -1,8 +1,3 @@
-/*
-* @title template
-*
-*/
-
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../library/template/template.cpp"

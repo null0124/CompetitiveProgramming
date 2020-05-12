@@ -1,4 +1,10 @@
 ﻿/*
+* @title template
+*
+*/
+
+
+/*
 このコード、と～おれ!
 Be accepted!
 ∧＿∧　
