@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :heavy_check_mark: template
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:46:49+09:00
+    - Last commit date: 2020-05-13 04:43:47+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
@@ -47,6 +47,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+* @title template
+*
+*/
+
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #include "../library/template/template.cpp"
@@ -66,6 +71,11 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "kyopro/test/template_yosupo-judge.test.cpp"
+/*
+* @title template
+*
+*/
+
 #define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
 
 #line 1 "kyopro/library/template/template.cpp"
@@ -173,7 +183,7 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 9 "kyopro/test/template_yosupo-judge.test.cpp"
 
 int main() {
 
