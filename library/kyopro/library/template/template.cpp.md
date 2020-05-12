@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/template/template.cpp
+# :heavy_check_mark: template
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#555f11034b492b610373485649bb8a76">kyopro/library/template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/template/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:46:49+09:00
+    - Last commit date: 2020-05-13 04:47:21+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/template_yosupo-judge.test.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
 
 
@@ -48,6 +48,12 @@ layout: default
 {% raw %}
 ```cpp
 ﻿/*
+* @title template
+*
+*/
+
+
+/*
 このコード、と～おれ!
 Be accepted!
 ∧＿∧　
@@ -159,6 +165,12 @@ ll LSB(ll n) { return (n & (-n)); }
 ```cpp
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
+* @title template
+*
+*/
+
+
+/*
 このコード、と～おれ!
 Be accepted!
 ∧＿∧　

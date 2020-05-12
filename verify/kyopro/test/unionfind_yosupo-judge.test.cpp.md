@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/unionfind_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:28:34+09:00
+    - Last commit date: 2020-05-13 04:47:21+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/unionfind.cpp.html">kyopro/library/datastructure/unionfind.cpp</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">kyopro/library/template/template.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -76,6 +76,12 @@ int main() {
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
+* @title template
+*
+*/
+
+
+/*
 このコード、と～おれ!
 Be accepted!
 ∧＿∧　

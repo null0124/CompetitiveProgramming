@@ -93,12 +93,12 @@ layout: default
 
 ### kyopro/library/template
 
-* :heavy_check_mark: <a href="library/kyopro/library/template/template.cpp.html">kyopro/library/template/template.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Verify Files
 
-* :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">template</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
 
 
