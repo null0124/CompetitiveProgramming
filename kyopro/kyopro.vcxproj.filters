@@ -88,6 +88,9 @@
     <ClCompile Include="Library\Graph\warshallfloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
+    <ClCompile Include="test\template_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
