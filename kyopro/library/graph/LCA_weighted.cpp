@@ -1,4 +1,4 @@
-//重み付き
+//驥阪∩莉倥″
 
 void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<pair<int, int>>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
@@ -22,7 +22,7 @@ struct LCA {
 	sparsetable<int> table{ tmp, 0 };
 	int n, root;
 
-	//木,　大きさ, 根
+	//譛ｨ,縲螟ｧ縺阪＆, 譬ｹ
 	LCA(vector<vector<pair<int, int>>> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
@@ -31,7 +31,7 @@ struct LCA {
 		table.build();
 	}
 
-	//LCA である頂点を返す
+	//LCA 縺ｧ縺ゅｋ鬆らせ繧定ｿ斐☆
 	int query(int l, int r) {
 		if (id[l] > id[r])swap(l, r);
 		return vs[table.query(id[l], id[r] + 1)];
