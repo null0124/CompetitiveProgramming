@@ -2,7 +2,7 @@
 
 #include "../library/template/template.cpp"
 
-#include "../library/datastructure/unionfind.cpp"
+#include "..\library\datastructure\unionfind.cpp"
 
 int main() {
 	int n, q;
