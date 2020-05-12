@@ -34,12 +34,6 @@
     <ClCompile Include="test\unionfind_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\algorithm\lis_dp.cpp">
-      <Filter>Library\Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="library\datastructure\bit.cpp">
-      <Filter>Library\DataStructure</Filter>
-    </ClCompile>
     <ClCompile Include="library\datastructure\lazysegtree.cpp">
       <Filter>Library\DataStructure</Filter>
     </ClCompile>
@@ -64,12 +58,6 @@
     <ClCompile Include="library\graph\istree.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="library\graph\lca.cpp">
-      <Filter>Library\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="library\graph\lca_weighted.cpp">
-      <Filter>Library\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="library\graph\warshallfloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
@@ -90,6 +78,18 @@
     </ClCompile>
     <ClCompile Include="library\template\template.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Graph\LCA.cpp">
+      <Filter>Library\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Graph\LCA_weighted.cpp">
+      <Filter>Library\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\DataStructure\BIT.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
+      <Filter>Library\Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
