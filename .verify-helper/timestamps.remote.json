@@ -1,7 +1,11 @@
 {
+"kyopro/test/BIT_yosupo-judge.test.cpp": "2020-05-13 20:35:29 +0900",
 "kyopro/test/LCA_yosupo-judge.test.cpp": "2020-05-13 16:40:44 +0900",
+"kyopro/test/LIS_dp_aoj.test.cpp": "2020-05-13 20:35:29 +0900",
 "kyopro/test/dijkstra_aoj.test.cpp": "2020-05-13 16:40:44 +0900",
 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp": "2020-05-13 16:40:44 +0900",
+"kyopro/test/lcm_aoj.test.cpp": "2020-05-13 20:35:29 +0900",
+"kyopro/test/sparsetable_yosupo-judge.test.cpp": "2020-05-13 20:35:29 +0900",
 "kyopro/test/template_yosupo-judge.test.cpp": "2020-05-13 04:47:21 +0900",
 "kyopro/test/unionfind_yosupo-judge.test.cpp": "2020-05-13 04:47:21 +0900"
 }
