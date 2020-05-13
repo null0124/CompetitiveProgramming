@@ -45,7 +45,7 @@ layout: default
 
 ### kyopro/library/algorithm
 
-* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">kyopro/library/algorithm/LIS_dp.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">LIS(dp)</a>
 
 
 <div id="2b68642ad9f56b522be9061078c930ba"></div>

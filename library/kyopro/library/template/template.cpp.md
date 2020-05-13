@@ -38,8 +38,11 @@ layout: default
 
 ## なに  
 テンプレート  
+## 使い方
+ソースコードの上に貼る  
 ## 計算量  
 ない
+
 
 ## Verified with
 

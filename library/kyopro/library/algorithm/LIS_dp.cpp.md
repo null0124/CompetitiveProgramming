@@ -25,15 +25,29 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/algorithm/LIS_dp.cpp
+# :heavy_check_mark: LIS(dp)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#1e7f6f770d19fb8d844d8fd4ade9dc2c">kyopro/library/algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/algorithm/LIS_dp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 16:40:44+09:00
+    - Last commit date: 2020-05-13 23:40:49+09:00
 
 
+
+
+## ‚È‚É  
+Å’·‘‰Á•”•ª—ñ‚Ì’·‚³‚ğ‹‚ß‚é  
+## g‚¢•û  
+ŠÖ”  
+#### ˆø”  
+- ”z—ñ‚Ì’·‚³: $N$
+- ”z—ñ: ${A}$
+- ‹·‹`‚©‚Ç‚¤‚©: bool ’l
+#### •Ô‚è’l  
+- ’·‚³
+## ŒvZ—Ê  
+${\rm O}(N \log N)$  
 
 
 ## Verified with
@@ -46,7 +60,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-ï»¿
+ï»¿/*
+* @title LIS(dp)
+* @docs kyopro/docs/LIS_dp.md
+*/
+
 //st ãŒ true ã®æ™‚ã€ç‹­ç¾©å˜èª¿å¢—åŠ 
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
@@ -67,7 +85,11 @@ int lis(const int& n, const vector<int>& a, const bool& st) {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/algorithm/LIS_dp.cpp"
-ï»¿
+ï»¿/*
+* @title LIS(dp)
+* @docs kyopro/docs/LIS_dp.md
+*/
+
 //st ãŒ true ã®æ™‚ã€ç‹­ç¾©å˜èª¿å¢—åŠ 
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
