@@ -110,5 +110,6 @@
   <ItemGroup>
     <None Include="cpp.hint" />
     <None Include="docs\template.md" />
+    <None Include="docs\LIS_dp.md" />
   </ItemGroup>
 </Project>

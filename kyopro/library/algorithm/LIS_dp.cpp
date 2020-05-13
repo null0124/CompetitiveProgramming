@@ -1,4 +1,8 @@
-﻿
+﻿/*
+* @title LIS(dp)
+* @docs kyopro/docs/LIS_dp.md
+*/
+
 //st が true の時、狭義単調増加
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
