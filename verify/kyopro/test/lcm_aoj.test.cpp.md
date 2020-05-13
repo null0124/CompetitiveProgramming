@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/lcm_aoj.test.cpp
+# :heavy_check_mark: kyopro/test/lcm_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/lcm_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 16:40:44+09:00
+    - Last commit date: 2020-05-13 20:35:29+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">kyopro/library/math/gcd_lcm.cpp</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">kyopro/library/math/gcd_lcm.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -57,6 +57,7 @@ layout: default
 int main() {
 
 	int n, ans = 1, a;
+	scanf("%d", &n);
 	while (n--) {
 		scanf("%d", &a);
 		ans = lcm(ans, a);
@@ -201,6 +202,7 @@ ll lcm(ll number1, ll number2) {//lcmを求める
 int main() {
 
 	int n, ans = 1, a;
+	scanf("%d", &n);
 	while (n--) {
 		scanf("%d", &a);
 		ans = lcm(ans, a);

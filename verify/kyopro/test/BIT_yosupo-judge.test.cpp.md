@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/BIT_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/BIT_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/BIT_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 16:40:44+09:00
+    - Last commit date: 2020-05-13 20:35:29+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">kyopro/library/datastructure/BIT.cpp</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">kyopro/library/datastructure/BIT.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -60,14 +60,14 @@ int main() {
 	scanf("%d%d", &n, &q);
 	BIT<ll> bit(n);
 	rep(i, n) {
-		int a;
-		scanf("%d", &a);
+		ll a;
+		scanf("%lld", &a);
 		bit.add(i, a);
 	}
 	while (q--) {
-		int t, a, b;
-		scanf("%d%d%d", &t, &a, &b);
-		if (t)printf("%d\n", bit.sum(a, b));
+		ll t, a, b;
+		scanf("%lld%lld%lld", &t, &a, &b);
+		if (t)printf("%lld\n", bit.sum(a, b));
 		else bit.add(a, b);
 	}
 
@@ -241,14 +241,14 @@ int main() {
 	scanf("%d%d", &n, &q);
 	BIT<ll> bit(n);
 	rep(i, n) {
-		int a;
-		scanf("%d", &a);
+		ll a;
+		scanf("%lld", &a);
 		bit.add(i, a);
 	}
 	while (q--) {
-		int t, a, b;
-		scanf("%d%d%d", &t, &a, &b);
-		if (t)printf("%d\n", bit.sum(a, b));
+		ll t, a, b;
+		scanf("%lld%lld%lld", &t, &a, &b);
+		if (t)printf("%lld\n", bit.sum(a, b));
 		else bit.add(a, b);
 	}
 

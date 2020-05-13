@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">kyopro/library/datastructure/sparsetable.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">kyopro/library/datastructure/sparsetable.cpp</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA.cpp.html">kyopro/library/graph/LCA.cpp</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
