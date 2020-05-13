@@ -31,10 +31,15 @@ layout: default
 
 * category: <a href="../../../../index.html#555f11034b492b610373485649bb8a76">kyopro/library/template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/template/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+    - Last commit date: 2020-05-13 23:17:59+09:00
 
 
 
+
+## ‚È‚É  
+ƒeƒ“ƒvƒŒ[ƒg  
+## ŒvZ—Ê  
+‚È‚¢
 
 ## Verified with
 
@@ -56,7 +61,7 @@ layout: default
 ```cpp
 ï»¿/*
 * @title template
-*
+* @docs kyopro/docs/template.md
 */
 
 
@@ -173,7 +178,7 @@ ll LSB(ll n) { return (n & (-n)); }
 #line 1 "kyopro/library/template/template.cpp"
 ï»¿/*
 * @title template
-*
+* @docs kyopro/docs/template.md
 */
 
 

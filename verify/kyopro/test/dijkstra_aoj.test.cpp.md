@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 16:40:44+09:00
+    - Last commit date: 2020-05-13 23:17:59+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A</a>
@@ -83,7 +83,7 @@ int main() {
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
 * @title template
-*
+* @docs kyopro/docs/template.md
 */
 
 
