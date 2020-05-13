@@ -7,6 +7,7 @@
 int main() {
 
 	int n;
+	scanf("%d", &n);
 	vector<int> a(n);
 	rep(i, n)scanf("%d", &a[i]);
 	printf("%d\n", lis(n, a, true));

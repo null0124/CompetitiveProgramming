@@ -7,6 +7,7 @@
 int main() {
 
 	int n, ans = 1, a;
+	scanf("%d", &n);
 	while (n--) {
 		scanf("%d", &a);
 		ans = lcm(ans, a);

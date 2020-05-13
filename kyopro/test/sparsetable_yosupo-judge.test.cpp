@@ -15,7 +15,7 @@ int main() {
 	while (q--) {
 		int l, r;
 		scanf("%d%d", &l, &r);
-		printf("%d\n", rmq.query(l, r));
+		printf("%d\n", a[rmq.query(l, r)]);
 	}
 
 	Please AC;

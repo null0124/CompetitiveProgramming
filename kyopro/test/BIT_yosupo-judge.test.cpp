@@ -10,14 +10,14 @@ int main() {
 	scanf("%d%d", &n, &q);
 	BIT<ll> bit(n);
 	rep(i, n) {
-		int a;
-		scanf("%d", &a);
+		ll a;
+		scanf("%lld", &a);
 		bit.add(i, a);
 	}
 	while (q--) {
-		int t, a, b;
-		scanf("%d%d%d", &t, &a, &b);
-		if (t)printf("%d\n", bit.sum(a, b));
+		ll t, a, b;
+		scanf("%lld%lld%lld", &t, &a, &b);
+		if (t)printf("%lld\n", bit.sum(a, b));
 		else bit.add(a, b);
 	}
 
