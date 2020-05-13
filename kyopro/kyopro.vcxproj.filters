@@ -109,5 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="docs\template.md" />
   </ItemGroup>
 </Project>

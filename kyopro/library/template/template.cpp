@@ -1,6 +1,6 @@
 ﻿/*
 * @title template
-*
+* @docs kyopro/docs/template.md
 */
 
 
