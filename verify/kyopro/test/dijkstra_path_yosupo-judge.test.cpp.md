@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
+* see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">kyopro/library/graph/dijkstra_path.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -47,15 +48,34 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include "../library/template/template.cpp"
 
+#include "../library/graph/dijkstra_path.cpp"
+
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, m, s, t;
+	scanf("%d%d%d%d", &n, &m, &s, &t);
+	vector<vector<pair<int, ll>>> graph(n);
+	while (m--) {
+		int a, b;
+		ll c;
+		scanf("%d%d%lld", &a, &b, &c);
+		graph[a].emplace_back(b, c);
+	}
+	vector<int> path;
+	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF);
+	int siz = (int)path.size() - 1;
+	if (ans[t] == LINF) {
+		puts("-1");
+		return AC;
+	}
+	printf("%lld %d\n", ans[t], siz);
+	rep(i, siz) {
+		printf("%d %d\n", path[i], path[i + 1]);
+	}
 
 	Please AC;
 }
@@ -65,8 +85,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/template_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#line 1 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -179,13 +199,66 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+
+#line 1 "kyopro/library/graph/dijkstra_path.cpp"
+﻿template<typename T>
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
+	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
+	vector<T> res(n);
+	vector<int> prev(n);
+	fill(all(prev), -1);
+	fill(all(res), Inf);
+	priq.push({ 0, v });
+	res[v] = 0;
+	int top;
+	while (!priq.empty()) {
+		auto now = priq.top();
+		top = now.second;
+		priq.pop();
+		if (res[top] < now.first)continue;
+		for (const auto& aa : graph[top]) {
+			if (res[top] + aa.second > res[aa.first])continue;
+			else if (res[top] + aa.second == res[aa.first]) {
+				//prev[aa.first] = min(top, prev[aa.first]);
+				continue;
+			}
+			res[aa.first] = aa.second + res[top];
+			prev[aa.first] = top;
+			priq.push({ res[aa.first], aa.first });
+		}
+	}
+
+	for (int i = g; i != -1; i = prev[i])path.push_back(i);
+
+	reverse(all(path));
+
+	return res;
+}
+#line 6 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
 
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, m, s, t;
+	scanf("%d%d%d%d", &n, &m, &s, &t);
+	vector<vector<pair<int, ll>>> graph(n);
+	while (m--) {
+		int a, b;
+		ll c;
+		scanf("%d%d%lld", &a, &b, &c);
+		graph[a].emplace_back(b, c);
+	}
+	vector<int> path;
+	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF);
+	int siz = (int)path.size() - 1;
+	if (ans[t] == LINF) {
+		puts("-1");
+		return AC;
+	}
+	printf("%lld %d\n", ans[t], siz);
+	rep(i, siz) {
+		printf("%d %d\n", path[i], path[i + 1]);
+	}
 
 	Please AC;
 }

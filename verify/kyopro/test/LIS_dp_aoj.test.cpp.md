@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :x: kyopro/test/LIS_dp_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LIS_dp_aoj.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D</a>
 
 
 ## Depends on
 
+* :x: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">kyopro/library/algorithm/LIS_dp.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -47,15 +48,18 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D"
 
 #include "../library/template/template.cpp"
 
+#include "../library/algorithm/LIS_dp.cpp"
+
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n;
+	vector<int> a(n);
+	rep(i, n)scanf("%d", &a[i]);
+	printf("%d\n", lis(n, a, true));
 
 	Please AC;
 }
@@ -65,8 +69,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/template_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#line 1 "kyopro/test/LIS_dp_aoj.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -179,13 +183,30 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/LIS_dp_aoj.test.cpp"
+
+#line 1 "kyopro/library/algorithm/LIS_dp.cpp"
+﻿
+//st が true の時、狭義単調増加
+int lis(const int& n, const vector<int>& a, const bool& st) {
+	vector<int> dp(n);
+	fill(all(dp), INF);
+	vector<int>::iterator ite;
+	rep(i, n) {
+		if (st)ite = lower_bound(all(dp), a[i]);
+		else ite = upper_bound(all(dp), a[i]);
+		if (ite != dp.end())*ite = a[i];
+	}
+	return distance(dp.begin(), lower_bound(all(dp), INF));
+}
+#line 6 "kyopro/test/LIS_dp_aoj.test.cpp"
 
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n;
+	vector<int> a(n);
+	rep(i, n)scanf("%d", &a[i]);
+	printf("%d\n", lis(n, a, true));
 
 	Please AC;
 }

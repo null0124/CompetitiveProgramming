@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/dijkstra_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_aoj.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A</a>
 
 
 ## Depends on
 
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra.cpp.html">kyopro/library/graph/dijkstra.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -47,15 +48,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
 #include "../library/template/template.cpp"
 
+#include "../library/graph/dijkstra.cpp"
+
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int v, e, r;
+	scanf("%d%d%d", &v, &e, &r);
+	vector<vector<pair<int, ll>>> graph(v);
+	while (e--) {
+		int s, t, d;
+		scanf("%d%d%d", &s, &t, &d);
+		graph[s].emplace_back(t, d);
+	}
+	for (const auto& aa : dijkstra<ll>(graph, r, v, LINF)) {
+		if (aa == LINF)puts("INF");
+		else printf("%lld\n", aa);
+	}
 
 	Please AC;
 }
@@ -65,8 +77,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/template_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#line 1 "kyopro/test/dijkstra_aoj.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -179,13 +191,47 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/dijkstra_aoj.test.cpp"
+
+#line 1 "kyopro/library/graph/dijkstra.cpp"
+﻿
+
+
+template<typename T>
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
+	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
+	vector<T> res(n);
+	fill(all(res), Inf);
+	priq.push({ 0, v });
+	res[v] = 0;
+	int top;
+	while (!priq.empty()) {
+		top = priq.top().second;
+		priq.pop();
+		for (const auto& aa : graph[top]) {
+			if (res[top] + aa.second >= res[aa.first])continue;
+			res[aa.first] = aa.second + res[top];
+			priq.push({ res[aa.first], aa.first });
+		}
+	}
+	return res;
+}
+#line 6 "kyopro/test/dijkstra_aoj.test.cpp"
 
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int v, e, r;
+	scanf("%d%d%d", &v, &e, &r);
+	vector<vector<pair<int, ll>>> graph(v);
+	while (e--) {
+		int s, t, d;
+		scanf("%d%d%d", &s, &t, &d);
+		graph[s].emplace_back(t, d);
+	}
+	for (const auto& aa : dijkstra<ll>(graph, r, v, LINF)) {
+		if (aa == LINF)puts("INF");
+		else printf("%lld\n", aa);
+	}
 
 	Please AC;
 }

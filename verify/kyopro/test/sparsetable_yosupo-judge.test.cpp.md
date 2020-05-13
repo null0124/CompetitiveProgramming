@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :x: kyopro/test/sparsetable_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/sparsetable_yosupo-judge.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
+* see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
 
 
 ## Depends on
 
+* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">kyopro/library/datastructure/sparsetable.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -47,15 +48,25 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include "../library/template/template.cpp"
 
+#include "../library/datastructure/sparsetable.cpp"
+
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, q;
+	scanf("%d%d", &n, &q);
+	vector<int> a(n);
+	rep(i, n)scanf("%d", &a[i]);
+	sparsetable<int> rmq(a, n);
+	rmq.build();
+	while (q--) {
+		int l, r;
+		scanf("%d%d", &l, &r);
+		printf("%d\n", rmq.query(l, r));
+	}
 
 	Please AC;
 }
@@ -65,8 +76,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/template_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#line 1 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -179,13 +190,76 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
+
+#line 1 "kyopro/library/datastructure/sparsetable.cpp"
+//RMQ <O(n log n), O(1)>
+template<typename T>
+struct sparsetable {
+
+	vector<vector<T>> table;
+	vector<int> logtable;
+	vector<int> a;
+	int n;
+
+	// 渡す配列, サイズ
+	sparsetable(const vector<T> a, int siz) : n(siz), a(a) {
+		logtable.assign(n + 1, 0);
+		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
+		table.assign(n, vector<T>(logtable[n] + 1, 0));
+	}
+
+	//リストバージョン
+	sparsetable(initializer_list<T> init) {
+		a = init[0];
+		n = init[1];
+		logtable.assign(n + 1, 0);
+		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
+		table.assign(n, vector<T>(logtable[n] + 1, 0));
+	}
+
+	//配列と大きさを渡して初期化
+	void init(const vector<T> aa, int siz) {
+		a = aa;
+		n = siz;
+		logtable.assign(n + 1, 0);
+		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
+		table.assign(n, vector<T>(logtable[n] + 1, 0));
+	}
+
+	//構築 O(n log n)
+	void build() {
+		for (int k = 0; (1 << k) <= n; ++k) {
+			for (int i = 0; i + (1 << k) <= n; ++i) {
+				if (k) table[i][k] = (a[table[i][k - 1]] < a[table[i + (1 << (k - 1))][k - 1]] ? table[i][k - 1] : table[i + (1 << (k - 1))][k - 1]);
+				else table[i][k] = i;
+			}
+		}
+	}
+
+	//[l, r) の RMQ O(1)
+	int query(int l, int r) {
+		int k = logtable[r - l];
+		return (a[table[l][k]] < a[table[r - (1 << k)][k]] ? table[l][k] : table[r - (1 << k)][k]);
+	}
+
+};
+
+#line 6 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
 
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, q;
+	scanf("%d%d", &n, &q);
+	vector<int> a(n);
+	rep(i, n)scanf("%d", &a[i]);
+	sparsetable<int> rmq(a, n);
+	rmq.build();
+	while (q--) {
+		int l, r;
+		scanf("%d%d", &l, &r);
+		printf("%d\n", rmq.query(l, r));
+	}
 
 	Please AC;
 }

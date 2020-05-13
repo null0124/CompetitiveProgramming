@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/template_yosupo-judge.test.cpp
+# :x: kyopro/test/lcm_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/template_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 04:47:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/lcm_aoj.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/aplusb">https://judge.yosupo.jp/problem/aplusb</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C</a>
 
 
 ## Depends on
 
+* :x: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">kyopro/library/math/gcd_lcm.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -47,15 +48,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C"
 
 #include "../library/template/template.cpp"
 
+#include "../library/math/gcd_lcm.cpp"
+
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, ans = 1, a;
+	while (n--) {
+		scanf("%d", &a);
+		ans = lcm(ans, a);
+	}
+	printf("%d\n", ans);
 
 	Please AC;
 }
@@ -65,8 +71,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/template_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/aplusb"
+#line 1 "kyopro/test/lcm_aoj.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -179,13 +185,27 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/template_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/lcm_aoj.test.cpp"
+
+#line 1 "kyopro/library/math/gcd_lcm.cpp"
+﻿ll gcd(ll a, ll b) {
+	if (b == 0) return a;
+	return gcd(b, a % b);
+}
+
+ll lcm(ll number1, ll number2) {//lcmを求める
+	return number1 / gcd(number1, number2) * number2;
+}
+#line 6 "kyopro/test/lcm_aoj.test.cpp"
 
 int main() {
 
-	int a, b;
-	scanf("%d%d", &a, &b);
-	printf("%d\n", a + b);
+	int n, ans = 1, a;
+	while (n--) {
+		scanf("%d", &a);
+		ans = lcm(ans, a);
+	}
+	printf("%d\n", ans);
 
 	Please AC;
 }

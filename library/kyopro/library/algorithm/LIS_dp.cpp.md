@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/algorithm/LIS_dp.cpp
+# :x: kyopro/library/algorithm/LIS_dp.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#1e7f6f770d19fb8d844d8fd4ade9dc2c">kyopro/library/algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/algorithm/LIS_dp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:58:00+09:00
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../../verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
 
 
 ## Code
@@ -42,7 +47,7 @@ layout: default
 {% raw %}
 ```cpp
 ﻿
-
+//st が true の時、狭義単調増加
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
 	fill(all(dp), INF);
@@ -63,7 +68,7 @@ int lis(const int& n, const vector<int>& a, const bool& st) {
 ```cpp
 #line 1 "kyopro/library/algorithm/LIS_dp.cpp"
 ﻿
-
+//st が true の時、狭義単調増加
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
 	fill(all(dp), INF);

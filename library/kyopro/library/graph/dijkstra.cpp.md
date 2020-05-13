@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/graph/dijkstra.cpp
+# :heavy_check_mark: kyopro/library/graph/dijkstra.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-13 16:40:44+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 
 
 ## Code
@@ -45,10 +50,10 @@ layout: default
 
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T inf) {
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
-	fill(all(res), inf);
+	fill(all(res), Inf);
 	priq.push({ 0, v });
 	res[v] = 0;
 	int top;
@@ -74,10 +79,10 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, cons
 
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T inf) {
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
-	fill(all(res), inf);
+	fill(all(res), Inf);
 	priq.push({ 0, v });
 	res[v] = 0;
 	int top;
