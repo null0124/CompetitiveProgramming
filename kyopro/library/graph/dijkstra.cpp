@@ -2,10 +2,10 @@
 
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T inf) {
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
-	fill(all(res), inf);
+	fill(all(res), Inf);
 	priq.push({ 0, v });
 	res[v] = 0;
 	int top;

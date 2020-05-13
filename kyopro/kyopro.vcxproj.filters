@@ -67,12 +67,6 @@
     <ClCompile Include="library\math\gcd_lcm.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\math\is_prime.cpp">
-      <Filter>Library\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="library\math\prime_factor.cpp">
-      <Filter>Library\Math</Filter>
-    </ClCompile>
     <ClCompile Include="library\others\modint.cpp">
       <Filter>Library\Other</Filter>
     </ClCompile>
@@ -90,6 +84,27 @@
     </ClCompile>
     <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
       <Filter>Library\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="test\sparsetable_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\LIS_dp_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\LCA_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\dijkstra_path_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\dijkstra_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\BIT_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\lcm_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

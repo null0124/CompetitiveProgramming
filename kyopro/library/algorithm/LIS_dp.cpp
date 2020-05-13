@@ -1,5 +1,5 @@
 ﻿
-
+//st が true の時、狭義単調増加
 int lis(const int& n, const vector<int>& a, const bool& st) {
 	vector<int> dp(n);
 	fill(all(dp), INF);
