@@ -84,6 +84,7 @@ layout: default
 
 ### kyopro/library/others
 
+* :warning: <a href="library/kyopro/library/others/doubling.cpp.html">kyopro/library/others/doubling.cpp</a>
 * :warning: <a href="library/kyopro/library/others/modint.cpp.html">kyopro/library/others/modint.cpp</a>
 
 
