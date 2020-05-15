@@ -1,4 +1,4 @@
-struct doubling {
+ï»¿struct doubling {
 
 	int n, log_k;
 	vector<vector<int>> a;
@@ -8,7 +8,7 @@ struct doubling {
 		a.assign(log_k + 1, vector<int>(n, -1));
 	}
 
-	//i ”Ô–Ú‚Ì—v‘f‚ÌƒZƒbƒg‚Å‚Í‚È‚­ˆê‚Âæ‚Ì—v‘f‚ÌƒZƒbƒg‚Å‚ ‚é‚±‚Æ‚É’ˆÓ
+	//i ç•ªç›®ã®è¦ç´ ã®ã‚»ãƒƒãƒˆã§ã¯ãªãä¸€ã¤å…ˆã®è¦ç´ ã®ã‚»ãƒƒãƒˆã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„
 	void set(int i, int x) {
 		a[0][i] = x;
 	}
@@ -22,7 +22,7 @@ struct doubling {
 		}
 	}
 
-	//k ”Ô–Ú‚Ì—v‘f‚Ì x ŒÂæ‚ð‹‚ß‚é
+	//k ç•ªç›®ã®è¦ç´ ã® x å€‹å…ˆã‚’æ±‚ã‚ã‚‹
 	int query(int k, ll x) {
 		for (int i = log_k; i >= 0; --i) {
 			if (k == -1)break;
