@@ -69,7 +69,7 @@ layout: default
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">kyopro/library/graph/dijkstra_path.cpp</a>
 * :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">kyopro/library/graph/eulertour.cpp</a>
 * :warning: <a href="library/kyopro/library/graph/istree.cpp.html">kyopro/library/graph/istree.cpp</a>
-* :warning: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">kyopro/library/graph/warshallfloyd.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">kyopro/library/graph/warshallfloyd.cpp</a>
 
 
 <div id="ba3c8997ace2fe23a0c99dabed45cad7"></div>
@@ -106,5 +106,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 
 

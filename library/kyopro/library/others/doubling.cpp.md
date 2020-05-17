@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/doubling.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-16 04:04:14+09:00
+    - Last commit date: 2020-05-16 20:30:00+09:00
 
 
 
@@ -45,8 +45,9 @@ layout: default
 
 	int n, log_k;
 	vector<vector<int>> a;
+	const function<int(int, int)> f1, f2;
 
-	doubling(int n, ll k) : n(n) {
+	doubling(int n, ll k, function<int(int, int)> f1, function<int(int, int)> f2) : n(n), f1(f1), f2(f2) {
 		log_k = ceil(log2(k));
 		a.assign(log_k + 1, vector<int>(n, -1));
 	}
@@ -60,7 +61,7 @@ layout: default
 		for (int i = 0; i < log_k; ++i) {
 			for (int j = 0; j < n; ++j) {
 				if (a[i][j] == -1) a[i + 1][j] = -1;
-				else a[i + 1][j] = a[i][a[i][j]];
+				else a[i + 1][j] = f1(a[i + 1][j], a[i][a[i][j]]);
 			}
 		}
 	}
@@ -69,12 +70,13 @@ layout: default
 	int query(int k, ll x) {
 		for (int i = log_k; i >= 0; --i) {
 			if (k == -1)break;
-			else if ((x >> (ll)i) & 1LL) k = a[i][k];
+			else if ((x >> (ll)i) & 1LL) k = f2(k, a[i][k]);
 		}
 		return k;
 	}
 
 };
+
 ```
 {% endraw %}
 
@@ -86,8 +88,9 @@ layout: default
 
 	int n, log_k;
 	vector<vector<int>> a;
+	const function<int(int, int)> f1, f2;
 
-	doubling(int n, ll k) : n(n) {
+	doubling(int n, ll k, function<int(int, int)> f1, function<int(int, int)> f2) : n(n), f1(f1), f2(f2) {
 		log_k = ceil(log2(k));
 		a.assign(log_k + 1, vector<int>(n, -1));
 	}
@@ -101,7 +104,7 @@ layout: default
 		for (int i = 0; i < log_k; ++i) {
 			for (int j = 0; j < n; ++j) {
 				if (a[i][j] == -1) a[i + 1][j] = -1;
-				else a[i + 1][j] = a[i][a[i][j]];
+				else a[i + 1][j] = f1(a[i + 1][j], a[i][a[i][j]]);
 			}
 		}
 	}
@@ -110,7 +113,7 @@ layout: default
 	int query(int k, ll x) {
 		for (int i = log_k; i >= 0; --i) {
 			if (k == -1)break;
-			else if ((x >> (ll)i) & 1LL) k = a[i][k];
+			else if ((x >> (ll)i) & 1LL) k = f2(k, a[i][k]);
 		}
 		return k;
 	}

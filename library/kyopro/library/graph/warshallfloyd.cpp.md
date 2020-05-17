@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/graph/warshallfloyd.cpp
+# :heavy_check_mark: kyopro/library/graph/warshallfloyd.cpp
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-05-13 02:46:49+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 
 
 ## Code
