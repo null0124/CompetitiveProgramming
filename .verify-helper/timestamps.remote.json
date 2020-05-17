@@ -7,5 +7,6 @@
 "kyopro/test/lcm_aoj.test.cpp": "2020-05-13 23:17:59 +0900",
 "kyopro/test/sparsetable_yosupo-judge.test.cpp": "2020-05-13 23:17:59 +0900",
 "kyopro/test/template_yosupo-judge.test.cpp": "2020-05-13 23:17:59 +0900",
-"kyopro/test/unionfind_yosupo-judge.test.cpp": "2020-05-13 23:17:59 +0900"
+"kyopro/test/unionfind_yosupo-judge.test.cpp": "2020-05-13 23:17:59 +0900",
+"kyopro/test/warshallfloyd_aoj.test.cpp": "2020-05-17 18:12:36 +0900"
 }
