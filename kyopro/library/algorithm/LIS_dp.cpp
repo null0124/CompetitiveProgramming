@@ -1,5 +1,5 @@
 ﻿/*
-* @title LIS(dp)
+* @title longest-increasing-subsequence(dp)
 * @docs kyopro/docs/LIS_dp.md
 */
 

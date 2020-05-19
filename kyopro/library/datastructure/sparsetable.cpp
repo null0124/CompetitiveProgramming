@@ -1,3 +1,8 @@
+/*
+* @title sparse-table
+* @docs kyopro/docs/sparsetable.md
+*/
+
 //RMQ <O(n log n), O(1)>
 template<typename T>
 struct sparsetable {

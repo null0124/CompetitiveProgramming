@@ -1,4 +1,9 @@
-﻿//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
+﻿/*
+* @title lazy-segment-tree
+* @docs kyopro/docs/lazysegtree.md
+*/
+
+//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
 template<typename T, typename U>
 struct lazysegtree {
 	//木を配列であらわしたもの

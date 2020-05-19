@@ -1,4 +1,9 @@
-﻿//ワーシャルフロイド
+﻿/*
+* @title warshallfloyd
+* @docs kyopro/docs/warshallfloyd.md
+*/
+
+//ワーシャルフロイド
 void WarshallFloyd(int n, vector<vector<ll>> & d) {
 	rep(i, n) {//経由する頂点
 		rep(j, n) {//始点

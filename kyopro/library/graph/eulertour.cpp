@@ -1,4 +1,9 @@
-﻿struct eulertour {
+﻿/*
+* @title euler-tour
+* @docs kyopro/docs/eulertour.md
+*/
+
+struct eulertour {
 
 	vector<int> depth, child;
 

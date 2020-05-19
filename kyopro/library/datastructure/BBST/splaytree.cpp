@@ -1,3 +1,8 @@
+/*
+* @title splay-tree
+* @docs kyopro/docs/splaytree.md
+*/
+
 template<typename T>
 struct splaytree {
 

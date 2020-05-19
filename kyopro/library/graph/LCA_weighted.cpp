@@ -1,4 +1,9 @@
-﻿//重み付き
+﻿/*
+* @title lowest-common-ancestor(weighted)
+* @docs kyopro/docs/LCA_weighted.md
+*/
+
+//重み付き
 
 void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<pair<int, int>>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);

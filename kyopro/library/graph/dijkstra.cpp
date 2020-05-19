@@ -1,4 +1,7 @@
-﻿
+﻿/*
+* @title dijkstra
+* @docs kyopro/docs/dijkstra.md
+*/
 
 
 template<typename T>

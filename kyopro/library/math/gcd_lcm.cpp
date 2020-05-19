@@ -1,4 +1,9 @@
-﻿ll gcd(ll a, ll b) {
+﻿/*
+* @title gcd-lcm
+* @docs kyopro/docs/gcd_lcm.md
+*/
+
+ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a % b);
 }

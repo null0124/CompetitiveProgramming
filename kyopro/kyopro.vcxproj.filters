@@ -55,9 +55,6 @@
     <ClCompile Include="library\graph\eulertour.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="library\graph\istree.cpp">
-      <Filter>Library\Graph</Filter>
-    </ClCompile>
     <ClCompile Include="library\graph\warshallfloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>

@@ -1,4 +1,9 @@
-﻿void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+﻿/*
+* @title lowest-common-ancestor
+* @docs kyopro/docs/LCA.md
+*/
+
+void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);

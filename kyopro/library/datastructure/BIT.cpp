@@ -1,5 +1,7 @@
-
-
+/*
+* @title binary-indexed-tree
+* @docs kyopro/docs/BIT.md
+*/
 
 template<typename T>
 //0-indexed/内部的に 1-indexed

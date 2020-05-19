@@ -1,4 +1,9 @@
-﻿template<int mod>
+﻿/*
+* @title modint
+* @docs kyopro/docs/modint.md
+*/
+
+template<int mod>
 struct modint {
 	int val;
 

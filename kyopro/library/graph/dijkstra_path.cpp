@@ -1,4 +1,9 @@
-﻿template<typename T>
+﻿/*
+* @title dijkstra(経路復元)
+* @docs kyopro/docs/dijkstra_path.md
+*/
+
+template<typename T>
 vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);

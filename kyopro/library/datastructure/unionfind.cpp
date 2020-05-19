@@ -1,3 +1,8 @@
+/*
+* @title unionfind
+* @docs kyopro/docs/unionfind.md
+*/
+
 //0-indexed
 struct unionfind {
 	vector<ll> par, siz;

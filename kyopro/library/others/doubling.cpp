@@ -1,4 +1,9 @@
-﻿struct doubling {
+﻿/*
+* @title doubling
+* @docs kyopro/docs/doubling.md
+*/
+
+struct doubling {
 
 	int n, log_k;
 	vector<vector<int>> a;

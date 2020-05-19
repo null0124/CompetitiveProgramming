@@ -1,4 +1,9 @@
-﻿
+﻿/*
+* @title segment-tree
+* @docs kyopro/docs/segtree.md
+*/
+
+
 //セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
 template<typename T>
 struct segtree {
