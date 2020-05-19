@@ -269,8 +269,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="docs\BIT.md" />
+    <None Include="docs\comb.md" />
+    <None Include="docs\dijkstra.md" />
+    <None Include="docs\dijkstra_path.md" />
+    <None Include="docs\doubling.md" />
+    <None Include="docs\eulertour.md" />
+    <None Include="docs\gcd_lcm.md" />
+    <None Include="docs\lazysegtree.md" />
+    <None Include="docs\LCA.md" />
+    <None Include="docs\LCA_weighted.md" />
     <None Include="docs\LIS_dp.md" />
+    <None Include="docs\modint.md" />
+    <None Include="docs\segtree.md" />
+    <None Include="docs\sparsetable.md" />
+    <None Include="docs\splaytree.md" />
     <None Include="docs\template.md" />
+    <None Include="docs\unionfind.md" />
+    <None Include="docs\wershallfloyd.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
