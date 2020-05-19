@@ -4,7 +4,7 @@
 */
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool &f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -21,7 +21,7 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 		for (const auto& aa : graph[top]) {
 			if (res[top] + aa.second > res[aa.first])continue;
 			else if (res[top] + aa.second == res[aa.first]) {
-				//prev[aa.first] = min(top, prev[aa.first]);
+				if(f) prev[aa.first] = min(top, prev[aa.first]);
 				continue;
 			}
 			res[aa.first] = aa.second + res[top];

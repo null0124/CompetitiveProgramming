@@ -16,7 +16,7 @@ int main() {
 		graph[a].emplace_back(b, c);
 	}
 	vector<int> path;
-	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF);
+	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF, false);
 	int siz = (int)path.size() - 1;
 	if (ans[t] == LINF) {
 		puts("-1");
