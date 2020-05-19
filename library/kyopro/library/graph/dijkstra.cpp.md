@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/graph/dijkstra.cpp
+# :heavy_check_mark: dijkstra
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 16:40:44+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,7 +48,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿
+﻿/*
+* @title dijkstra
+* @docs kyopro/docs/dijkstra.md
+*/
 
 
 template<typename T>
@@ -75,7 +80,10 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, cons
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/graph/dijkstra.cpp"
-﻿
+﻿/*
+* @title dijkstra
+* @docs kyopro/docs/dijkstra.md
+*/
 
 
 template<typename T>

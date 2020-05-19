@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-17 18:12:36+09:00
+    - Last commit date: 2020-05-19 17:56:23+09:00
 
 
 
@@ -156,6 +156,7 @@ int main() {
 
 	Please AC;
 }
+
 ```
 {% endraw %}
 

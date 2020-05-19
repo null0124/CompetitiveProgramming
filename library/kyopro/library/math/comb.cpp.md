@@ -25,23 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/math/comb.cpp
+# :warning: combination
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#ba3c8997ace2fe23a0c99dabed45cad7">kyopro/library/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/math/comb.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Code
 
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿template<int mod>
+﻿/*
+* @title combination
+* @docs kyopro/docs/comb.md
+*/
+
+template<int mod>
 modint<mod> nCr(ll a, ll b) {
 	modint ans = 1;
 	for (ll i = 0; i < b; i++) {
@@ -59,7 +66,12 @@ modint<mod> nCr(ll a, ll b) {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/math/comb.cpp"
-﻿template<int mod>
+﻿/*
+* @title combination
+* @docs kyopro/docs/comb.md
+*/
+
+template<int mod>
 modint<mod> nCr(ll a, ll b) {
 	modint ans = 1;
 	for (ll i = 0; i < b; i++) {

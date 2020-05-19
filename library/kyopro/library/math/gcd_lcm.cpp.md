@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/math/gcd_lcm.cpp
+# :heavy_check_mark: gcd-lcm
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#ba3c8997ace2fe23a0c99dabed45cad7">kyopro/library/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/math/gcd_lcm.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,7 +48,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿ll gcd(ll a, ll b) {
+﻿/*
+* @title gcd-lcm
+* @docs kyopro/docs/gcd_lcm.md
+*/
+
+ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a % b);
 }
@@ -61,7 +68,12 @@ ll lcm(ll number1, ll number2) {//lcmを求める
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/math/gcd_lcm.cpp"
-﻿ll gcd(ll a, ll b) {
+﻿/*
+* @title gcd-lcm
+* @docs kyopro/docs/gcd_lcm.md
+*/
+
+ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a % b);
 }

@@ -25,23 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/graph/eulertour.cpp
+# :warning: euler-tour
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/eulertour.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Code
 
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿struct eulertour {
+﻿/*
+* @title euler-tour
+* @docs kyopro/docs/eulertour.md
+*/
+
+struct eulertour {
 
 	vector<int> depth, child;
 
@@ -73,7 +80,12 @@ public:
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/graph/eulertour.cpp"
-﻿struct eulertour {
+﻿/*
+* @title euler-tour
+* @docs kyopro/docs/eulertour.md
+*/
+
+struct eulertour {
 
 	vector<int> depth, child;
 

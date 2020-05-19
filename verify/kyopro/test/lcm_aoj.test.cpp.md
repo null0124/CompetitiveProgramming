@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/lcm_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 23:17:59+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">kyopro/library/math/gcd_lcm.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -189,7 +189,12 @@ ll LSB(ll n) { return (n & (-n)); }
 #line 4 "kyopro/test/lcm_aoj.test.cpp"
 
 #line 1 "kyopro/library/math/gcd_lcm.cpp"
-﻿ll gcd(ll a, ll b) {
+﻿/*
+* @title gcd-lcm
+* @docs kyopro/docs/gcd_lcm.md
+*/
+
+ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a % b);
 }

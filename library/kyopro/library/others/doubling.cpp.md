@@ -25,23 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/others/doubling.cpp
+# :warning: doubling
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/doubling.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-16 20:30:00+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Code
 
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿struct doubling {
+﻿/*
+* @title doubling
+* @docs kyopro/docs/doubling.md
+*/
+
+struct doubling {
 
 	int n, log_k;
 	vector<vector<int>> a;
@@ -84,7 +91,12 @@ layout: default
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/others/doubling.cpp"
-﻿struct doubling {
+﻿/*
+* @title doubling
+* @docs kyopro/docs/doubling.md
+*/
+
+struct doubling {
 
 	int n, log_k;
 	vector<vector<int>> a;

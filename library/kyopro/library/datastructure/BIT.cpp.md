@@ -25,14 +25,43 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/datastructure/BIT.cpp
+# :heavy_check_mark: binary-indexed-tree
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/BIT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:53:54+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
+
+
+
+﻿
+## なに
+ある列の区間の和と一点更新が高速にできる  
+一応抽象化をしているが二項演算は $+$ と $-$ のままなので実質数列限定  
+変なのを乗せるときは segment tree をつかう  
+
+## 使い方
+構造体  
+
+#### 宣言
+BIT<$T$> bit($N$);  
+$T$: 型  
+$N$: 大きさ  
+
+#### 一点更新
+bit.add($i, a$)  
+- $i$: 追加する index  
+- $a$: 足す値  
+
+#### 区間取得
+bit.sum($l, r$)  
+- $l, r$: 区間 $[l, r)$ の和を取得する。  
+
+### 計算量
+- 一点更新・区間取得  
+${\rm O}(N \log N)$  
 
 
 
@@ -46,8 +75,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
-
+/*
+* @title binary-indexed-tree
+* @docs kyopro/docs/BIT.md
+*/
 
 template<typename T>
 //0-indexed/内部的に 1-indexed
@@ -91,8 +122,10 @@ struct BIT {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/datastructure/BIT.cpp"
-
-
+/*
+* @title binary-indexed-tree
+* @docs kyopro/docs/BIT.md
+*/
 
 template<typename T>
 //0-indexed/内部的に 1-indexed

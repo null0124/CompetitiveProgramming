@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/graph/warshallfloyd.cpp
+# :heavy_check_mark: warshallfloyd
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/warshallfloyd.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:46:49+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
@@ -46,7 +46,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿//ワーシャルフロイド
+﻿/*
+* @title warshallfloyd
+* @docs kyopro/docs/warshallfloyd.md
+*/
+
+//ワーシャルフロイド
 void WarshallFloyd(int n, vector<vector<ll>> & d) {
 	rep(i, n) {//経由する頂点
 		rep(j, n) {//始点
@@ -65,7 +70,12 @@ void WarshallFloyd(int n, vector<vector<ll>> & d) {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/graph/warshallfloyd.cpp"
-﻿//ワーシャルフロイド
+﻿/*
+* @title warshallfloyd
+* @docs kyopro/docs/warshallfloyd.md
+*/
+
+//ワーシャルフロイド
 void WarshallFloyd(int n, vector<vector<ll>> & d) {
 	rep(i, n) {//経由する頂点
 		rep(j, n) {//始点

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: LIS(dp)
+# :heavy_check_mark: longest-increasing-subsequence(dp)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#1e7f6f770d19fb8d844d8fd4ade9dc2c">kyopro/library/algorithm</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/algorithm/LIS_dp.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 23:40:49+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
@@ -42,11 +42,12 @@ layout: default
 
 ## 使い方
 関数  
+lis($N, A, F$)
 
 #### 引数
-- 配列の長さ: $N$  
-- 配列: ${A}$  
-- 狭義かどうか: bool 値  
+- $N$: 配列の長さ  
+- ${A}$: 配列  
+- $F$: 狭義かどうか  
 
 #### 返り値
 - 長さ  
@@ -67,7 +68,7 @@ ${\rm O}(N \log N)$
 {% raw %}
 ```cpp
 ﻿/*
-* @title LIS(dp)
+* @title longest-increasing-subsequence(dp)
 * @docs kyopro/docs/LIS_dp.md
 */
 
@@ -92,7 +93,7 @@ int lis(const int& n, const vector<int>& a, const bool& st) {
 ```cpp
 #line 1 "kyopro/library/algorithm/LIS_dp.cpp"
 ﻿/*
-* @title LIS(dp)
+* @title longest-increasing-subsequence(dp)
 * @docs kyopro/docs/LIS_dp.md
 */
 

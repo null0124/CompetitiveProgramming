@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/graph/LCA.cpp
+# :heavy_check_mark: lowest-common-ancestor
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/LCA.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:58:00+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,7 +48,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+﻿/*
+* @title lowest-common-ancestor
+* @docs kyopro/docs/LCA.md
+*/
+
+void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);
@@ -96,7 +103,12 @@ struct LCA {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/graph/LCA.cpp"
-﻿void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+﻿/*
+* @title lowest-common-ancestor
+* @docs kyopro/docs/LCA.md
+*/
+
+void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);

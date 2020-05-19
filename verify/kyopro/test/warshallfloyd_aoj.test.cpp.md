@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/warshallfloyd_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-17 18:12:36+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/warshallfloyd.cpp.html">kyopro/library/graph/warshallfloyd.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -204,7 +204,12 @@ double acot(double x) {
 
 ll LSB(ll n) { return (n & (-n)); }
 #line 1 "kyopro/library/graph/warshallfloyd.cpp"
-﻿//ワーシャルフロイド
+﻿/*
+* @title warshallfloyd
+* @docs kyopro/docs/warshallfloyd.md
+*/
+
+//ワーシャルフロイド
 void WarshallFloyd(int n, vector<vector<ll>> & d) {
 	rep(i, n) {//経由する頂点
 		rep(j, n) {//始点

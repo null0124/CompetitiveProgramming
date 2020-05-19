@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LIS_dp_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 23:40:49+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">LIS(dp)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -188,7 +188,7 @@ ll LSB(ll n) { return (n & (-n)); }
 
 #line 1 "kyopro/library/algorithm/LIS_dp.cpp"
 ﻿/*
-* @title LIS(dp)
+* @title longest-increasing-subsequence(dp)
 * @docs kyopro/docs/LIS_dp.md
 */
 

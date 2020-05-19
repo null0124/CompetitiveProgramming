@@ -25,23 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: kyopro/library/datastructure/lazysegtree.cpp
+# :warning: lazy-segment-tree
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/lazysegtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Code
 
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
+﻿/*
+* @title lazy-segment-tree
+* @docs kyopro/docs/lazysegtree.md
+*/
+
+//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
 template<typename T, typename U>
 struct lazysegtree {
 	//木を配列であらわしたもの
@@ -233,7 +240,12 @@ struct lazysegtree {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/datastructure/lazysegtree.cpp"
-﻿//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
+﻿/*
+* @title lazy-segment-tree
+* @docs kyopro/docs/lazysegtree.md
+*/
+
+//セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
 template<typename T, typename U>
 struct lazysegtree {
 	//木を配列であらわしたもの

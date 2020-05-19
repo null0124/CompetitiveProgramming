@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/graph/dijkstra_path.cpp
+# :heavy_check_mark: dijkstra(経路復元)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/dijkstra_path.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:56:30+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,7 +48,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿template<typename T>
+﻿/*
+* @title dijkstra(経路復元)
+* @docs kyopro/docs/dijkstra_path.md
+*/
+
+template<typename T>
 vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
@@ -86,7 +93,12 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/graph/dijkstra_path.cpp"
-﻿template<typename T>
+﻿/*
+* @title dijkstra(経路復元)
+* @docs kyopro/docs/dijkstra_path.md
+*/
+
+template<typename T>
 vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);

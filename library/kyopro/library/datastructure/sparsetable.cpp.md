@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/datastructure/sparsetable.cpp
+# :heavy_check_mark: sparse-table
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/sparsetable.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:46:49+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -47,6 +49,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+* @title sparse-table
+* @docs kyopro/docs/sparsetable.md
+*/
+
 //RMQ <O(n log n), O(1)>
 template<typename T>
 struct sparsetable {
@@ -107,6 +114,11 @@ struct sparsetable {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/datastructure/sparsetable.cpp"
+/*
+* @title sparse-table
+* @docs kyopro/docs/sparsetable.md
+*/
+
 //RMQ <O(n log n), O(1)>
 template<typename T>
 struct sparsetable {

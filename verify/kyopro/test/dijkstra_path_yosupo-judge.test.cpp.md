@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 23:17:59+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">kyopro/library/graph/dijkstra_path.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -202,7 +202,12 @@ ll LSB(ll n) { return (n & (-n)); }
 #line 4 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/graph/dijkstra_path.cpp"
-﻿template<typename T>
+﻿/*
+* @title dijkstra(経路復元)
+* @docs kyopro/docs/dijkstra_path.md
+*/
+
+template<typename T>
 vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);

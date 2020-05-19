@@ -45,47 +45,53 @@ layout: default
 
 ### kyopro/library/algorithm
 
-* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">LIS(dp)</a>
+* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
 
 
 <div id="2b68642ad9f56b522be9061078c930ba"></div>
 
 ### kyopro/library/datastructure
 
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">kyopro/library/datastructure/BIT.cpp</a>
-* :warning: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">kyopro/library/datastructure/lazysegtree.cpp</a>
-* :warning: <a href="library/kyopro/library/datastructure/segtree.cpp.html">kyopro/library/datastructure/segtree.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">kyopro/library/datastructure/sparsetable.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/unionfind.cpp.html">kyopro/library/datastructure/unionfind.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
+* :warning: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
+* :warning: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
+* :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :heavy_check_mark: <a href="library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
+
+
+<div id="69df2a6b39f1dc68c8ea69e0fa166f43"></div>
+
+### kyopro/library/datastructure/BBST
+
+* :warning: <a href="library/kyopro/library/datastructure/BBST/splaytree.cpp.html">splay-tree</a>
 
 
 <div id="950d3b5531ccd296b32ebda74bb65534"></div>
 
 ### kyopro/library/graph
 
-* :heavy_check_mark: <a href="library/kyopro/library/graph/LCA.cpp.html">kyopro/library/graph/LCA.cpp</a>
-* :warning: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">kyopro/library/graph/LCA_weighted.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">kyopro/library/graph/dijkstra.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">kyopro/library/graph/dijkstra_path.cpp</a>
-* :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">kyopro/library/graph/eulertour.cpp</a>
-* :warning: <a href="library/kyopro/library/graph/istree.cpp.html">kyopro/library/graph/istree.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">kyopro/library/graph/warshallfloyd.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :warning: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
+* :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
 
 
 <div id="ba3c8997ace2fe23a0c99dabed45cad7"></div>
 
 ### kyopro/library/math
 
-* :warning: <a href="library/kyopro/library/math/comb.cpp.html">kyopro/library/math/comb.cpp</a>
-* :heavy_check_mark: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">kyopro/library/math/gcd_lcm.cpp</a>
+* :warning: <a href="library/kyopro/library/math/comb.cpp.html">combination</a>
+* :heavy_check_mark: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
 
 
 <div id="3f8f1932cca0dd85953a1d1a98528004"></div>
 
 ### kyopro/library/others
 
-* :warning: <a href="library/kyopro/library/others/doubling.cpp.html">kyopro/library/others/doubling.cpp</a>
-* :warning: <a href="library/kyopro/library/others/modint.cpp.html">kyopro/library/others/modint.cpp</a>
+* :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
+* :warning: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
 
 
 <div id="555f11034b492b610373485649bb8a76"></div>

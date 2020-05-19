@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/datastructure/unionfind.cpp
+# :heavy_check_mark: unionfind
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/unionfind.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:28:34+09:00
+    - Last commit date: 2020-05-19 18:09:31+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,6 +48,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+* @title unionfind
+* @docs kyopro/docs/unionfind.md
+*/
+
 //0-indexed
 struct unionfind {
 	vector<ll> par, siz;
@@ -121,6 +128,11 @@ struct unionfind {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/datastructure/unionfind.cpp"
+/*
+* @title unionfind
+* @docs kyopro/docs/unionfind.md
+*/
+
 //0-indexed
 struct unionfind {
 	vector<ll> par, siz;
