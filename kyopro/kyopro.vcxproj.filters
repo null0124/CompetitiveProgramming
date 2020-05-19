@@ -112,6 +112,9 @@
     <ClCompile Include="test\warshallfloyd_aoj.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\datastructure\BBST\splaytree.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
