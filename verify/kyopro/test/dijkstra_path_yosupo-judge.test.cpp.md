@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-05-19 18:59:30+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
@@ -66,7 +66,7 @@ int main() {
 		graph[a].emplace_back(b, c);
 	}
 	vector<int> path;
-	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF);
+	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF, false);
 	int siz = (int)path.size() - 1;
 	if (ans[t] == LINF) {
 		puts("-1");
@@ -208,7 +208,7 @@ ll LSB(ll n) { return (n & (-n)); }
 */
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf) {
+vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool &f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -225,7 +225,7 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 		for (const auto& aa : graph[top]) {
 			if (res[top] + aa.second > res[aa.first])continue;
 			else if (res[top] + aa.second == res[aa.first]) {
-				//prev[aa.first] = min(top, prev[aa.first]);
+				if(f) prev[aa.first] = min(top, prev[aa.first]);
 				continue;
 			}
 			res[aa.first] = aa.second + res[top];
@@ -254,7 +254,7 @@ int main() {
 		graph[a].emplace_back(b, c);
 	}
 	vector<int> path;
-	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF);
+	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF, false);
 	int siz = (int)path.size() - 1;
 	if (ans[t] == LINF) {
 		puts("-1");
