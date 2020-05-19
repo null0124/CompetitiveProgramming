@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 * @title splay-tree
 * @docs kyopro/docs/splaytree.md
 */
@@ -17,9 +17,9 @@ struct splaytree {
 		}
 
 		int state() {
-			if (not this->parent)return 0;//e‚ª‚¢‚È‚¢
-			else if (this->parent->left == this)return 1;//e‚Ì¶
-			else if (this->parent->right == this)return -1;//e‚Ì‰E
+			if (not this->parent)return 0;//è¦ªãŒã„ãªã„
+			else if (this->parent->left == this)return 1;//è¦ªã®å·¦
+			else if (this->parent->right == this)return -1;//è¦ªã®å³
 			return 0;
 		}
 
