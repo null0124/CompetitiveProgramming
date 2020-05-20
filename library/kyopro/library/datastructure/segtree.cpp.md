@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: segment-tree
+# :heavy_check_mark: segment-tree
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -37,6 +37,11 @@ layout: default
 
 
 ﻿
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
+
 
 ## Code
 
