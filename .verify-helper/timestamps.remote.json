@@ -5,6 +5,7 @@
 "kyopro/test/dijkstra_aoj.test.cpp": "2020-05-19 18:09:31 +0900",
 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp": "2020-05-19 18:59:30 +0900",
 "kyopro/test/lcm_aoj.test.cpp": "2020-05-19 18:09:31 +0900",
+"kyopro/test/segtree_yosupo-judge.test.cpp": "2020-05-21 02:05:46 +0900",
 "kyopro/test/sparsetable_yosupo-judge.test.cpp": "2020-05-19 18:09:31 +0900",
 "kyopro/test/template_yosupo-judge.test.cpp": "2020-05-13 23:17:59 +0900",
 "kyopro/test/unionfind_yosupo-judge.test.cpp": "2020-05-19 18:09:31 +0900",
