@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-21 02:05:46+09:00
+    - Last commit date: 2020-05-21 02:14:52+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -49,7 +49,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
 
 #include "../library/template/template.cpp"
 
@@ -92,7 +92,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "kyopro/test/segtree_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
