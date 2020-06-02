@@ -115,6 +115,12 @@
     <ClCompile Include="test\segtree_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\kth-shortest-path_yen.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -136,5 +142,6 @@
     <None Include="docs\gcd_lcm.md" />
     <None Include="docs\doubling.md" />
     <None Include="docs\modint.md" />
+    <None Include="docs\kth-shortest-path_yen.md" />
   </ItemGroup>
 </Project>
