@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
