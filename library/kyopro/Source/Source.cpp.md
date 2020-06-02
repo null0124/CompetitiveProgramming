@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 17:56:23+09:00
+    - Last commit date: 2020-06-02 23:54:11+09:00
 
 
 
@@ -73,11 +73,10 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
-/*
-多倍長整数, cpp_intで宣言
-#include <boost/multiprecision/cpp_int.hpp>
-using namespace boost::multiprecision;
-*/
+
+////多倍長整数, cpp_intで宣言
+//#include <boost/multiprecision/cpp_int.hpp>
+//using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
@@ -113,8 +112,8 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1000000007;
-constexpr long double eps = 1e-9;
+constexpr ll MOD = 1e9+7;
+constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
@@ -156,7 +155,6 @@ int main() {
 
 	Please AC;
 }
-
 ```
 {% endraw %}
 
@@ -196,11 +194,10 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
-/*
-多倍長整数, cpp_intで宣言
-#include <boost/multiprecision/cpp_int.hpp>
-using namespace boost::multiprecision;
-*/
+
+////多倍長整数, cpp_intで宣言
+//#include <boost/multiprecision/cpp_int.hpp>
+//using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
@@ -236,8 +233,8 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1000000007;
-constexpr long double eps = 1e-9;
+constexpr ll MOD = 1e9+7;
+constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
