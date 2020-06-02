@@ -30,11 +30,10 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
-/*
-多倍長整数, cpp_intで宣言
-#include <boost/multiprecision/cpp_int.hpp>
-using namespace boost::multiprecision;
-*/
+
+////多倍長整数, cpp_intで宣言
+//#include <boost/multiprecision/cpp_int.hpp>
+//using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
@@ -70,8 +69,8 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1000000007;
-constexpr long double eps = 1e-9;
+constexpr ll MOD = 1e9+7;
+constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
