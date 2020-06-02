@@ -1,5 +1,7 @@
 ﻿#define PROBLEM "https://yukicoder.me/problems/no/1069"
 
+#define ERROR 1e-4
+
 #include "../library/template/template.cpp"
 
 #include "../library/graph/kth-shortest-path_yen.cpp"
