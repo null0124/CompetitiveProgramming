@@ -1,5 +1,5 @@
 ﻿/*
-* @title Kth-Shortest-Path(Yen's Algorithm)
+* @title kth-shortest-path(yen's algorithm)
 * @docs kyopro/docs/kth-shortest-path_yen.md
 */
 

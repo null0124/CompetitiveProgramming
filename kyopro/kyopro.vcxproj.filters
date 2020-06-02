@@ -118,7 +118,7 @@
     <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="test\kth-shortest-path_yen.test.cpp">
+    <ClCompile Include="test\kth-shortest-path_yen_yukicoder.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
