@@ -55,7 +55,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen.test.cpp.html">kyopro/test/kth-shortest-path_yen.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>

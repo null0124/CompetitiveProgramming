@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/kth-shortest-path_yen.test.cpp
+# :heavy_check_mark: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/kth-shortest-path_yen.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-03 00:52:31+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-03 00:55:36+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1069">https://yukicoder.me/problems/no/1069</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">Kth-Shortest-Path(Yen's Algorithm)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -89,7 +89,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/kth-shortest-path_yen.test.cpp"
+#line 1 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
 ﻿#define PROBLEM "https://yukicoder.me/problems/no/1069"
 
 #define ERROR 1e-4
@@ -205,11 +205,11 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 6 "kyopro/test/kth-shortest-path_yen.test.cpp"
+#line 6 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
 
 #line 1 "kyopro/library/graph/kth-shortest-path_yen.cpp"
 ﻿/*
-* @title Kth-Shortest-Path(Yen's Algorithm)
+* @title kth-shortest-path(yen's algorithm)
 * @docs kyopro/docs/kth-shortest-path_yen.md
 */
 
@@ -321,7 +321,7 @@ void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& sta
 	}
 	return;
 }
-#line 8 "kyopro/test/kth-shortest-path_yen.test.cpp"
+#line 8 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
 
 int main() {
 

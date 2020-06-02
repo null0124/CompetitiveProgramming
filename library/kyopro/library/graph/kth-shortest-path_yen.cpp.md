@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Kth-Shortest-Path(Yen's Algorithm)
+# :heavy_check_mark: kth-shortest-path(yen's algorithm)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/kth-shortest-path_yen.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-03 00:45:37+09:00
+    - Last commit date: 2020-06-03 00:55:36+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen.test.cpp.html">kyopro/test/kth-shortest-path_yen.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 
 
 ## Code
@@ -49,7 +49,7 @@ layout: default
 {% raw %}
 ```cpp
 ﻿/*
-* @title Kth-Shortest-Path(Yen's Algorithm)
+* @title kth-shortest-path(yen's algorithm)
 * @docs kyopro/docs/kth-shortest-path_yen.md
 */
 
@@ -169,7 +169,7 @@ void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& sta
 ```cpp
 #line 1 "kyopro/library/graph/kth-shortest-path_yen.cpp"
 ﻿/*
-* @title Kth-Shortest-Path(Yen's Algorithm)
+* @title kth-shortest-path(yen's algorithm)
 * @docs kyopro/docs/kth-shortest-path_yen.md
 */
 
