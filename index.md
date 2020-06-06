@@ -91,7 +91,7 @@ layout: default
 
 ### kyopro/library/others
 
-* :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">kyopro/library/others/cumulative-sum.cpp</a>
+* :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
 * :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
 * :heavy_check_mark: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
 

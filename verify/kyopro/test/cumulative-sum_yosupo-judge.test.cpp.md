@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/cumulative-sum_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-06 13:54:17+09:00
+    - Last commit date: 2020-06-06 13:57:11+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/static_range_sum">https://judge.yosupo.jp/problem/static_range_sum</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/others/cumulative-sum.cpp.html">kyopro/library/others/cumulative-sum.cpp</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -192,7 +192,12 @@ ll LSB(ll n) { return (n & (-n)); }
 #line 4 "kyopro/test/cumulative-sum_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/others/cumulative-sum.cpp"
-﻿template<typename T>
+﻿/*
+* @title 累積和
+* @docs kyopro/docs/cumulative-sum.md
+*/
+
+template<typename T>
 struct cumulativesum {
     vector<T> cs;
     const function<T(T, T)> rev;

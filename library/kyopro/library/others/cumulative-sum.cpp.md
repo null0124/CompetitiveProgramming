@@ -25,16 +25,18 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/library/others/cumulative-sum.cpp
+# :heavy_check_mark: 累積和
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/cumulative-sum.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-06 13:54:17+09:00
+    - Last commit date: 2020-06-06 13:57:11+09:00
 
 
 
+
+﻿
 
 ## Verified with
 
@@ -46,7 +48,12 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿template<typename T>
+﻿/*
+* @title 累積和
+* @docs kyopro/docs/cumulative-sum.md
+*/
+
+template<typename T>
 struct cumulativesum {
     vector<T> cs;
     const function<T(T, T)> rev;
@@ -68,7 +75,12 @@ struct cumulativesum {
 {% raw %}
 ```cpp
 #line 1 "kyopro/library/others/cumulative-sum.cpp"
-﻿template<typename T>
+﻿/*
+* @title 累積和
+* @docs kyopro/docs/cumulative-sum.md
+*/
+
+template<typename T>
 struct cumulativesum {
     vector<T> cs;
     const function<T(T, T)> rev;
