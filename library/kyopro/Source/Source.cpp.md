@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-02 23:54:11+09:00
+    - Last commit date: 2020-06-06 13:54:17+09:00
 
 
 
@@ -49,7 +49,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
+          　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -112,35 +112,35 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1e9+7;
+constexpr ll MOD = 1e9 + 7;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
 
 void scans(string& str) {
-	char c;
-	str = "";
-	scanf("%c", &c);
-	if (c == '\n')scanf("%c", &c);
-	while (c != '\n' && c != -1 && c != ' ') {
-		str += c;
-		scanf("%c", &c);
-	}
+    char c;
+    str = "";
+    scanf("%c", &c);
+    if (c == '\n')scanf("%c", &c);
+    while (c != '\n' && c != -1 && c != ' ') {
+        str += c;
+        scanf("%c", &c);
+    }
 }
 
 void scanc(char& str) {
-	char c;
-	scanf("%c", &c);
-	if (c == -1)return;
-	while (c == '\n') {
-		scanf("%c", &c);
-	}
-	str = c;
+    char c;
+    scanf("%c", &c);
+    if (c == -1)return;
+    while (c == '\n') {
+        scanf("%c", &c);
+    }
+    str = c;
 }
 
 double acot(double x) {
-	return PI / 2 - atan(x);
+    return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -153,8 +153,9 @@ int main() {
 
 
 
-	Please AC;
+    Please AC;
 }
+
 ```
 {% endraw %}
 
@@ -170,7 +171,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
+          　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -233,35 +234,35 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1e9+7;
+constexpr ll MOD = 1e9 + 7;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
 
 void scans(string& str) {
-	char c;
-	str = "";
-	scanf("%c", &c);
-	if (c == '\n')scanf("%c", &c);
-	while (c != '\n' && c != -1 && c != ' ') {
-		str += c;
-		scanf("%c", &c);
-	}
+    char c;
+    str = "";
+    scanf("%c", &c);
+    if (c == '\n')scanf("%c", &c);
+    while (c != '\n' && c != -1 && c != ' ') {
+        str += c;
+        scanf("%c", &c);
+    }
 }
 
 void scanc(char& str) {
-	char c;
-	scanf("%c", &c);
-	if (c == -1)return;
-	while (c == '\n') {
-		scanf("%c", &c);
-	}
-	str = c;
+    char c;
+    scanf("%c", &c);
+    if (c == -1)return;
+    while (c == '\n') {
+        scanf("%c", &c);
+    }
+    str = c;
 }
 
 double acot(double x) {
-	return PI / 2 - atan(x);
+    return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -274,7 +275,7 @@ int main() {
 
 
 
-	Please AC;
+    Please AC;
 }
 
 ```
