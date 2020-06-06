@@ -2,6 +2,7 @@
 "kyopro/test/BIT_yosupo-judge.test.cpp": "2020-05-19 18:09:31 +0900",
 "kyopro/test/LCA_yosupo-judge.test.cpp": "2020-05-19 18:09:31 +0900",
 "kyopro/test/LIS_dp_aoj.test.cpp": "2020-05-19 18:09:31 +0900",
+"kyopro/test/cumulative-sum_yosupo-judge.test.cpp": "2020-06-06 13:54:17 +0900",
 "kyopro/test/dijkstra_aoj.test.cpp": "2020-05-19 18:09:31 +0900",
 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp": "2020-05-19 18:59:30 +0900",
 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp": "2020-06-03 00:55:36 +0900",
