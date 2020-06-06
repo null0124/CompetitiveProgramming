@@ -1,4 +1,9 @@
-﻿template<typename T>
+﻿/*
+* @title 累積和
+* @docs kyopro/docs/cumulative-sum.md
+*/
+
+template<typename T>
 struct cumulativesum {
     vector<T> cs;
     const function<T(T, T)> rev;
