@@ -6,7 +6,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
+          　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -69,35 +69,35 @@ using ll = long long;
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1e9+7;
+constexpr ll MOD = 1e9 + 7;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
 
 void scans(string& str) {
-	char c;
-	str = "";
-	scanf("%c", &c);
-	if (c == '\n')scanf("%c", &c);
-	while (c != '\n' && c != -1 && c != ' ') {
-		str += c;
-		scanf("%c", &c);
-	}
+    char c;
+    str = "";
+    scanf("%c", &c);
+    if (c == '\n')scanf("%c", &c);
+    while (c != '\n' && c != -1 && c != ' ') {
+        str += c;
+        scanf("%c", &c);
+    }
 }
 
 void scanc(char& str) {
-	char c;
-	scanf("%c", &c);
-	if (c == -1)return;
-	while (c == '\n') {
-		scanf("%c", &c);
-	}
-	str = c;
+    char c;
+    scanf("%c", &c);
+    if (c == -1)return;
+    while (c == '\n') {
+        scanf("%c", &c);
+    }
+    str = c;
 }
 
 double acot(double x) {
-	return PI / 2 - atan(x);
+    return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -110,5 +110,5 @@ int main() {
 
 
 
-	Please AC;
+    Please AC;
 }
