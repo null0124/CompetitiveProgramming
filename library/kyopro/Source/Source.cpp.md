@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-06 13:54:17+09:00
+    - Last commit date: 2020-07-04 00:18:47+09:00
 
 
 
@@ -49,7 +49,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-          　　　　　　　　　　(¸.·´ (¸.·'* ☆
+		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -79,7 +79,7 @@ Be accepted!
 //using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
-//#pragma gcc optimization ("o3")
+//#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define rep1(i, n) for(int i = 1; i <= (n); ++i)
@@ -106,7 +106,6 @@ Be accepted!
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
 
 constexpr int INF = 1073741823;
@@ -119,28 +118,28 @@ const long double PI = acosl(-1.0L);
 using namespace std;
 
 void scans(string& str) {
-    char c;
-    str = "";
-    scanf("%c", &c);
-    if (c == '\n')scanf("%c", &c);
-    while (c != '\n' && c != -1 && c != ' ') {
-        str += c;
-        scanf("%c", &c);
-    }
+	char c;
+	str = "";
+	scanf("%c", &c);
+	if (c == '\n')scanf("%c", &c);
+	while (c != '\n' && c != -1 && c != ' ') {
+		str += c;
+		scanf("%c", &c);
+	}
 }
 
 void scanc(char& str) {
-    char c;
-    scanf("%c", &c);
-    if (c == -1)return;
-    while (c == '\n') {
-        scanf("%c", &c);
-    }
-    str = c;
+	char c;
+	scanf("%c", &c);
+	if (c == -1)return;
+	while (c == '\n') {
+		scanf("%c", &c);
+	}
+	str = c;
 }
 
 double acot(double x) {
-    return PI / 2 - atan(x);
+	return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -151,11 +150,10 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
+	
 
-
-    Please AC;
+	Please AC;
 }
-
 ```
 {% endraw %}
 
@@ -171,7 +169,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-          　　　　　　　　　　(¸.·´ (¸.·'* ☆
+		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -201,7 +199,7 @@ Be accepted!
 //using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
-//#pragma gcc optimization ("o3")
+//#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define rep1(i, n) for(int i = 1; i <= (n); ++i)
@@ -228,7 +226,6 @@ Be accepted!
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
 
 constexpr int INF = 1073741823;
@@ -241,28 +238,28 @@ const long double PI = acosl(-1.0L);
 using namespace std;
 
 void scans(string& str) {
-    char c;
-    str = "";
-    scanf("%c", &c);
-    if (c == '\n')scanf("%c", &c);
-    while (c != '\n' && c != -1 && c != ' ') {
-        str += c;
-        scanf("%c", &c);
-    }
+	char c;
+	str = "";
+	scanf("%c", &c);
+	if (c == '\n')scanf("%c", &c);
+	while (c != '\n' && c != -1 && c != ' ') {
+		str += c;
+		scanf("%c", &c);
+	}
 }
 
 void scanc(char& str) {
-    char c;
-    scanf("%c", &c);
-    if (c == -1)return;
-    while (c == '\n') {
-        scanf("%c", &c);
-    }
-    str = c;
+	char c;
+	scanf("%c", &c);
+	if (c == -1)return;
+	while (c == '\n') {
+		scanf("%c", &c);
+	}
+	str = c;
 }
 
 double acot(double x) {
-    return PI / 2 - atan(x);
+	return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -273,9 +270,9 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
+	
 
-
-    Please AC;
+	Please AC;
 }
 
 ```
