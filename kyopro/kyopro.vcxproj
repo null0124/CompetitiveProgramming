@@ -310,6 +310,7 @@
     <None Include="docs\segtree.md" />
     <None Include="docs\sparsetable.md" />
     <None Include="docs\splaytree.md" />
+    <None Include="docs\SWAG.md" />
     <None Include="docs\template.md" />
     <None Include="docs\unionfind.md" />
     <None Include="docs\wershallfloyd.md" />

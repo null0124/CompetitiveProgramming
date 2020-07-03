@@ -153,5 +153,6 @@
     <None Include="docs\modint.md" />
     <None Include="docs\kth-shortest-path_yen.md" />
     <None Include="docs\cumulative-sum.md" />
+    <None Include="docs\SWAG.md" />
   </ItemGroup>
 </Project>

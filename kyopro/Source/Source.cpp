@@ -35,9 +35,9 @@ Be accepted!
 //#include <boost/multiprecision/cpp_int.hpp>
 //using namespace boost::multiprecision;
 
-#pragma gcc target ("avx2")
-#pragma gcc optimization ("Ofast")
-#pragma gcc optimization ("unroll-loops")
+//#pragma gcc target ("avx2")
+//#pragma gcc optimization ("Ofast")
+//#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define rep1(i, n) for(int i = 1; i <= (n); ++i)
 #define rep2(i, n) for(int i = 2; i < (n); ++i)
