@@ -58,9 +58,6 @@
     <ClCompile Include="library\graph\warshallfloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="library\math\comb.cpp">
-      <Filter>Library\Math</Filter>
-    </ClCompile>
     <ClCompile Include="library\math\gcd_lcm.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -147,7 +144,6 @@
     <None Include="docs\LCA.md" />
     <None Include="docs\LCA_weighted.md" />
     <None Include="docs\wershallfloyd.md" />
-    <None Include="docs\comb.md" />
     <None Include="docs\gcd_lcm.md" />
     <None Include="docs\doubling.md" />
     <None Include="docs\modint.md" />
