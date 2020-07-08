@@ -53,7 +53,6 @@ layout: default
 ### kyopro/library/datastructure
 
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
-* :warning: <a href="library/kyopro/library/datastructure/SWAG.cpp.html">kyopro/library/datastructure/SWAG.cpp</a>
 * :warning: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>

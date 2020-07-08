@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 00:18:47+09:00
+    - Last commit date: 2020-07-08 22:58:26+09:00
 
 
 
@@ -117,7 +117,7 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string& str) {
+void scans(string & str) {
 	char c;
 	str = "";
 	scanf("%c", &c);
@@ -150,7 +150,8 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-	
+
+
 
 	Please AC;
 }
@@ -237,7 +238,7 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string& str) {
+void scans(string & str) {
 	char c;
 	str = "";
 	scanf("%c", &c);
@@ -270,7 +271,8 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-	
+
+
 
 	Please AC;
 }
