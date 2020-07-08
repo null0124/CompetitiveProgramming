@@ -124,9 +124,6 @@
     <ClCompile Include="test\cumulative-sum_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\datastructure\SWAG.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -149,6 +146,5 @@
     <None Include="docs\modint.md" />
     <None Include="docs\kth-shortest-path_yen.md" />
     <None Include="docs\cumulative-sum.md" />
-    <None Include="docs\SWAG.md" />
   </ItemGroup>
 </Project>

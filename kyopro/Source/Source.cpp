@@ -74,7 +74,7 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string& str) {
+void scans(string & str) {
 	char c;
 	str = "";
 	scanf("%c", &c);
@@ -107,7 +107,8 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-	
+
+
 
 	Please AC;
 }
