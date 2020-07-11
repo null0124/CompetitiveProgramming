@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/unionfind_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-11 16:18:51+09:00
+    - Last commit date: 2020-07-11 18:20:19+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #include "../library/template/template.cpp"
 
@@ -72,7 +72,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "kyopro/test/unionfind_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
