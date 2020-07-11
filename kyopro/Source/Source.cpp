@@ -52,9 +52,6 @@ Be accepted!
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2LL) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
@@ -64,6 +61,7 @@ Be accepted!
 #define linf numeric_limits<long double>::infinity()
 
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
@@ -103,10 +101,11 @@ ll LSB(ll n) { return (n & (-n)); }
 
 /*-----------------------------------------ここからコード-----------------------------------------*/
 
+struct rolling_hash {
 
+};
 
 int main() {
-
 
 
 
