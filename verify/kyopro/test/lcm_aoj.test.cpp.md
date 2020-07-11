@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/lcm_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-07-11 16:18:51+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_C</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -137,9 +137,6 @@ using namespace boost::multiprecision;
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2LL) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
@@ -148,8 +145,8 @@ using namespace boost::multiprecision;
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;

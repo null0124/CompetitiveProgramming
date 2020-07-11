@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: template
+# :question: template
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#555f11034b492b610373485649bb8a76">kyopro/library/template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/template/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 23:17:59+09:00
+    - Last commit date: 2020-07-11 16:18:51+09:00
 
 
 
@@ -58,10 +58,11 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/prime_factor_yosupo-judge.test.cpp.html">kyopro/test/prime_factor_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 
 
@@ -131,9 +132,6 @@ using namespace boost::multiprecision;
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2LL) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
@@ -142,8 +140,8 @@ using namespace boost::multiprecision;
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
@@ -248,9 +246,6 @@ using namespace boost::multiprecision;
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2LL) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
@@ -259,8 +254,8 @@ using namespace boost::multiprecision;
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;

@@ -25,21 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/BIT_yosupo-judge.test.cpp
+# :x: kyopro/test/prime_factor_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/BIT_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-11 16:18:51+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/prime_factor_yosupo-judge.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-11 17:41:41+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
+* :x: <a href="../../../library/kyopro/library/math/prime_factor.cpp.html">kyopro/library/math/prime_factor.cpp</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -48,27 +47,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
+#define IGNORE
 
 #include "../library/template/template.cpp"
 
-#include "../library/datastructure/BIT.cpp"
+#include "../library/math/prime_factor.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d%d", &n, &q);
-	BIT<ll> bit(n);
-	rep(i, n) {
+	int q;
+	scanf("%d", &q);
+	while (q--) {
 		ll a;
 		scanf("%lld", &a);
-		bit.add(i, a);
-	}
-	while (q--) {
-		ll t, a, b;
-		scanf("%lld%lld%lld", &t, &a, &b);
-		if (t)printf("%lld\n", bit.sum(a, b));
-		else bit.add(a, b);
+		auto b = prime_factor(a);
+		printf("%d\n", (int)b.size());
+		for (const auto& [p, q] : b)rep(i, q)printf("%lld\n", p);
 	}
 
 	Please AC;
@@ -79,8 +74,9 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/BIT_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+#line 1 "kyopro/test/prime_factor_yosupo-judge.test.cpp"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
+#define IGNORE
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -190,65 +186,29 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
-#line 4 "kyopro/test/BIT_yosupo-judge.test.cpp"
+#line 5 "kyopro/test/prime_factor_yosupo-judge.test.cpp"
 
-#line 1 "kyopro/library/datastructure/BIT.cpp"
-/*
-* @title binary-indexed-tree
-* @docs kyopro/docs/BIT.md
-*/
-
-template<typename T>
-//0-indexed/内部的に 1-indexed
-struct BIT {
-	vector<T> tree;
-	//初期化
-	BIT(int n) : tree(n) {
-		tree.assign(n + 1, 0);
+#line 1 "kyopro/library/math/prime_factor.cpp"
+﻿map<ll, int> prime_factor(ll a) {
+	map<ll, int> ret;
+	for (ll x = 2; x * x <= a; ++x) {
+		while (not(a % x))++ret[x], a /= x;
 	}
-
-	int LSB(int n) { return (n & (-n)); }
-
-	//[0, n) の sum を返す/0-indexed
-	T sum(int n) {
-		T ret = 0;
-		//実は 1-indexed だが半開区間なので見た目がそのまま
-		for (; n >= 0; n -= LSB(n)) {
-			ret += tree[n];
-			if (!n)break;
-		}
-		return ret;
-	}
-
-
-	//[i, j) の sum を返す/0-indexed
-	T sum(int i, int j) {;
-		return sum(j) - sum(i);
-	}
-
-	//n 番目に x を足す
-	void add(int n, T x) {
-		int siz = tree.size();
-		for (++n; n < siz; n += LSB(n))tree[n] += x;
-	}
-};
-#line 6 "kyopro/test/BIT_yosupo-judge.test.cpp"
+	if (a != 1)++ret[a];
+	return ret;
+}
+#line 7 "kyopro/test/prime_factor_yosupo-judge.test.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d%d", &n, &q);
-	BIT<ll> bit(n);
-	rep(i, n) {
+	int q;
+	scanf("%d", &q);
+	while (q--) {
 		ll a;
 		scanf("%lld", &a);
-		bit.add(i, a);
-	}
-	while (q--) {
-		ll t, a, b;
-		scanf("%lld%lld%lld", &t, &a, &b);
-		if (t)printf("%lld\n", bit.sum(a, b));
-		else bit.add(a, b);
+		auto b = prime_factor(a);
+		printf("%d\n", (int)b.size());
+		for (const auto& [p, q] : b)rep(i, q)printf("%lld\n", p);
 	}
 
 	Please AC;
