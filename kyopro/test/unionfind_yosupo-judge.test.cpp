@@ -14,4 +14,6 @@ int main() {
 		if (t)printf("%d\n", uni.same(u, v));
 		else uni.unite(u, v);
 	}
+
+	Please AC;
 }
