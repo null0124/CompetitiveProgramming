@@ -1,4 +1,4 @@
-/*
+﻿/*
 * @title unionfind
 * @docs kyopro/docs/unionfind.md
 */
