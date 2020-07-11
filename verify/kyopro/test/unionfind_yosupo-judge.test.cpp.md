@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/unionfind_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-11 18:23:50+09:00
+    - Last commit date: 2020-07-11 18:26:57+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -64,6 +64,8 @@ int main() {
 		if (t)printf("%d\n", uni.same(u, v));
 		else uni.unite(u, v);
 	}
+
+	Please AC;
 }
 ```
 {% endraw %}
@@ -269,6 +271,8 @@ int main() {
 		if (t)printf("%d\n", uni.same(u, v));
 		else uni.unite(u, v);
 	}
+
+	Please AC;
 }
 
 ```
