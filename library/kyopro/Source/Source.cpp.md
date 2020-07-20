@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 14:56:14+09:00
+    - Last commit date: 2020-07-20 12:22:26+09:00
 
 
 
@@ -149,7 +149,7 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-
+    
 
 	Please AC;
 }
@@ -268,7 +268,7 @@ ll LSB(ll n) { return (n & (-n)); }
 
 int main() {
 
-
+    
 
 	Please AC;
 }
