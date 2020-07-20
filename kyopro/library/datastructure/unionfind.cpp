@@ -1,4 +1,4 @@
-/*
+﻿/*
 * @title unionfind
 * @docs kyopro/docs/unionfind.md
 */
@@ -65,7 +65,7 @@ struct unionfind {
 	vector<ll> leaf(ll a) {
 		vector<ll> x;
 		ll n = par.size();
-		for (ll i = 0; i < n; ++i)if (same(a, i))x.pb(i);
+		for (ll i = 0; i < n; ++i)if (same(a, i))x.push_back(i);
 		return x;
 	}
 

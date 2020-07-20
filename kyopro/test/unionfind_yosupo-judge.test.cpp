@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #include "../library/template/template.cpp"
 
@@ -14,4 +14,6 @@ int main() {
 		if (t)printf("%d\n", uni.same(u, v));
 		else uni.unite(u, v);
 	}
+
+	Please AC;
 }

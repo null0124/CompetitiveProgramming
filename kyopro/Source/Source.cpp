@@ -6,7 +6,7 @@ Be accepted!
 ⊂　　 ノ 　　　・゜+.
 　しーＪ　　　°。+ *´¨)
  　　　　　　　　　.· ´¸.·*´¨) ¸.·*¨)
-          　　　　　　　　　　(¸.·´ (¸.·'* ☆
+		  　　　　　　　　　　(¸.·´ (¸.·'* ☆
 */
 
 #include <cstdio>
@@ -36,7 +36,7 @@ Be accepted!
 //using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
-//#pragma gcc optimization ("o3")
+//#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define rep1(i, n) for(int i = 1; i <= (n); ++i)
@@ -52,9 +52,6 @@ Be accepted!
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2LL) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
@@ -63,8 +60,8 @@ Be accepted!
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
@@ -75,29 +72,29 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string& str) {
-    char c;
-    str = "";
-    scanf("%c", &c);
-    if (c == '\n')scanf("%c", &c);
-    while (c != '\n' && c != -1 && c != ' ') {
-        str += c;
-        scanf("%c", &c);
-    }
+void scans(string & str) {
+	char c;
+	str = "";
+	scanf("%c", &c);
+	if (c == '\n')scanf("%c", &c);
+	while (c != '\n' && c != -1 && c != ' ') {
+		str += c;
+		scanf("%c", &c);
+	}
 }
 
 void scanc(char& str) {
-    char c;
-    scanf("%c", &c);
-    if (c == -1)return;
-    while (c == '\n') {
-        scanf("%c", &c);
-    }
-    str = c;
+	char c;
+	scanf("%c", &c);
+	if (c == -1)return;
+	while (c == '\n') {
+		scanf("%c", &c);
+	}
+	str = c;
 }
 
 double acot(double x) {
-    return PI / 2 - atan(x);
+	return PI / 2 - atan(x);
 }
 
 ll LSB(ll n) { return (n & (-n)); }
@@ -106,9 +103,10 @@ ll LSB(ll n) { return (n & (-n)); }
 
 
 
+
 int main() {
 
     
 
-    Please AC;
+	Please AC;
 }
