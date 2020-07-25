@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-23 01:26:17+09:00
+    - Last commit date: 2020-07-26 01:06:15+09:00
 
 
 
@@ -82,10 +82,6 @@ Be accepted!
 //#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
-#define rep1(i, n) for(int i = 1; i <= (n); ++i)
-#define rep2(i, n) for(int i = 2; i < (n); ++i)
-#define repr(i, n) for(int i = n; i >= 0; --i)
-#define reprm(i, n) for(int i = n - 1; i >= 0; --i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
 #define printYN(a) printf(a ? "YES\n" : "NO\n")
@@ -115,7 +111,7 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string & str) {
+void scans(string& str) {
 	char c;
 	str = "";
 	scanf("%c", &c);
@@ -141,6 +137,18 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
+
+template<typename T>
+T chmin(T& a, const T& b) {
+	if (a > b)a = b;
+	return a;
+}
+
+template<typename T>
+T chmax(T& a, const T& b) {
+	if (a < b)a = b;
+	return a;
+}
 
 /*-----------------------------------------ここからコード-----------------------------------------*/
 
@@ -200,10 +208,6 @@ Be accepted!
 //#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
 #define rep(i, n) for(int i = 0; i < (n); ++i)
-#define rep1(i, n) for(int i = 1; i <= (n); ++i)
-#define rep2(i, n) for(int i = 2; i < (n); ++i)
-#define repr(i, n) for(int i = n; i >= 0; --i)
-#define reprm(i, n) for(int i = n - 1; i >= 0; --i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
 #define printYN(a) printf(a ? "YES\n" : "NO\n")
@@ -233,7 +237,7 @@ const long double PI = acosl(-1.0L);
 
 using namespace std;
 
-void scans(string & str) {
+void scans(string& str) {
 	char c;
 	str = "";
 	scanf("%c", &c);
@@ -259,6 +263,18 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
+
+template<typename T>
+T chmin(T& a, const T& b) {
+	if (a > b)a = b;
+	return a;
+}
+
+template<typename T>
+T chmax(T& a, const T& b) {
+	if (a < b)a = b;
+	return a;
+}
 
 /*-----------------------------------------ここからコード-----------------------------------------*/
 

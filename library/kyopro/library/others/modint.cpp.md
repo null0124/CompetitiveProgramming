@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 01:32:32+09:00
+    - Last commit date: 2020-07-26 01:06:15+09:00
 
 
 
@@ -99,9 +99,9 @@ struct modint {
 	}
 
 	modint& operator/=(const modint& x) {
-		if (x <= size) {
+		if (x.val <= size) {
 			ll num = x.val;
-			num *= inv[x];
+			num *= inv[x.val];
 			num %= mod;
 			val = num;
 			return *this;
@@ -232,9 +232,9 @@ struct modint {
 	}
 
 	modint& operator/=(const modint& x) {
-		if (x <= size) {
+		if (x.val <= size) {
 			ll num = x.val;
-			num *= inv[x];
+			num *= inv[x.val];
 			num %= mod;
 			val = num;
 			return *this;
