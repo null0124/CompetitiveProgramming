@@ -49,9 +49,9 @@ struct modint {
 	}
 
 	modint& operator/=(const modint& x) {
-		if (x <= size) {
+		if (x.val <= size) {
 			ll num = x.val;
-			num *= inv[x];
+			num *= inv[x.val];
 			num %= mod;
 			val = num;
 			return *this;
