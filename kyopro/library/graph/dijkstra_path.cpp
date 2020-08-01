@@ -4,7 +4,7 @@
 */
 
 template<typename T>
-vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool& f) {
+vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
