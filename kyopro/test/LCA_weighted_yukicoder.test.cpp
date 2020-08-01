@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/lca"
+﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
 
 #include "../library/template/template.cpp"
 #include "../library/graph/graph_template.cpp"
@@ -10,15 +10,11 @@
 int main() {
 
 	int n, q;
-	scanf("%d%d", &n, &q);
-	graph<int> tree(n, true, false);
-	int p;
-	rep(i, n - 1) {
-		scanf("%d", &p);
-		tree.add_edge(p, i + 1);
-	}
+	scanf("%d", &n);
+	graph<int> tree(n, false, true);
+	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
-	int v;
+	int v, p;
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
 		printf("%d\n", lca.query(p, v));
