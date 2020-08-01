@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 04:57:13+09:00
+    - Last commit date: 2020-08-02 05:04:17+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :question: <a href="../../../library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :x: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
 * :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
@@ -57,7 +57,7 @@ layout: default
 
 #include "../library/datastructure/sparsetable.cpp"
 
-#include "../library/graph/LCA.cpp"
+#include "../library/graph/LCA_weighted.cpp"
 
 int main() {
 
@@ -74,6 +74,7 @@ int main() {
 
 	Please AC;
 }
+
 ```
 {% endraw %}
 
@@ -324,12 +325,13 @@ struct sparsetable {
 
 #line 7 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
 
-#line 1 "kyopro/library/graph/LCA.cpp"
+#line 1 "kyopro/library/graph/LCA_weighted.cpp"
 ﻿/*
-* @title lowest-common-ancestor
-* @docs kyopro/docs/LCA.md
+* @title lowest-common-ancestor(weighted)
+* @docs kyopro/docs/LCA_weighted.md
 */
 
+//重み付き
 
 template<typename T>
 void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
@@ -339,7 +341,7 @@ void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const 
 	for (const auto& aa : graph[now]) {
 		if (aa.to != bef) {
 			++cnt;
-			eulertour(aa.to, now, cnt, graph, d + 1, vs, depth, id);
+			eulertour(aa.to, now, cnt, graph, d + aa.cost, vs, depth, id);
 			++cnt;
 			depth.emplace_back(d);
 			vs.emplace_back(now);
@@ -347,7 +349,7 @@ void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const 
 	}
 }
 
-template<typename T = int>
+template<typename T>
 struct LCA {
 
 	vector<int> vs, depth, id, tmp = { 0 };
@@ -374,7 +376,6 @@ struct LCA {
 		return depth[id[n]];
 	}
 };
-
 #line 9 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
 
 int main() {

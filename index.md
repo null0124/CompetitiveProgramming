@@ -70,8 +70,8 @@ layout: default
 
 ### kyopro/library/graph
 
-* :question: <a href="library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
-* :warning: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :x: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
 * :x: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
