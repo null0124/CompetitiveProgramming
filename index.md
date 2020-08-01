@@ -75,6 +75,7 @@ layout: default
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
+* :warning: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
 
