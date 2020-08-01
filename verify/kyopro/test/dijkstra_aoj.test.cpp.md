@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-02 04:31:23+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A</a>
@@ -40,6 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -51,6 +52,7 @@ layout: default
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A"
 
 #include "../library/template/template.cpp"
+#include "../library/graph/graph_template.cpp"
 
 #include "../library/graph/dijkstra.cpp"
 
@@ -58,16 +60,13 @@ int main() {
 
 	int v, e, r;
 	scanf("%d%d%d", &v, &e, &r);
-	vector<vector<pair<int, ll>>> graph(v);
-	while (e--) {
-		int s, t, d;
-		scanf("%d%d%d", &s, &t, &d);
-		graph[s].emplace_back(t, d);
-	}
-	for (const auto& aa : dijkstra<ll>(graph, r, v, LINF)) {
+	graph<ll> g(v, true, true);
+	g.read(e, false);
+	for (const auto& aa : dijkstra<ll>(g, r, v, LINF)) {
 		if (aa == LINF)puts("INF");
 		else printf("%lld\n", aa);
 	}
+
 
 	Please AC;
 }
@@ -197,7 +196,56 @@ T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/dijkstra_aoj.test.cpp"
+#line 1 "kyopro/library/graph/graph_template.cpp"
+﻿/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+#line 5 "kyopro/test/dijkstra_aoj.test.cpp"
 
 #line 1 "kyopro/library/graph/dijkstra.cpp"
 ﻿/*
@@ -206,8 +254,8 @@ T chmax(T& a, const T& b) {
 */
 
 
-template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
+template<typename T = int>
+vector<T> dijkstra(graph<T>& g, const int& v, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	fill(all(res), Inf);
@@ -217,30 +265,27 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, cons
 	while (!priq.empty()) {
 		top = priq.top().second;
 		priq.pop();
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second >= res[aa.first])continue;
-			res[aa.first] = aa.second + res[top];
-			priq.push({ res[aa.first], aa.first });
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost >= res[aa.to])continue;
+			res[aa.to] = aa.cost + res[top];
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 	return res;
 }
-#line 6 "kyopro/test/dijkstra_aoj.test.cpp"
+#line 7 "kyopro/test/dijkstra_aoj.test.cpp"
 
 int main() {
 
 	int v, e, r;
 	scanf("%d%d%d", &v, &e, &r);
-	vector<vector<pair<int, ll>>> graph(v);
-	while (e--) {
-		int s, t, d;
-		scanf("%d%d%d", &s, &t, &d);
-		graph[s].emplace_back(t, d);
-	}
-	for (const auto& aa : dijkstra<ll>(graph, r, v, LINF)) {
+	graph<ll> g(v, true, true);
+	g.read(e, false);
+	for (const auto& aa : dijkstra<ll>(g, r, v, LINF)) {
 		if (aa == LINF)puts("INF");
 		else printf("%lld\n", aa);
 	}
+
 
 	Please AC;
 }

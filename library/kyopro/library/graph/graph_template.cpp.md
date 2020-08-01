@@ -25,18 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: template(graph)
+# :heavy_check_mark: template(graph)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/graph_template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 03:22:31+09:00
+    - Last commit date: 2020-08-02 04:31:23+09:00
 
 
 
 
 ﻿
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
+
 
 ## Code
 
@@ -48,21 +53,22 @@ layout: default
 * @docs kyopro/docs/graph_template.md
 */
 
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
 template<typename T = int>
 struct graph {
 
 	int n;
 	bool directed, weighted;
 
-	struct edge {
-		T cost;
-		int from, to;
-
-		edge(int from, int to) : from(from), to(to), cost(T(1)) {}
-		edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
-	};
-
-	vector<vector<edge>> g;
+	vector<vector<edge<T>>> g;
 
 	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
 
@@ -71,6 +77,10 @@ struct graph {
 		if (not directed) {
 			g[to].emplace_back(to, from, cost);
 		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
 	}
 
 	void read(int e, bool one_indexed) {
@@ -98,21 +108,22 @@ struct graph {
 * @docs kyopro/docs/graph_template.md
 */
 
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
 template<typename T = int>
 struct graph {
 
 	int n;
 	bool directed, weighted;
 
-	struct edge {
-		T cost;
-		int from, to;
-
-		edge(int from, int to) : from(from), to(to), cost(T(1)) {}
-		edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
-	};
-
-	vector<vector<edge>> g;
+	vector<vector<edge<T>>> g;
 
 	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
 
@@ -121,6 +132,10 @@ struct graph {
 		if (not directed) {
 			g[to].emplace_back(to, from, cost);
 		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
 	}
 
 	void read(int e, bool one_indexed) {
