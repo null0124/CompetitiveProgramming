@@ -15,6 +15,7 @@ int main() {
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
+	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
 		printf("%d\n", lca.query(p, v));
