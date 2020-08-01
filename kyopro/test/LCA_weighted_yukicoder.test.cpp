@@ -5,7 +5,7 @@
 
 #include "../library/datastructure/sparsetable.cpp"
 
-#include "../library/graph/LCA.cpp"
+#include "../library/graph/LCA_weighted.cpp"
 
 int main() {
 
