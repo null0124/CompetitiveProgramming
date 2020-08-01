@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lowest-common-ancestor
+# :question: lowest-common-ancestor
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/LCA.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 
@@ -40,6 +40,7 @@ layout: default
 
 ## Verified with
 
+* :x: <a href="../../../../verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
 
 
@@ -53,14 +54,16 @@ layout: default
 * @docs kyopro/docs/LCA.md
 */
 
-void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+
+template<typename T>
+void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);
 	for (const auto& aa : graph[now]) {
-		if (aa != bef) {
+		if (aa.to != bef) {
 			++cnt;
-			eulertour(aa, now, cnt, graph, d + 1, vs, depth, id);
+			eulertour(aa.to, now, cnt, graph, d + 1, vs, depth, id);
 			++cnt;
 			depth.emplace_back(d);
 			vs.emplace_back(now);
@@ -68,15 +71,16 @@ void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int
 	}
 }
 
+template<typename T = int>
 struct LCA {
 
 	vector<int> vs, depth, id, tmp = { 0 };
-	vector<vector<int>> tree;
+	graph<T> tree;
 	sparsetable<int> table{ tmp, 0 };
 	int n, root;
 
 	//木,　大きさ, 根
-	LCA(vector<vector<int>> tree, int n, int root) : tree(tree), n(n), root(root) {
+	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
 		eulertour(root, -1, cnt, tree, d, vs, depth, id);
@@ -108,14 +112,16 @@ struct LCA {
 * @docs kyopro/docs/LCA.md
 */
 
-void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+
+template<typename T>
+void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);
 	for (const auto& aa : graph[now]) {
-		if (aa != bef) {
+		if (aa.to != bef) {
 			++cnt;
-			eulertour(aa, now, cnt, graph, d + 1, vs, depth, id);
+			eulertour(aa.to, now, cnt, graph, d + 1, vs, depth, id);
 			++cnt;
 			depth.emplace_back(d);
 			vs.emplace_back(now);
@@ -123,15 +129,16 @@ void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int
 	}
 }
 
+template<typename T = int>
 struct LCA {
 
 	vector<int> vs, depth, id, tmp = { 0 };
-	vector<vector<int>> tree;
+	graph<T> tree;
 	sparsetable<int> table{ tmp, 0 };
 	int n, root;
 
 	//木,　大きさ, 根
-	LCA(vector<vector<int>> tree, int n, int root) : tree(tree), n(n), root(root) {
+	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
 		eulertour(root, -1, cnt, tree, d, vs, depth, id);

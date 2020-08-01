@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 04:31:23+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 
@@ -156,6 +156,7 @@ T chmax(T& a, const T& b) {
 
 
 int main() {
+
 
 
 	Please AC;
@@ -283,6 +284,7 @@ T chmax(T& a, const T& b) {
 
 
 int main() {
+
 
 
 	Please AC;

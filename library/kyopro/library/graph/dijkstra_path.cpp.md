@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: dijkstra(経路復元)
+# :x: dijkstra(経路復元)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/dijkstra_path.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:59:30+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 
 
 ## Code
@@ -54,7 +54,7 @@ layout: default
 */
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool &f) {
+vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool& f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -68,15 +68,15 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 		top = now.second;
 		priq.pop();
 		if (res[top] < now.first)continue;
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second > res[aa.first])continue;
-			else if (res[top] + aa.second == res[aa.first]) {
-				if(f) prev[aa.first] = min(top, prev[aa.first]);
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost > res[aa.to])continue;
+			else if (res[top] + aa.cost == res[aa.to]) {
+				if (f) prev[aa.to] = min(top, prev[aa.to]);
 				continue;
 			}
-			res[aa.first] = aa.second + res[top];
-			prev[aa.first] = top;
-			priq.push({ res[aa.first], aa.first });
+			res[aa.to] = aa.cost + res[top];
+			prev[aa.to] = top;
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 
@@ -99,7 +99,7 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 */
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool &f) {
+vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool& f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -113,15 +113,15 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 		top = now.second;
 		priq.pop();
 		if (res[top] < now.first)continue;
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second > res[aa.first])continue;
-			else if (res[top] + aa.second == res[aa.first]) {
-				if(f) prev[aa.first] = min(top, prev[aa.first]);
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost > res[aa.to])continue;
+			else if (res[top] + aa.cost == res[aa.to]) {
+				if (f) prev[aa.to] = min(top, prev[aa.to]);
 				continue;
 			}
-			res[aa.first] = aa.second + res[top];
-			prev[aa.first] = top;
-			priq.push({ res[aa.first], aa.first });
+			res[aa.to] = aa.cost + res[top];
+			prev[aa.to] = top;
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 

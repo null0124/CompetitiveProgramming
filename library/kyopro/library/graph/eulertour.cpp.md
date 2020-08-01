@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/eulertour.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 
@@ -48,16 +48,17 @@ layout: default
 * @docs kyopro/docs/eulertour.md
 */
 
+template<typename T = int>
 struct eulertour {
 
 	vector<int> depth, child;
 
 private:
-	void dfs(const vector<vector<int>>& graph, const int& now, const int& bef, int& cnt) {
+	void dfs(graph<T>& g, const int& now, const int& bef, int& cnt) {
 		depth[now] = cnt;
-		for (const auto& aa : graph[now]) {
+		for (const auto& aa : g[now]) {
 			if (aa != bef) {
-				dfs(graph, aa, now, ++cnt);
+				dfs(g, aa, now, ++cnt);
 				child[now] += child[aa] + 1;
 				--cnt;
 			}
@@ -65,14 +66,15 @@ private:
 	}
 
 public:
-	eulertour(const vector<vector<int>>& graph, const int& n, const int& root) {
+	eulertour(graph<T>& g, const int& n, const int& root) {
 		depth.assign(n, 0);
 		child.assign(n, 0);
 		int cnt = 0;
-		dfs(graph, root, -1, cnt);
+		dfs(g, root, -1, cnt);
 	}
 
 };
+
 ```
 {% endraw %}
 
@@ -85,16 +87,17 @@ public:
 * @docs kyopro/docs/eulertour.md
 */
 
+template<typename T = int>
 struct eulertour {
 
 	vector<int> depth, child;
 
 private:
-	void dfs(const vector<vector<int>>& graph, const int& now, const int& bef, int& cnt) {
+	void dfs(graph<T>& g, const int& now, const int& bef, int& cnt) {
 		depth[now] = cnt;
-		for (const auto& aa : graph[now]) {
+		for (const auto& aa : g[now]) {
 			if (aa != bef) {
-				dfs(graph, aa, now, ++cnt);
+				dfs(g, aa, now, ++cnt);
 				child[now] += child[aa] + 1;
 				--cnt;
 			}
@@ -102,11 +105,11 @@ private:
 	}
 
 public:
-	eulertour(const vector<vector<int>>& graph, const int& n, const int& root) {
+	eulertour(graph<T>& g, const int& n, const int& root) {
 		depth.assign(n, 0);
 		child.assign(n, 0);
 		int cnt = 0;
-		dfs(graph, root, -1, cnt);
+		dfs(g, root, -1, cnt);
 	}
 
 };

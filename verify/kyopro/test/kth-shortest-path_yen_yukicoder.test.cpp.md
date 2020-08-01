@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1069">https://yukicoder.me/problems/no/1069</a>
@@ -39,6 +39,7 @@ layout: default
 
 ## Depends on
 
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
@@ -53,6 +54,7 @@ layout: default
 #define ERROR 1e-4
 
 #include "../library/template/template.cpp"
+#include "../library/graph/graph_template.cpp"
 
 #include "../library/graph/kth-shortest-path_yen.cpp"
 
@@ -61,7 +63,7 @@ int main() {
 	int n, m, k, x, y;
 	scanf("%d%d%d%d%d", &n, &m, &k, &x, &y);
 	--x; --y;
-	vector<vector<pair<int, long double>>> graph(n);
+	graph<long double> g(n, false, true);
 	vector<pair<int, int>> xy(n);
 	set<vector<int>> routememo;
 	int p, q;
@@ -73,12 +75,11 @@ int main() {
 		scanf("%d%d", &p, &q);
 		--p; --q;
 		long double a = xy[p].first, b = xy[p].second, c = xy[q].first, d = xy[q].second;
-		graph[p].push_back({ q, sqrt((c - a) * (c - a) + (d - b) * (d - b)) });
-		graph[q].push_back({ p, sqrt((c - a) * (c - a) + (d - b) * (d - b)) });
+		g.add_edge(p, q, sqrt((c - a) * (c - a) + (d - b) * (d - b)));
 	}
 	vector<vector<int>> path(k);
 	vector<long double> ans;
-	ksp<long double>(graph, n, x, y, k, path, ans, linf);
+	ksp<long double>(g, n, x, y, k, path, ans, linf);
 	rep(i, k)printLdb(ans[i]);
 
 	Please AC;
@@ -211,7 +212,69 @@ T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 6 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
+#line 1 "kyopro/library/graph/graph_template.cpp"
+﻿/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+#line 7 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
 
 #line 1 "kyopro/library/graph/kth-shortest-path_yen.cpp"
 ﻿/*
@@ -220,8 +283,9 @@ T chmax(T& a, const T& b) {
 */
 
 
+
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const vector<vector<bool>>& deleted, set<int> r) {
+vector<T> dijkstra(graph<T>& gh, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const vector<vector<bool>>& deleted, set<int> r) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -233,11 +297,11 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 	while (!priq.empty()) {
 		top = priq.top().second;
 		priq.pop();
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second >= res[aa.first] or deleted[top][aa.first] or r.find(aa.first) != r.end())continue;
-			res[aa.first] = aa.second + res[top];
-			prev[aa.first] = top;
-			priq.push({ res[aa.first], aa.first });
+		for (const auto& aa : gh[top]) {
+			if (res[top] + aa.cost >= res[aa.to] or deleted[top][aa.to] or r.find(aa.to) != r.end())continue;
+			res[aa.to] = aa.cost + res[top];
+			prev[aa.to] = top;
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 
@@ -248,13 +312,13 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 }
 
 template<typename T>
-void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& start, const int& goal, const int& k, vector<vector<int>>& path, vector<T>& ans, const T& Inf) {
+void ksp(graph<T>& g, const int& n, const int& start, const int& goal, const int& k, vector<vector<int>>& path, vector<T>& ans, const T& Inf) {
 	set<vector<int>> routememo;
 	vector<T> res, anstmp;
 	vector<vector<bool>> deleted(n, vector<bool>(n));
 	ans.resize(k);
 	path.resize(k);
-	res = dijkstra<T>(graph, path[0], start, goal, n, Inf, deleted, {});
+	res = dijkstra<T>(g, path[0], start, goal, n, Inf, deleted, {});
 	ans[0] = res[goal];
 	anstmp = res;
 	routememo.insert(path[0]);
@@ -275,16 +339,16 @@ void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& sta
 			r.insert(path[i][j]);
 			spurnode[route].push_back(path[i][j + 1]);
 			if (j != 0) {
-				for (const auto& aa : graph[path[i][j - 1]]) {
-					if (aa.first == path[i][j]) {
-						cost += aa.second;
+				for (const auto& aa : g[path[i][j - 1]]) {
+					if (aa.to == path[i][j]) {
+						cost += aa.cost;
 						break;
 					}
 				}
 			}
 			for (const auto& aa : spurnode[route])deleted[path[i][j]][aa] = deleted[aa][path[i][j]] = true;
 			if (j > 0)deleted[path[i][j - 1]][path[i][j]] = deleted[path[i][j]][path[i][j - 1]] = true;
-			res = dijkstra<T>(graph, path[i + 1], path[i][j], goal, n, Inf, deleted, r);
+			res = dijkstra<T>(g, path[i + 1], path[i][j], goal, n, Inf, deleted, r);
 			if (j > 0)deleted[path[i][j - 1]][path[i][j]] = deleted[path[i][j]][path[i][j - 1]] = false;
 			for (const auto& aa : spurnode[route])deleted[path[i][j]][aa] = deleted[aa][path[i][j]] = false;
 			if (res[goal] >= Inf)continue;
@@ -327,14 +391,14 @@ void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& sta
 	}
 	return;
 }
-#line 8 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
+#line 9 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp"
 
 int main() {
 
 	int n, m, k, x, y;
 	scanf("%d%d%d%d%d", &n, &m, &k, &x, &y);
 	--x; --y;
-	vector<vector<pair<int, long double>>> graph(n);
+	graph<long double> g(n, false, true);
 	vector<pair<int, int>> xy(n);
 	set<vector<int>> routememo;
 	int p, q;
@@ -346,12 +410,11 @@ int main() {
 		scanf("%d%d", &p, &q);
 		--p; --q;
 		long double a = xy[p].first, b = xy[p].second, c = xy[q].first, d = xy[q].second;
-		graph[p].push_back({ q, sqrt((c - a) * (c - a) + (d - b) * (d - b)) });
-		graph[q].push_back({ p, sqrt((c - a) * (c - a) + (d - b) * (d - b)) });
+		g.add_edge(p, q, sqrt((c - a) * (c - a) + (d - b) * (d - b)));
 	}
 	vector<vector<int>> path(k);
 	vector<long double> ans;
-	ksp<long double>(graph, n, x, y, k, path, ans, linf);
+	ksp<long double>(g, n, x, y, k, path, ans, linf);
 	rep(i, k)printLdb(ans[i]);
 
 	Please AC;

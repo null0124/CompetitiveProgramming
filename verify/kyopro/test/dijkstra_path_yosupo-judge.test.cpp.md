@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+# :x: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
@@ -39,7 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
+* :x: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -51,6 +52,7 @@ layout: default
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 
 #include "../library/template/template.cpp"
+#include "../library/graph/graph_template.cpp"
 
 #include "../library/graph/dijkstra_path.cpp"
 
@@ -58,15 +60,10 @@ int main() {
 
 	int n, m, s, t;
 	scanf("%d%d%d%d", &n, &m, &s, &t);
-	vector<vector<pair<int, ll>>> graph(n);
-	while (m--) {
-		int a, b;
-		ll c;
-		scanf("%d%d%lld", &a, &b, &c);
-		graph[a].emplace_back(b, c);
-	}
+	graph<ll> g(n, true, true);
+	g.read(m, false);
 	vector<int> path;
-	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF, false);
+	auto ans = dijkstra<ll>(g, path, s, t, n, LINF, false);
 	int siz = (int)path.size() - 1;
 	if (ans[t] == LINF) {
 		puts("-1");
@@ -205,7 +202,69 @@ T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+#line 1 "kyopro/library/graph/graph_template.cpp"
+﻿/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+#line 5 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/graph/dijkstra_path.cpp"
 ﻿/*
@@ -214,7 +273,7 @@ T chmax(T& a, const T& b) {
 */
 
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool &f) {
+vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool& f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -228,15 +287,15 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 		top = now.second;
 		priq.pop();
 		if (res[top] < now.first)continue;
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second > res[aa.first])continue;
-			else if (res[top] + aa.second == res[aa.first]) {
-				if(f) prev[aa.first] = min(top, prev[aa.first]);
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost > res[aa.to])continue;
+			else if (res[top] + aa.cost == res[aa.to]) {
+				if (f) prev[aa.to] = min(top, prev[aa.to]);
 				continue;
 			}
-			res[aa.first] = aa.second + res[top];
-			prev[aa.first] = top;
-			priq.push({ res[aa.first], aa.first });
+			res[aa.to] = aa.cost + res[top];
+			prev[aa.to] = top;
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 
@@ -246,21 +305,16 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 
 	return res;
 }
-#line 6 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+#line 7 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
 
 int main() {
 
 	int n, m, s, t;
 	scanf("%d%d%d%d", &n, &m, &s, &t);
-	vector<vector<pair<int, ll>>> graph(n);
-	while (m--) {
-		int a, b;
-		ll c;
-		scanf("%d%d%lld", &a, &b, &c);
-		graph[a].emplace_back(b, c);
-	}
+	graph<ll> g(n, true, true);
+	g.read(m, false);
 	vector<int> path;
-	auto ans = dijkstra<ll>(graph, path, s, t, n, LINF, false);
+	auto ans = dijkstra<ll>(g, path, s, t, n, LINF, false);
 	int siz = (int)path.size() - 1;
 	if (ans[t] == LINF) {
 		puts("-1");

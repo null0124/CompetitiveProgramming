@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/lca">https://judge.yosupo.jp/problem/lca</a>
@@ -39,8 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :question: <a href="../../../library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -52,6 +53,7 @@ layout: default
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
 #include "../library/template/template.cpp"
+#include "../library/graph/graph_template.cpp"
 
 #include "../library/datastructure/sparsetable.cpp"
 
@@ -61,11 +63,11 @@ int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	vector<vector<int>> tree(n);
+	graph<int> tree(n, true, false);
 	int p;
 	rep(i, n - 1) {
 		scanf("%d", &p);
-		tree[p].emplace_back(i + 1);
+		tree.add_edge(p, i + 1);
 	}
 	LCA lca(tree, n, 0);
 	int v;
@@ -202,7 +204,69 @@ T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/LCA_yosupo-judge.test.cpp"
+#line 1 "kyopro/library/graph/graph_template.cpp"
+﻿/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+#line 5 "kyopro/test/LCA_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/datastructure/sparsetable.cpp"
 /*
@@ -262,7 +326,7 @@ struct sparsetable {
 
 };
 
-#line 6 "kyopro/test/LCA_yosupo-judge.test.cpp"
+#line 7 "kyopro/test/LCA_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/graph/LCA.cpp"
 ﻿/*
@@ -270,14 +334,16 @@ struct sparsetable {
 * @docs kyopro/docs/LCA.md
 */
 
-void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int>>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+
+template<typename T>
+void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
 	depth.emplace_back(d);
 	vs.emplace_back(now);
 	id[now] = min(id[now], cnt);
 	for (const auto& aa : graph[now]) {
-		if (aa != bef) {
+		if (aa.to != bef) {
 			++cnt;
-			eulertour(aa, now, cnt, graph, d + 1, vs, depth, id);
+			eulertour(aa.to, now, cnt, graph, d + 1, vs, depth, id);
 			++cnt;
 			depth.emplace_back(d);
 			vs.emplace_back(now);
@@ -285,15 +351,16 @@ void eulertour(const int& now, const int& bef, int& cnt, const vector<vector<int
 	}
 }
 
+template<typename T = int>
 struct LCA {
 
 	vector<int> vs, depth, id, tmp = { 0 };
-	vector<vector<int>> tree;
+	graph<T> tree;
 	sparsetable<int> table{ tmp, 0 };
 	int n, root;
 
 	//木,　大きさ, 根
-	LCA(vector<vector<int>> tree, int n, int root) : tree(tree), n(n), root(root) {
+	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
 		id.assign(n, INF);
 		int cnt = 0, d = 0;
 		eulertour(root, -1, cnt, tree, d, vs, depth, id);
@@ -312,17 +379,17 @@ struct LCA {
 	}
 };
 
-#line 8 "kyopro/test/LCA_yosupo-judge.test.cpp"
+#line 9 "kyopro/test/LCA_yosupo-judge.test.cpp"
 
 int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	vector<vector<int>> tree(n);
+	graph<int> tree(n, true, false);
 	int p;
 	rep(i, n - 1) {
 		scanf("%d", &p);
-		tree[p].emplace_back(i + 1);
+		tree.add_edge(p, i + 1);
 	}
 	LCA lca(tree, n, 0);
 	int v;

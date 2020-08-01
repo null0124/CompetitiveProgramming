@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: template(graph)
+# :question: template(graph)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/graph_template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 04:31:23+09:00
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
 
@@ -40,7 +40,11 @@ layout: default
 
 ## Verified with
 
+* :x: <a href="../../../../verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 
 
 ## Code
@@ -89,6 +93,19 @@ struct graph {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
 				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);
@@ -144,6 +161,19 @@ struct graph {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
 				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);

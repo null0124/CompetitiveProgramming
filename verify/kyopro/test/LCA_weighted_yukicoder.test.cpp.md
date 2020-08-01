@@ -25,21 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/sparsetable_yosupo-judge.test.cpp
+# :x: kyopro/test/LCA_weighted_yukicoder.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/sparsetable_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-02 04:57:13+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
+* see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
 
 
 ## Depends on
 
 * :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :question: <a href="../../../library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -48,24 +50,26 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
 
 #include "../library/template/template.cpp"
+#include "../library/graph/graph_template.cpp"
 
 #include "../library/datastructure/sparsetable.cpp"
+
+#include "../library/graph/LCA.cpp"
 
 int main() {
 
 	int n, q;
-	scanf("%d%d", &n, &q);
-	vector<int> a(n);
-	rep(i, n)scanf("%d", &a[i]);
-	sparsetable<int> rmq(a, n);
-	rmq.build();
-	while (q--) {
-		int l, r;
-		scanf("%d%d", &l, &r);
-		printf("%d\n", a[rmq.query(l, r)]);
+	scanf("%d", &n);
+	graph<int> tree(n, false, true);
+	tree.read(n - 1, true);
+	LCA lca(tree, n, 0);
+	int v, p;
+	rep(i, q) {
+		scanf("%d%d", &p, &v);
+		printf("%d\n", lca.query(p, v));
 	}
 
 	Please AC;
@@ -76,8 +80,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
+#line 1 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
+﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -196,7 +200,69 @@ T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
+#line 1 "kyopro/library/graph/graph_template.cpp"
+﻿/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string &format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format, &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+#line 5 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
 
 #line 1 "kyopro/library/datastructure/sparsetable.cpp"
 /*
@@ -256,20 +322,72 @@ struct sparsetable {
 
 };
 
-#line 6 "kyopro/test/sparsetable_yosupo-judge.test.cpp"
+#line 7 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
+
+#line 1 "kyopro/library/graph/LCA.cpp"
+﻿/*
+* @title lowest-common-ancestor
+* @docs kyopro/docs/LCA.md
+*/
+
+
+template<typename T>
+void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
+	depth.emplace_back(d);
+	vs.emplace_back(now);
+	id[now] = min(id[now], cnt);
+	for (const auto& aa : graph[now]) {
+		if (aa.to != bef) {
+			++cnt;
+			eulertour(aa.to, now, cnt, graph, d + 1, vs, depth, id);
+			++cnt;
+			depth.emplace_back(d);
+			vs.emplace_back(now);
+		}
+	}
+}
+
+template<typename T = int>
+struct LCA {
+
+	vector<int> vs, depth, id, tmp = { 0 };
+	graph<T> tree;
+	sparsetable<int> table{ tmp, 0 };
+	int n, root;
+
+	//木,　大きさ, 根
+	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
+		id.assign(n, INF);
+		int cnt = 0, d = 0;
+		eulertour(root, -1, cnt, tree, d, vs, depth, id);
+		table.init(depth, depth.size());
+		table.build();
+	}
+
+	//LCA である頂点を返す
+	int query(int l, int r) {
+		if (id[l] > id[r])swap(l, r);
+		return vs[table.query(id[l], id[r] + 1)];
+	}
+
+	int depthq(int n) {
+		return depth[id[n]];
+	}
+};
+
+#line 9 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
 
 int main() {
 
 	int n, q;
-	scanf("%d%d", &n, &q);
-	vector<int> a(n);
-	rep(i, n)scanf("%d", &a[i]);
-	sparsetable<int> rmq(a, n);
-	rmq.build();
-	while (q--) {
-		int l, r;
-		scanf("%d%d", &l, &r);
-		printf("%d\n", a[rmq.query(l, r)]);
+	scanf("%d", &n);
+	graph<int> tree(n, false, true);
+	tree.read(n - 1, true);
+	LCA lca(tree, n, 0);
+	int v, p;
+	rep(i, q) {
+		scanf("%d%d", &p, &v);
+		printf("%d\n", lca.query(p, v));
 	}
 
 	Please AC;
