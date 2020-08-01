@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 05:04:17+09:00
+    - Last commit date: 2020-08-02 05:12:51+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
@@ -67,6 +67,7 @@ int main() {
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
+	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
 		printf("%d\n", lca.query(p, v));
@@ -386,6 +387,7 @@ int main() {
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
+	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
 		printf("%d\n", lca.query(p, v));
