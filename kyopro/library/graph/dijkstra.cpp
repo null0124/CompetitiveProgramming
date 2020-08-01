@@ -4,8 +4,8 @@
 */
 
 
-template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, const int& n, const T Inf) {
+template<typename T = int>
+vector<T> dijkstra(graph<T>& g, const int& v, const int& n, const T Inf) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	fill(all(res), Inf);
@@ -15,10 +15,10 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, const int& v, cons
 	while (!priq.empty()) {
 		top = priq.top().second;
 		priq.pop();
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second >= res[aa.first])continue;
-			res[aa.first] = aa.second + res[top];
-			priq.push({ res[aa.first], aa.first });
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost >= res[aa.to])continue;
+			res[aa.to] = aa.cost + res[top];
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 	return res;

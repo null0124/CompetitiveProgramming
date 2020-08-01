@@ -3,21 +3,22 @@
 * @docs kyopro/docs/graph_template.md
 */
 
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
 template<typename T = int>
 struct graph {
 
 	int n;
 	bool directed, weighted;
 
-	struct edge {
-		T cost;
-		int from, to;
-
-		edge(int from, int to) : from(from), to(to), cost(T(1)) {}
-		edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
-	};
-
-	vector<vector<edge>> g;
+	vector<vector<edge<T>>> g;
 
 	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
 
@@ -26,6 +27,10 @@ struct graph {
 		if (not directed) {
 			g[to].emplace_back(to, from, cost);
 		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
 	}
 
 	void read(int e, bool one_indexed) {
