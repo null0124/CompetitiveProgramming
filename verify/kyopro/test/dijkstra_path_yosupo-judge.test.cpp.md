@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 05:19:39+09:00
+    - Last commit date: 2020-08-02 16:46:31+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
-* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -273,7 +273,7 @@ struct graph {
 */
 
 template<typename T>
-vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool f) {
+vector<T> dijkstra(graph<T>& gh, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool f) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -287,7 +287,7 @@ vector<T> dijkstra(graph<T>& g, vector<int>& path, const int& v, const int& g, c
 		top = now.second;
 		priq.pop();
 		if (res[top] < now.first)continue;
-		for (const auto& aa : g[top]) {
+		for (const auto& aa : gh[top]) {
 			if (res[top] + aa.cost > res[aa.to])continue;
 			else if (res[top] + aa.cost == res[aa.to]) {
 				if (f) prev[aa.to] = min(top, prev[aa.to]);

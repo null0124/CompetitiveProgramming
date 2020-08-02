@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/LCA_weighted_yukicoder.test.cpp
+# :heavy_check_mark: kyopro/test/LCA_weighted_yukicoder.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 05:12:51+09:00
+    - Last commit date: 2020-08-02 16:42:42+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :x: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
-* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -63,14 +63,15 @@ int main() {
 
 	int n, q;
 	scanf("%d", &n);
-	graph<int> tree(n, false, true);
+	graph tree(n, false, true);
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
 	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
-		printf("%d\n", lca.query(p, v));
+		--p, --v;
+		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
 	}
 
 	Please AC;
@@ -383,14 +384,15 @@ int main() {
 
 	int n, q;
 	scanf("%d", &n);
-	graph<int> tree(n, false, true);
+	graph tree(n, false, true);
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
 	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
-		printf("%d\n", lca.query(p, v));
+		--p, --v;
+		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
 	}
 
 	Please AC;

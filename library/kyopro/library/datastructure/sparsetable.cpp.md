@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: sparse-table
+# :heavy_check_mark: sparse-table
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../../verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 
