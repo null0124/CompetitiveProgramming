@@ -136,6 +136,12 @@
     <ClCompile Include="test\LCA_weighted_yukicoder.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\graph\topological_sort.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\topological_sort_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -160,5 +166,6 @@
     <None Include="docs\cumulative-sum.md" />
     <None Include="docs\prime_factor.md" />
     <None Include="docs\graph_template.md" />
+    <None Include="docs\topological_sort.md" />
   </ItemGroup>
 </Project>
