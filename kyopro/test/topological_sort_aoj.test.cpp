@@ -1,4 +1,5 @@
-﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
+﻿#define IGNORE
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
 
 #include "../library/template/template.cpp"
 #include "../library/graph/graph_template.cpp"

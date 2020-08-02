@@ -1,5 +1,5 @@
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
-#define IGNORE
+﻿#define IGNORE
+#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
 
 #include "../library/template/template.cpp"
 
