@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/prime_factor_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-03 02:54:19+09:00
 
 
 
@@ -47,8 +47,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
-#define IGNORE
+﻿#define IGNORE
+#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
 
 #include "../library/template/template.cpp"
 
@@ -75,8 +75,8 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "kyopro/test/prime_factor_yosupo-judge.test.cpp"
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
-#define IGNORE
+﻿#define IGNORE
+#define PROBLEM "https://judge.yosupo.jp/problem/factorize"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*

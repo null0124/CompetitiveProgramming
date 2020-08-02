@@ -31,10 +31,9 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/topological_sort_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-03 02:19:54+09:00
+    - Last commit date: 2020-08-03 02:54:19+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B">https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B</a>
 
 
 ## Depends on
@@ -49,7 +48,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
+﻿#define IGNORE
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
 
 #include "../library/template/template.cpp"
 #include "../library/graph/graph_template.cpp"
@@ -73,7 +73,8 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "kyopro/test/topological_sort_aoj.test.cpp"
-﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
+﻿#define IGNORE
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -254,7 +255,7 @@ struct graph {
 	}
 
 };
-#line 5 "kyopro/test/topological_sort_aoj.test.cpp"
+#line 6 "kyopro/test/topological_sort_aoj.test.cpp"
 
 #line 1 "kyopro/library/graph/topological_sort.cpp"
 ﻿/*
@@ -281,7 +282,7 @@ vector<int> topological_sort(graph<T>& g, const int& v) {
 	}
 	return ret;
 }
-#line 7 "kyopro/test/topological_sort_aoj.test.cpp"
+#line 8 "kyopro/test/topological_sort_aoj.test.cpp"
 
 int main() {
 
