@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+# :x: kyopro/test/topological_sort_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/dijkstra_path_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 16:46:31+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/topological_sort_aoj.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-03 02:19:54+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B">https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :x: <a href="../../../library/kyopro/library/graph/topological_sort.cpp.html">topological-sort</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -49,30 +49,20 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
+﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
 
 #include "../library/template/template.cpp"
 #include "../library/graph/graph_template.cpp"
 
-#include "../library/graph/dijkstra_path.cpp"
+#include "../library/graph/topological_sort.cpp"
 
 int main() {
 
-	int n, m, s, t;
-	scanf("%d%d%d%d", &n, &m, &s, &t);
-	graph<ll> g(n, true, true);
-	g.read(m, false);
-	vector<int> path;
-	auto ans = dijkstra<ll>(g, path, s, t, n, LINF, false);
-	int siz = (int)path.size() - 1;
-	if (ans[t] == LINF) {
-		puts("-1");
-		return AC;
-	}
-	printf("%lld %d\n", ans[t], siz);
-	rep(i, siz) {
-		printf("%d %d\n", path[i], path[i + 1]);
-	}
+	int v, e;
+	scanf("%d%d", &v, &e);
+	graph<int> g(v, true, false);
+	g.read(e, false);
+	for (const auto& ans : topological_sort(g, v))printf("%d\n", ans);
 
 	Please AC;
 }
@@ -82,8 +72,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
+#line 1 "kyopro/test/topological_sort_aoj.test.cpp"
+﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -264,66 +254,42 @@ struct graph {
 	}
 
 };
-#line 5 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+#line 5 "kyopro/test/topological_sort_aoj.test.cpp"
 
-#line 1 "kyopro/library/graph/dijkstra_path.cpp"
+#line 1 "kyopro/library/graph/topological_sort.cpp"
 ﻿/*
-* @title dijkstra(経路復元)
-* @docs kyopro/docs/dijkstra_path.md
+* @title topological-sort
+* @docs kyopro/docs/topological_sort.md
 */
 
-template<typename T>
-vector<T> dijkstra(graph<T>& gh, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const bool f) {
-	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
-	vector<T> res(n);
-	vector<int> prev(n);
-	fill(all(prev), -1);
-	fill(all(res), Inf);
-	priq.push({ 0, v });
-	res[v] = 0;
-	int top;
-	while (!priq.empty()) {
-		auto now = priq.top();
-		top = now.second;
-		priq.pop();
-		if (res[top] < now.first)continue;
-		for (const auto& aa : gh[top]) {
-			if (res[top] + aa.cost > res[aa.to])continue;
-			else if (res[top] + aa.cost == res[aa.to]) {
-				if (f) prev[aa.to] = min(top, prev[aa.to]);
-				continue;
-			}
-			res[aa.to] = aa.cost + res[top];
-			prev[aa.to] = top;
-			priq.push({ res[aa.to], aa.to });
+template<typename T = int>
+vector<int> topological_sort(graph<T>& g, const int& v) {
+	vector<int> ret, in(v);
+
+	queue<int> que;
+	rep(i, v) for (const auto& aa : g[i])++in[aa.to];
+	rep(i, v)if (not in[i])que.push(i);
+
+	while (not que.empty()) {
+		int top = que.front();
+		que.pop();
+		for (const auto& aa : g[top]) {
+			--in[aa.to];
+			if (not in[aa.to])que.push(aa.to);
 		}
+		ret.emplace_back(top);
 	}
-
-	for (int i = g; i != -1; i = prev[i])path.push_back(i);
-
-	reverse(all(path));
-
-	return res;
+	return ret;
 }
-#line 7 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp"
+#line 7 "kyopro/test/topological_sort_aoj.test.cpp"
 
 int main() {
 
-	int n, m, s, t;
-	scanf("%d%d%d%d", &n, &m, &s, &t);
-	graph<ll> g(n, true, true);
-	g.read(m, false);
-	vector<int> path;
-	auto ans = dijkstra<ll>(g, path, s, t, n, LINF, false);
-	int siz = (int)path.size() - 1;
-	if (ans[t] == LINF) {
-		puts("-1");
-		return AC;
-	}
-	printf("%lld %d\n", ans[t], siz);
-	rep(i, siz) {
-		printf("%d %d\n", path[i], path[i + 1]);
-	}
+	int v, e;
+	scanf("%d%d", &v, &e);
+	graph<int> g(v, true, false);
+	g.read(e, false);
+	for (const auto& ans : topological_sort(g, v))printf("%d\n", ans);
 
 	Please AC;
 }

@@ -63,6 +63,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/topological_sort_aoj.test.cpp.html">kyopro/test/topological_sort_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 

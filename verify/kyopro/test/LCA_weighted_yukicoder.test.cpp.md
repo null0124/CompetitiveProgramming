@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 

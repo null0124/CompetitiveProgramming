@@ -75,8 +75,9 @@ layout: default
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :question: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
+* :x: <a href="library/kyopro/library/graph/topological_sort.cpp.html">topological-sort</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
 
 
@@ -119,6 +120,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
+* :x: <a href="verify/kyopro/test/topological_sort_aoj.test.cpp.html">kyopro/test/topological_sort_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 
