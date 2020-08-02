@@ -11,14 +11,15 @@ int main() {
 
 	int n, q;
 	scanf("%d", &n);
-	graph<int> tree(n, false, true);
+	graph tree(n, false, true);
 	tree.read(n - 1, true);
 	LCA lca(tree, n, 0);
 	int v, p;
 	scanf("%d", &q);
 	rep(i, q) {
 		scanf("%d%d", &p, &v);
-		printf("%d\n", lca.query(p, v));
+		--p, --v;
+		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
 	}
 
 	Please AC;
