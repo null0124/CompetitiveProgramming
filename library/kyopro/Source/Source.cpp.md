@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 04:57:13+09:00
+    - Last commit date: 2020-08-07 02:04:20+09:00
 
 
 
@@ -81,6 +81,7 @@ Be accepted!
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
@@ -157,7 +158,7 @@ T chmax(T& a, const T& b) {
 
 int main() {
 
-
+	
 
 	Please AC;
 }
@@ -209,6 +210,7 @@ Be accepted!
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("Ofast")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
@@ -285,7 +287,7 @@ T chmax(T& a, const T& b) {
 
 int main() {
 
-
+	
 
 	Please AC;
 }

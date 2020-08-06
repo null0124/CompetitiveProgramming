@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-02 16:42:42+09:00
+    - Last commit date: 2020-08-07 02:04:20+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
@@ -134,6 +134,7 @@ using namespace boost::multiprecision;
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")

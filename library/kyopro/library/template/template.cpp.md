@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#555f11034b492b610373485649bb8a76">kyopro/library/template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/template/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 15:00:05+09:00
+    - Last commit date: 2020-08-07 02:04:20+09:00
 
 
 
@@ -120,6 +120,7 @@ using namespace boost::multiprecision;
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
@@ -243,6 +244,7 @@ using namespace boost::multiprecision;
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
