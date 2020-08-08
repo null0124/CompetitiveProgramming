@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-09 05:27:05+09:00
+    - Last commit date: 2020-08-09 06:18:15+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -222,26 +222,10 @@ T chmax(T& a, const T& b) {
 
 template<int mod>
 struct modint {
-	int val, size;
+	int val;
 
-	vector<ll> fac, inv, facinv;
-
-	modint() : val(0), size(0) {};
-	modint(ll x) : val(x >= 0 ? x % mod : (mod + x % mod) % mod), size(0) {};
-
-	//siz <= 1e7 くらい
-	void cominit(const int siz) {
-		size = siz;
-		fac.assign(siz + 1, 0);
-		inv.assign(siz + 1, 0);
-		facinv.assign(siz + 1, 0);
-		fac[0] = fac[1] = facinv[0] = facinv[1] = inv[0] = 1;
-		for (ll i = 2; i <= siz; ++i) {
-			fac[i] = fac[i - 1] * i % mod;
-			inv[i] = mod - inv[mod % i] * (mod / i) % mod;
-			facinv[i] = facinv[i - 1] * inv[i] % mod;
-		}
-	}
+	modint() : val(0) {};
+	modint(ll x) : val(x >= 0 ? x % mod : (mod + x % mod) % mod) {};
 
 	modint& operator=(const modint& x) {
 		val = x.val;
@@ -266,13 +250,6 @@ struct modint {
 	}
 
 	modint& operator/=(const modint& x) {
-		if (x.val <= size) {
-			ll num = x.val;
-			num *= inv[x.val];
-			num %= mod;
-			val = num;
-			return *this;
-		}
 		int a = x.val, b = mod, u = 1, v = 0, t;
 		while (b > 0) {
 			t = a / b;
@@ -333,10 +310,6 @@ struct modint {
 			n /= 2;
 		}
 		return ret;
-	}
-
-	modint comb(const modint& n, const modint& r) {
-		return (n < r or n < 0 or r < 0) ? 0 : ((fac[n] * (facinv[r] * facinv[n - r] % mod)) % mod);
 	}
 
 	static int getmod() { return mod; };

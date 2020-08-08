@@ -85,6 +85,7 @@ layout: default
 
 ### kyopro/library/math
 
+* :warning: <a href="library/kyopro/library/math/Comb.cpp.html">combination</a>
 * :heavy_check_mark: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
 * :x: <a href="library/kyopro/library/math/prime_factor.cpp.html">kyopro/library/math/prime_factor.cpp</a>
 
