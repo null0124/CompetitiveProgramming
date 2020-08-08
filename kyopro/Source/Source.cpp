@@ -36,8 +36,9 @@ Be accepted!
 //using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
-//#pragma gcc optimization ("Ofast")
+//#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+//#pragma clang optimize off
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -115,7 +116,8 @@ T chmax(T& a, const T& b) {
 
 int main() {
 
-	
+
 
 	Please AC;
 }
+

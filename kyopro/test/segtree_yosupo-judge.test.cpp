@@ -12,7 +12,7 @@ int main() {
 	int n, q;
 	scanf("%d%d", &n, &q);
 	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>> tree(n, { 1, 0 }, f);
+	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
 	rep(i, n) {
 		int a, b;
 		scanf("%d%d", &a, &b);

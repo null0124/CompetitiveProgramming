@@ -5,7 +5,7 @@
 
 
 //セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
-template<typename T>
+template<typename T, typename F>
 struct segtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -13,8 +13,8 @@ struct segtree {
 	int siz;
 	//単位元
 	const T e;
-	//比較関数の型
-	using F = function<T(T, T)>;
+	////比較関数の型
+	//using F = function<T(T, T)>;
 	//マージする関数
 	const F f;
 
