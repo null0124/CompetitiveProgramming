@@ -142,6 +142,9 @@
     <ClCompile Include="test\topological_sort_aoj.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\math\Comb.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -167,5 +170,6 @@
     <None Include="docs\prime_factor.md" />
     <None Include="docs\graph_template.md" />
     <None Include="docs\topological_sort.md" />
+    <None Include="docs\comb.md" />
   </ItemGroup>
 </Project>
