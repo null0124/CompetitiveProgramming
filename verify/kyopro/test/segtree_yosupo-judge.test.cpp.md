@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-07 02:04:20+09:00
+    - Last commit date: 2020-08-09 05:27:05+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -63,7 +63,7 @@ int main() {
 	int n, q;
 	scanf("%d%d", &n, &q);
 	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>> tree(n, { 1, 0 }, f);
+	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
 	rep(i, n) {
 		int a, b;
 		scanf("%d%d", &a, &b);
@@ -349,7 +349,7 @@ struct modint {
 
 
 //セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
-template<typename T>
+template<typename T, typename F>
 struct segtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -357,8 +357,8 @@ struct segtree {
 	int siz;
 	//単位元
 	const T e;
-	//比較関数の型
-	using F = function<T(T, T)>;
+	////比較関数の型
+	//using F = function<T(T, T)>;
 	//マージする関数
 	const F f;
 
@@ -460,7 +460,7 @@ int main() {
 	int n, q;
 	scanf("%d%d", &n, &q);
 	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>> tree(n, { 1, 0 }, f);
+	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
 	rep(i, n) {
 		int a, b;
 		scanf("%d%d", &a, &b);

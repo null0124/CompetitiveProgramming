@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/segtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-08-09 05:27:05+09:00
 
 
 
@@ -55,7 +55,7 @@ layout: default
 
 
 //セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
-template<typename T>
+template<typename T, typename F>
 struct segtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -63,8 +63,8 @@ struct segtree {
 	int siz;
 	//単位元
 	const T e;
-	//比較関数の型
-	using F = function<T(T, T)>;
+	////比較関数の型
+	//using F = function<T(T, T)>;
 	//マージする関数
 	const F f;
 
@@ -171,7 +171,7 @@ struct segtree {
 
 
 //セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
-template<typename T>
+template<typename T, typename F>
 struct segtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -179,8 +179,8 @@ struct segtree {
 	int siz;
 	//単位元
 	const T e;
-	//比較関数の型
-	using F = function<T(T, T)>;
+	////比較関数の型
+	//using F = function<T(T, T)>;
 	//マージする関数
 	const F f;
 
