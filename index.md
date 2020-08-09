@@ -96,6 +96,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
 * :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
+* :warning: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
 * :heavy_check_mark: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
 
 

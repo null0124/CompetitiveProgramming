@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-09 06:18:15+09:00
+    - Last commit date: 2020-08-10 07:56:48+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -380,8 +380,8 @@ struct segtree {
 	}
 
 	//[start, end) について、[l, r) を調べながら k 番目が check を満たすか二分探索 最後が true なら left, false なら right fの逆演算
-	template<typename C>
-	int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const function<T(T, T)> revf) {
+	template<typename C, typename FT>
+	int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const FT revf) {
 		//cerr << checknum << '\n';
 		//範囲外またはそこがすでに満たさないとき
 		//cerr << k << ',' << checknum << '\n';
@@ -399,28 +399,28 @@ struct segtree {
 		int res;
 		if (b) {
 			//左側を調べる
-			res = find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+			res = find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 			//左側が適してたらそれが答え
 			if (res != -1)return (res);
-			return find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+			return find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 		}
 		else {
 			//右側を調べる
-			res = find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+			res = find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 			//右側が適してたらそれが答え
 			if (res != -1)return (res);
-			return find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+			return find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 		}
 	}
 
-	template<typename C>
-	int find_left(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-		return find< C >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
+	template<typename C, typename FT>
+	int find_left(int start, int end, const C check, T checknum, FT revf) {
+		return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
 	}
 
-	template<typename C>
-	int find_right(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-		return find< C >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
+	template<typename C, typename FT>
+	int find_right(int start, int end, const C check, T checknum, FT revf) {
+		return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
 	}
 
 };
