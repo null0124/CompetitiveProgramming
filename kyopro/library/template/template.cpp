@@ -72,6 +72,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1000000007;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-9;
 const long double PI = acosl(-1.0L);
 

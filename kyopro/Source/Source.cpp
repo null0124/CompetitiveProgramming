@@ -38,7 +38,6 @@ Be accepted!
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
-//#pragma clang optimize off
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -65,6 +64,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1e9 + 7;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 

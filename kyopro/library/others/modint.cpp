@@ -97,3 +97,6 @@ struct modint {
 
 	static int getmod() { return mod; };
 };
+
+using ModInt = modint<MOD>;
+using Modint = modint<mod>;
