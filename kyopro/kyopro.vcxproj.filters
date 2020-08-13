@@ -127,9 +127,6 @@
     <ClCompile Include="library\math\prime_factor.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="test\prime_factor_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="library\graph\graph_template.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -137,9 +134,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="library\graph\topological_sort.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\topological_sort_aoj.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="library\math\Comb.cpp">
