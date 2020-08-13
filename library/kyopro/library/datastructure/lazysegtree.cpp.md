@@ -25,18 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :warning: lazy-segment-tree
+# :heavy_check_mark: lazy-segment-tree
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/lazysegtree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-08-14 03:45:21+09:00
 
 
 
 
 ﻿
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
+
 
 ## Code
 
@@ -49,7 +54,7 @@ layout: default
 */
 
 //セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
-template<typename T, typename U>
+template<typename T, typename U, typename F, typename F2, typename F3, typename F4>
 struct lazysegtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -65,14 +70,14 @@ struct lazysegtree {
 	const T se;
 	//遅延ノードの単位元
 	const U le;
-	//本体のマージ関数の型
-	using F = function<T(T, T)>;
-	//遅延ノードのマージ関数の型
-	using F2 = function<U(U, U)>;
-	//遅延ノードと本体のマージ関数の型
-	using F3 = function<T(T, U)>;
-	//サイズを使った演算をする関数の型
-	using F4 = function<U(U, int)>;
+	////本体のマージ関数の型
+	//using F = function<T(T, T)>;
+	////遅延ノードのマージ関数の型
+	//using F2 = function<U(U, U)>;
+	////遅延ノードと本体のマージ関数の型
+	//using F3 = function<T(T, U)>;
+	////サイズを使った演算をする関数の型
+	//using F4 = function<U(U, int)>;
 	//本体同士をマージする関数
 	const F f;
 	//遅延ノード同士をマージする関数
@@ -154,7 +159,7 @@ struct lazysegtree {
 	}
 
 	//[l, r) の値を a に更新
-	void update(int l, int r, T a) {
+	void update(int l, int r, U a) {
 		int x = l + siz, y = r + siz - 1;
 		topdown(x);
 		topdown(y);
@@ -186,10 +191,9 @@ struct lazysegtree {
 		return f(l, r);
 	}
 
-
 	////[start, end) について、[l, r) を調べながら k 番目が check を満たすか二分探索 最後が true なら left, false なら right fの逆演算
-	//template<typename C>
-	//int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const function<T(T, T)> revf) {
+	//template<typename C, typename FT>
+	//int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const FT revf) {
 	//	//cerr << checknum << '\n';
 	//	//範囲外またはそこがすでに満たさないとき
 	//	//cerr << k << ',' << checknum << '\n';
@@ -207,28 +211,28 @@ struct lazysegtree {
 	//	int res;
 	//	if (b) {
 	//		//左側を調べる
-	//		res = find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+	//		res = find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 	//		//左側が適してたらそれが答え
 	//		if (res != -1)return (res);
-	//		return find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+	//		return find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 	//	}
 	//	else {
 	//		//右側を調べる
-	//		res = find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+	//		res = find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 	//		//右側が適してたらそれが答え
 	//		if (res != -1)return (res);
-	//		return find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+	//		return find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 	//	}
 	//}
 
-	//template<typename C>
-	//int find_left(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-	//	return find< C >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
+	//template<typename C, typename FT>
+	//int find_left(int start, int end, const C check, T checknum, FT revf) {
+	//	return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
 	//}
 
-	//template<typename C>
-	//int find_right(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-	//	return find< C >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
+	//template<typename C, typename FT>
+	//int find_right(int start, int end, const C check, T checknum, FT revf) {
+	//	return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
 	//}
 
 };
@@ -246,7 +250,7 @@ struct lazysegtree {
 */
 
 //セグ木/0-indexed/非再帰/n の大きさ, a (単位元), 本体のマージ関数, 遅延ノードの単位元, 遅延ノードのマージ関数, 遅延ノードと本体のマージ関数 で segtree を初期化する
-template<typename T, typename U>
+template<typename T, typename U, typename F, typename F2, typename F3, typename F4>
 struct lazysegtree {
 	//木を配列であらわしたもの
 	vector<T> seg;
@@ -262,14 +266,14 @@ struct lazysegtree {
 	const T se;
 	//遅延ノードの単位元
 	const U le;
-	//本体のマージ関数の型
-	using F = function<T(T, T)>;
-	//遅延ノードのマージ関数の型
-	using F2 = function<U(U, U)>;
-	//遅延ノードと本体のマージ関数の型
-	using F3 = function<T(T, U)>;
-	//サイズを使った演算をする関数の型
-	using F4 = function<U(U, int)>;
+	////本体のマージ関数の型
+	//using F = function<T(T, T)>;
+	////遅延ノードのマージ関数の型
+	//using F2 = function<U(U, U)>;
+	////遅延ノードと本体のマージ関数の型
+	//using F3 = function<T(T, U)>;
+	////サイズを使った演算をする関数の型
+	//using F4 = function<U(U, int)>;
 	//本体同士をマージする関数
 	const F f;
 	//遅延ノード同士をマージする関数
@@ -351,7 +355,7 @@ struct lazysegtree {
 	}
 
 	//[l, r) の値を a に更新
-	void update(int l, int r, T a) {
+	void update(int l, int r, U a) {
 		int x = l + siz, y = r + siz - 1;
 		topdown(x);
 		topdown(y);
@@ -383,10 +387,9 @@ struct lazysegtree {
 		return f(l, r);
 	}
 
-
 	////[start, end) について、[l, r) を調べながら k 番目が check を満たすか二分探索 最後が true なら left, false なら right fの逆演算
-	//template<typename C>
-	//int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const function<T(T, T)> revf) {
+	//template<typename C, typename FT>
+	//int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const FT revf) {
 	//	//cerr << checknum << '\n';
 	//	//範囲外またはそこがすでに満たさないとき
 	//	//cerr << k << ',' << checknum << '\n';
@@ -404,28 +407,28 @@ struct lazysegtree {
 	//	int res;
 	//	if (b) {
 	//		//左側を調べる
-	//		res = find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+	//		res = find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 	//		//左側が適してたらそれが答え
 	//		if (res != -1)return (res);
-	//		return find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+	//		return find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 	//	}
 	//	else {
 	//		//右側を調べる
-	//		res = find< C >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
+	//		res = find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
 	//		//右側が適してたらそれが答え
 	//		if (res != -1)return (res);
-	//		return find< C >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
+	//		return find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
 	//	}
 	//}
 
-	//template<typename C>
-	//int find_left(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-	//	return find< C >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
+	//template<typename C, typename FT>
+	//int find_left(int start, int end, const C check, T checknum, FT revf) {
+	//	return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
 	//}
 
-	//template<typename C>
-	//int find_right(int start, int end, const C check, T checknum, function<T(T, T)> revf) {
-	//	return find< C >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
+	//template<typename C, typename FT>
+	//int find_right(int start, int end, const C check, T checknum, FT revf) {
+	//	return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
 	//}
 
 };

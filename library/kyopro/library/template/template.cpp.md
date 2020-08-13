@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#555f11034b492b610373485649bb8a76">kyopro/library/template</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/template/template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-07 02:04:20+09:00
+    - Last commit date: 2020-08-14 03:45:21+09:00
 
 
 
@@ -58,6 +58,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
 * :x: <a href="../../../../verify/kyopro/test/prime_factor_yosupo-judge.test.cpp.html">kyopro/test/prime_factor_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
@@ -147,6 +148,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1000000007;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-9;
 const long double PI = acosl(-1.0L);
 
@@ -271,6 +273,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1000000007;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-9;
 const long double PI = acosl(-1.0L);
 

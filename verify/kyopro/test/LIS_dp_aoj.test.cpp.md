@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LIS_dp_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-07 02:04:20+09:00
+    - Last commit date: 2020-08-14 03:45:21+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D</a>
@@ -148,6 +148,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1000000007;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-9;
 const long double PI = acosl(-1.0L);
 

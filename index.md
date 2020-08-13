@@ -53,7 +53,7 @@ layout: default
 ### kyopro/library/datastructure
 
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
-* :warning: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
+* :heavy_check_mark: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
@@ -117,6 +117,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
 * :x: <a href="verify/kyopro/test/prime_factor_yosupo-judge.test.cpp.html">kyopro/test/prime_factor_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>

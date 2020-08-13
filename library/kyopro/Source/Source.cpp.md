@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-09 06:18:15+09:00
+    - Last commit date: 2020-08-14 03:45:21+09:00
 
 
 
@@ -81,7 +81,6 @@ Be accepted!
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
-//#pragma clang optimize off
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -108,6 +107,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1e9 + 7;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
@@ -211,7 +211,6 @@ Be accepted!
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
-//#pragma clang optimize off
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -238,6 +237,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1e9 + 7;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 

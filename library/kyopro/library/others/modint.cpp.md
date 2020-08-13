@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-09 06:18:15+09:00
+    - Last commit date: 2020-08-14 03:45:21+09:00
 
 
 
@@ -40,6 +40,7 @@ layout: default
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 
 
@@ -147,6 +148,9 @@ struct modint {
 
 	static int getmod() { return mod; };
 };
+
+using ModInt = modint<MOD>;
+using Modint = modint<mod>;
 ```
 {% endraw %}
 
@@ -253,6 +257,9 @@ struct modint {
 
 	static int getmod() { return mod; };
 };
+
+using ModInt = modint<MOD>;
+using Modint = modint<mod>;
 
 ```
 {% endraw %}
