@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: topological-sort
+# :warning: topological-sort
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -37,11 +37,6 @@ layout: default
 
 
 ﻿
-
-## Verified with
-
-* :x: <a href="../../../../verify/kyopro/test/topological_sort_aoj.test.cpp.html">kyopro/test/topological_sort_aoj.test.cpp</a>
-
 
 ## Code
 
