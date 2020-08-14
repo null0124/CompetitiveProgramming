@@ -29,19 +29,17 @@ Be accepted!
 #include <iomanip>
 #include <set>
 #include <stack>
-/*多倍長整数/cpp_intで宣言
-#include <boost/multiprecision/cpp_int.hpp>
-using namespace boost::multiprecision;
-*/
+#include <bitset>
+
+////多倍長整数, cpp_intで宣言
+//#include <boost/multiprecision/cpp_int.hpp>
+//using namespace boost::multiprecision;
 
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
-#define rep1(i, n) for(int i = 1; i <= (n); ++i)
-#define rep2(i, n) for(int i = 2; i < (n); ++i)
-#define repr(i, n) for(int i = n; i >= 0; --i)
-#define reprm(i, n) for(int i = n - 1; i >= 0; --i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
 #define printYN(a) printf(a ? "YES\n" : "NO\n")
@@ -51,23 +49,23 @@ using namespace boost::multiprecision;
 #define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
 #define prints(s) printf("%s\n", s.c_str()) //string出力
 #define all(x) (x).begin(), (x).end()
-#define allsum(a, b, c) ((a + b) * c / 2.0) //等差数列の和、初項,末項,項数
-#define pb push_back
-#define priq priority_queue
-#define rpriq priq<int, vector<int>, greater<int>>
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
 #define AC 0
 #define manhattan_dist(a, b, c, d) (abs(a - c) + abs(b - d)) /*(a, b) から (c, d) のマンハッタン距離 */
-
+#define inf numeric_limits<double>::infinity();
+#define linf numeric_limits<long double>::infinity()
 
 using ll = long long;
+using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1000000007;
+constexpr ll MOD = 1e9 + 7;
+constexpr ll mod = 998244353;
+constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
@@ -93,20 +91,24 @@ void scanc(char& str) {
 	str = c;
 }
 
+
 double acot(double x) {
 	return PI / 2 - atan(x);
 }
 
-ll gcd(ll a, ll b) {
-	if (b == 0) return a;
-	return gcd(b, a % b);
-}
-
-ll lcm(ll number1, ll number2) {
-	return number1 / gcd(number1, number2) * number2;
-}
-
 ll LSB(ll n) { return (n & (-n)); }
+
+template<typename T>
+T chmin(T& a, const T& b) {
+	if (a > b)a = b;
+	return a;
+}
+
+template<typename T>
+T chmax(T& a, const T& b) {
+	if (a < b)a = b;
+	return a;
+}
 
 /*-----------------------------------------ここからコード-----------------------------------------*/
 

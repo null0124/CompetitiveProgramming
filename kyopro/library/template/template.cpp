@@ -45,11 +45,8 @@ using namespace boost::multiprecision;
 //#pragma gcc target ("avx2")
 //#pragma gcc optimization ("o3")
 //#pragma gcc optimization ("unroll-loops")
+#define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
-#define rep1(i, n) for(int i = 1; i <= (n); ++i)
-#define rep2(i, n) for(int i = 2; i < (n); ++i)
-#define repr(i, n) for(int i = n; i >= 0; --i)
-#define reprm(i, n) for(int i = n - 1; i >= 0; --i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
 #define printYN(a) printf(a ? "YES\n" : "NO\n")
@@ -67,6 +64,7 @@ using namespace boost::multiprecision;
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
+
 using ll = long long;
 using ull = unsigned long long;
 
@@ -74,6 +72,7 @@ constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
 constexpr ll MOD = 1000000007;
+constexpr ll mod = 998244353;
 constexpr long double eps = 1e-9;
 const long double PI = acosl(-1.0L);
 
@@ -105,3 +104,15 @@ double acot(double x) {
 }
 
 ll LSB(ll n) { return (n & (-n)); }
+
+template<typename T>
+T chmin(T& a, const T& b) {
+	if (a > b)a = b;
+	return a;
+}
+
+template<typename T>
+T chmax(T& a, const T& b) {
+	if (a < b)a = b;
+	return a;
+}

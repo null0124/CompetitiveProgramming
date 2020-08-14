@@ -4,8 +4,9 @@
 */
 
 
+
 template<typename T>
-vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const vector<vector<bool>>& deleted, set<int> r) {
+vector<T> dijkstra(graph<T>& gh, vector<int>& path, const int& v, const int& g, const int& n, const T Inf, const vector<vector<bool>>& deleted, set<int> r) {
 	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
 	vector<T> res(n);
 	vector<int> prev(n);
@@ -17,11 +18,11 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 	while (!priq.empty()) {
 		top = priq.top().second;
 		priq.pop();
-		for (const auto& aa : graph[top]) {
-			if (res[top] + aa.second >= res[aa.first] or deleted[top][aa.first] or r.find(aa.first) != r.end())continue;
-			res[aa.first] = aa.second + res[top];
-			prev[aa.first] = top;
-			priq.push({ res[aa.first], aa.first });
+		for (const auto& aa : gh[top]) {
+			if (res[top] + aa.cost >= res[aa.to] or deleted[top][aa.to] or r.find(aa.to) != r.end())continue;
+			res[aa.to] = aa.cost + res[top];
+			prev[aa.to] = top;
+			priq.push({ res[aa.to], aa.to });
 		}
 	}
 
@@ -32,13 +33,13 @@ vector<T> dijkstra(const vector<vector<pair<int, T>>>& graph, vector<int>& path,
 }
 
 template<typename T>
-void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& start, const int& goal, const int& k, vector<vector<int>>& path, vector<T>& ans, const T& Inf) {
+void ksp(graph<T>& g, const int& n, const int& start, const int& goal, const int& k, vector<vector<int>>& path, vector<T>& ans, const T& Inf) {
 	set<vector<int>> routememo;
 	vector<T> res, anstmp;
 	vector<vector<bool>> deleted(n, vector<bool>(n));
 	ans.resize(k);
 	path.resize(k);
-	res = dijkstra<T>(graph, path[0], start, goal, n, Inf, deleted, {});
+	res = dijkstra<T>(g, path[0], start, goal, n, Inf, deleted, {});
 	ans[0] = res[goal];
 	anstmp = res;
 	routememo.insert(path[0]);
@@ -59,16 +60,16 @@ void ksp(const vector<vector<pair<int, T>>>& graph, const int& n, const int& sta
 			r.insert(path[i][j]);
 			spurnode[route].push_back(path[i][j + 1]);
 			if (j != 0) {
-				for (const auto& aa : graph[path[i][j - 1]]) {
-					if (aa.first == path[i][j]) {
-						cost += aa.second;
+				for (const auto& aa : g[path[i][j - 1]]) {
+					if (aa.to == path[i][j]) {
+						cost += aa.cost;
 						break;
 					}
 				}
 			}
 			for (const auto& aa : spurnode[route])deleted[path[i][j]][aa] = deleted[aa][path[i][j]] = true;
 			if (j > 0)deleted[path[i][j - 1]][path[i][j]] = deleted[path[i][j]][path[i][j - 1]] = true;
-			res = dijkstra<T>(graph, path[i + 1], path[i][j], goal, n, Inf, deleted, r);
+			res = dijkstra<T>(g, path[i + 1], path[i][j], goal, n, Inf, deleted, r);
 			if (j > 0)deleted[path[i][j - 1]][path[i][j]] = deleted[path[i][j]][path[i][j - 1]] = false;
 			for (const auto& aa : spurnode[route])deleted[path[i][j]][aa] = deleted[aa][path[i][j]] = false;
 			if (res[goal] >= Inf)continue;

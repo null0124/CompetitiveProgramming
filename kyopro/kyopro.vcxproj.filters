@@ -58,6 +58,9 @@
     <ClCompile Include="library\graph\warshallfloyd.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
+    <ClCompile Include="library\math\gcd_lcm.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="library\others\modint.cpp">
       <Filter>Library\Other</Filter>
     </ClCompile>
@@ -97,38 +100,50 @@
     <ClCompile Include="test\lcm_aoj.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\others\doubling.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="test\warshallfloyd_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\datastructure\BBST\splaytree.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="test\segtree_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="test\kth-shortest-path_yen_yukicoder.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\others\cumulative-sum.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="test\cumulative-sum_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="test\prime_factor_yosupo-judge.test.cpp">
+    <ClCompile Include="library\math\prime_factor.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\others\cumulative-sum.cpp">
-      <Filter>Library\Other</Filter>
+    <ClCompile Include="library\graph\graph_template.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\others\doubling.cpp">
-      <Filter>Library\Other</Filter>
+    <ClCompile Include="test\LCA_weighted_yukicoder.test.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\math\gcd_lcm.cpp">
-      <Filter>Library\Math</Filter>
+    <ClCompile Include="library\graph\topological_sort.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
-      <Filter>Library\Graph</Filter>
+    <ClCompile Include="library\math\Comb.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\math\prime_factor.cpp">
-      <Filter>Library\Math</Filter>
+    <ClCompile Include="library\others\mo.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="library\datastructure\BBST\splaytree.cpp">
-      <Filter>Library\DataStructure</Filter>
+    <ClCompile Include="test\lazysegtree_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -153,5 +168,9 @@
     <None Include="docs\kth-shortest-path_yen.md" />
     <None Include="docs\cumulative-sum.md" />
     <None Include="docs\prime_factor.md" />
+    <None Include="docs\graph_template.md" />
+    <None Include="docs\topological_sort.md" />
+    <None Include="docs\comb.md" />
+    <None Include="docs\mo.md" />
   </ItemGroup>
 </Project>
