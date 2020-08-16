@@ -25,21 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/BIT_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/mo_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/BIT_yosupo-judge.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/mo_yosupo-judge.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-08-16 22:28:59+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/point_add_range_sum">https://judge.yosupo.jp/problem/point_add_range_sum</a>
+* see: <a href="https://judge.yosupo.jp/problem/static_range_inversions_query">https://judge.yosupo.jp/problem/static_range_inversions_query</a>
 
 
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -48,39 +49,57 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/static_range_inversions_query"
 
 #include "../library/template/template.cpp"
 
 #include "../library/datastructure/BIT.cpp"
+#include "../library/others/mo.cpp"
 
 int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	BIT<ll> bit(n);
-	rep(i, n) {
-		ll a;
-		scanf("%lld", &a);
-		bit.add(i, a);
-	}
-	while (q--) {
-		ll t, a, b;
-		scanf("%lld%lld%lld", &t, &a, &b);
-		if (t)printf("%lld\n", bit.sum(a, b));
-		else bit.add(a, b);
-	}
+	vector<int> a(n);
+	rep(i, n) scanf("%d", &a[i]);
+	vector<int> as = a;
+	sort(all(as));
+	as.erase(unique(all(as)), as.end());
+	ll siz = as.size();
+	rep(i, n)a[i] = distance(as.begin(), lower_bound(all(as), a[i]));
+	BIT<ll> bit(siz);
+	auto add_left = [&](const int& idx, ll& ret) {
+		ret += bit.sum(0, a[idx]);
+		bit.add(a[idx], 1ll);
+	};
+	auto add_right = [&](const int& idx, ll& ret) {
+		ret += bit.sum(a[idx] + 1, siz);
+		bit.add(a[idx], 1ll);
+	};
+	auto del_left = [&](const int& idx, ll& ret) {
+		ret -= bit.sum(0, a[idx]);
+		bit.add(a[idx], -1ll);
+	};
+	auto del_right = [&](const int& idx, ll& ret) {
+		ret -= bit.sum(a[idx] + 1, siz);
+		bit.add(a[idx], -1ll);
+	};
+	auto rem = [](const int& idx, vector<ll>& ans, const ll& ret) {ans[idx] = ret; };
+	mo<decltype(add_left), decltype(del_left), decltype(rem), decltype(add_right), decltype(del_right), ll> m(n, q);
+	m.allrun(false, add_left, add_right, del_left, del_right, rem);
+	rep(i, q)printf("%lld\n", m[i]);
 
 	Please AC;
 }
+
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/BIT_yosupo-judge.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
+#line 1 "kyopro/test/mo_yosupo-judge.test.cpp"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/static_range_inversions_query"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -201,7 +220,7 @@ inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/BIT_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/mo_yosupo-judge.test.cpp"
 
 #line 1 "kyopro/library/datastructure/BIT.cpp"
 /*
@@ -243,24 +262,103 @@ struct BIT {
 		for (++n; n < siz; n += LSB(n))tree[n] += x;
 	}
 };
-#line 6 "kyopro/test/BIT_yosupo-judge.test.cpp"
+#line 1 "kyopro/library/others/mo.cpp"
+﻿/*
+* @title Mo's Algorithm
+* @docs kyopro/docs/mo.md
+*/
+
+template<typename ADD_LEFT, typename DEL_LEFT, typename REM, typename ADD_RIGHT = ADD_LEFT, typename DEL_RIGHT = DEL_LEFT, typename T = int>
+struct mo {
+	int sqn, q, l, r, p;
+	T ret;
+	vector<tuple<int, int, int>> query;
+	vector<T> ans;
+
+	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
+
+	inline void insert(const int& l, const int& r) {
+		query[p] = { l, r, p++ };
+	}
+
+	inline void read(const bool& oneindexed) {
+		for (auto& [left, right, idx] : query) {
+			scanf("%d%d", &left, &right);
+			if (oneindexed)--left;
+			idx = p++;
+		}
+	}
+
+	void build() {
+		sort(all(query), [&](const tuple<int, int, int>& a, const tuple<int, int, int>& b) {
+			if (get<0>(a) / sqn != get<0>(b) / sqn)return get<0>(a) < get<0>(b);
+			return get<1>(a) < get<1>(b);
+			});
+	}
+
+	void run(const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {
+		for (const auto& [ql, qr, qo] : query) {
+			while (l > ql)add_left(--l, ret);
+			while (r < qr)add_right(r++, ret);
+			while (l < ql)del_left(l++, ret);
+			while (r > qr)del_right(--r, ret);
+			rem(qo, ans, ret);
+		}
+	}
+
+	void run(const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {
+		run(add, add, del, del, rem);
+	}
+
+	T operator [](const int& idx) {
+		return ans[idx];
+	}
+
+	void allrun(const bool& oneindexed, const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {
+		read(oneindexed);
+		build();
+		run(add_left, add_right, del_left, del_right, rem);
+	}
+
+	void allrun(const bool& oneindexed, const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {
+		allrun(oneindexed, add, add, del, del, rem, rem);
+	}
+
+};
+#line 7 "kyopro/test/mo_yosupo-judge.test.cpp"
 
 int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	BIT<ll> bit(n);
-	rep(i, n) {
-		ll a;
-		scanf("%lld", &a);
-		bit.add(i, a);
-	}
-	while (q--) {
-		ll t, a, b;
-		scanf("%lld%lld%lld", &t, &a, &b);
-		if (t)printf("%lld\n", bit.sum(a, b));
-		else bit.add(a, b);
-	}
+	vector<int> a(n);
+	rep(i, n) scanf("%d", &a[i]);
+	vector<int> as = a;
+	sort(all(as));
+	as.erase(unique(all(as)), as.end());
+	ll siz = as.size();
+	rep(i, n)a[i] = distance(as.begin(), lower_bound(all(as), a[i]));
+	BIT<ll> bit(siz);
+	auto add_left = [&](const int& idx, ll& ret) {
+		ret += bit.sum(0, a[idx]);
+		bit.add(a[idx], 1ll);
+	};
+	auto add_right = [&](const int& idx, ll& ret) {
+		ret += bit.sum(a[idx] + 1, siz);
+		bit.add(a[idx], 1ll);
+	};
+	auto del_left = [&](const int& idx, ll& ret) {
+		ret -= bit.sum(0, a[idx]);
+		bit.add(a[idx], -1ll);
+	};
+	auto del_right = [&](const int& idx, ll& ret) {
+		ret -= bit.sum(a[idx] + 1, siz);
+		bit.add(a[idx], -1ll);
+	};
+	auto rem = [](const int& idx, vector<ll>& ans, const ll& ret) {ans[idx] = ret; };
+	mo<decltype(add_left), decltype(del_left), decltype(rem), decltype(add_right), decltype(del_right), ll> m(n, q);
+	m.allrun(false, add_left, add_right, del_left, del_right, rem);
+	rep(i, q)printf("%lld\n", m[i]);
 
 	Please AC;
 }

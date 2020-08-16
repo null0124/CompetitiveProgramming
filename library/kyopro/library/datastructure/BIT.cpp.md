@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#2b68642ad9f56b522be9061078c930ba">kyopro/library/datastructure</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/datastructure/BIT.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-19 18:09:31+09:00
+    - Last commit date: 2020-08-16 22:28:59+09:00
 
 
 
@@ -68,6 +68,7 @@ ${\rm O}(N \log N)$
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/BIT_yosupo-judge.test.cpp.html">kyopro/test/BIT_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 
 
 ## Code
@@ -104,7 +105,7 @@ struct BIT {
 
 
 	//[i, j) の sum を返す/0-indexed
-	T sum(int i, int j) {;
+	T sum(int i, int j) {
 		return sum(j) - sum(i);
 	}
 
@@ -151,7 +152,7 @@ struct BIT {
 
 
 	//[i, j) の sum を返す/0-indexed
-	T sum(int i, int j) {;
+	T sum(int i, int j) {
 		return sum(j) - sum(i);
 	}
 

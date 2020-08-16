@@ -96,7 +96,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
 * :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
-* :warning: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
+* :heavy_check_mark: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
 * :heavy_check_mark: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
 
 
@@ -119,6 +119,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>

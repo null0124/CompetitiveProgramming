@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LIS_dp_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-14 03:45:21+09:00
+    - Last commit date: 2020-08-16 22:28:59+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D</a>
@@ -112,15 +112,15 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
-/*
-多倍長整数, cpp_intで宣言
-#include <boost/multiprecision/cpp_int.hpp>
-using namespace boost::multiprecision;
-*/
 
-//#pragma gcc target ("avx2")
-//#pragma gcc optimization ("o3")
-//#pragma gcc optimization ("unroll-loops")
+////多倍長整数, cpp_intで宣言
+//#include <boost/multiprecision/cpp_int.hpp>
+//using namespace boost::multiprecision;
+
+//#pragma GCC target ("avx2")
+//#pragma GCC optimization ("O3")
+//#pragma GCC optimization ("unroll-loops")
+//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -140,16 +140,15 @@ using namespace boost::multiprecision;
 #define inf numeric_limits<double>::infinity();
 #define linf numeric_limits<long double>::infinity()
 
-
 using ll = long long;
 using ull = unsigned long long;
 
 constexpr int INF = 1073741823;
 constexpr int MINF = -1073741823;
 constexpr ll LINF = ll(4661686018427387903);
-constexpr ll MOD = 1000000007;
+constexpr ll MOD = 1e9 + 7;
 constexpr ll mod = 998244353;
-constexpr long double eps = 1e-9;
+constexpr long double eps = 1e-6;
 const long double PI = acosl(-1.0L);
 
 using namespace std;
@@ -175,6 +174,7 @@ void scanc(char& str) {
 	str = c;
 }
 
+
 double acot(double x) {
 	return PI / 2 - atan(x);
 }
@@ -182,13 +182,13 @@ double acot(double x) {
 ll LSB(ll n) { return (n & (-n)); }
 
 template<typename T>
-T chmin(T& a, const T& b) {
+inline T chmin(T& a, const T& b) {
 	if (a > b)a = b;
 	return a;
 }
 
 template<typename T>
-T chmax(T& a, const T& b) {
+inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
