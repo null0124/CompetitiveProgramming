@@ -27,7 +27,7 @@ struct BIT {
 
 
 	//[i, j) の sum を返す/0-indexed
-	T sum(int i, int j) {;
+	T sum(int i, int j) {
 		return sum(j) - sum(i);
 	}
 

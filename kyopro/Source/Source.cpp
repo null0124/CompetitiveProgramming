@@ -35,9 +35,10 @@ Be accepted!
 //#include <boost/multiprecision/cpp_int.hpp>
 //using namespace boost::multiprecision;
 
-//#pragma gcc target ("avx2")
-//#pragma gcc optimization ("o3")
-//#pragma gcc optimization ("unroll-loops")
+//#pragma GCC target ("avx2")
+#pragma GCC optimization ("Ofast")
+#pragma GCC optimization ("unroll-loops")
+//#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
 #define printynl(a) printf(a ? "yes\n" : "no\n")
@@ -99,13 +100,13 @@ double acot(double x) {
 ll LSB(ll n) { return (n & (-n)); }
 
 template<typename T>
-T chmin(T& a, const T& b) {
+inline T chmin(T& a, const T& b) {
 	if (a > b)a = b;
 	return a;
 }
 
 template<typename T>
-T chmax(T& a, const T& b) {
+inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
