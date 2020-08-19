@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/segtree_yosupo-judge.test.cpp
+# :x: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-19 22:19:24+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
+* see: <a href="https://judge.yosupo.jp/problem/range_kth_smallest">https://judge.yosupo.jp/problem/range_kth_smallest</a>
 
 
 ## Depends on
 
 * :question: <a href="../../../library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/others/modint.cpp.html">modint</a>
+* :question: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -49,39 +49,45 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
 #include "../library/template/template.cpp"
 
-#include "../library/others/modint.cpp"
 #include "../library/datastructure/segtree.cpp"
-
-using Modint = modint<998244353>;
+#include "../library/others/mo.cpp"
 
 int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
-	rep(i, n) {
-		int a, b;
-		scanf("%d%d", &a, &b);
-		tree.set(i, { a, b });
+	vector<int> a(n), b;
+	rep(i, n)scanf("%d", &a[i]);
+	b = a;
+	sort(all(b));
+	b.erase(unique(all(b)), b.end());
+	rep(i, n)a[i] = distance(b.begin(), lower_bound(all(b), a[i]));
+	segtree<int, decltype(plus<int>())> seg(200001, 0, plus<int>());
+	seg.build();
+	auto f = [](const int& a, const int& b) {return a >= b; };
+	auto f2 = [](const int& a, const int& b) {return a - b; };
+	auto add = [&](const int& idx, int& ret) {
+		seg.update(a[idx], seg[a[idx]] + 1);
+	};
+	auto del = [&](const int& idx, int& ret) {
+		seg.update(a[idx], seg[a[idx]] - 1);
+	};
+	vector<tuple<int, int, int>> query(q);
+	auto rem = [&](const int& num, vector<int>& ans, int& ret) {
+		ans[num] = b[seg.find_left<decltype(f), decltype(f2)>(0, 200001, f, get<2>(query[num]) + 1, f2)];
+	};
+	mo<decltype(add), decltype(del), decltype(rem)> m(n, q);
+	for (auto& [l, r, k] : query) {
+		scanf("%d%d%d", &l, &r, &k);
+		m.insert(l, r);
 	}
-	tree.build();
-	int p, c, d, k;
-	rep(i, q) {
-		scanf("%d%d%d%d", &k, &p, &c, &d);
-		if (k) {
-			Modint x = d;
-			auto f = tree.query(p, c);
-			printf("%d\n", (x * f.first + f.second).val);
-		}
-		else {
-			tree.update(p, { c, d });
-		}
-	}
+	m.build();
+	m.run(add, del, rem);
+	rep(i, q)printf("%d\n", m[i]);
 
 	Please AC;
 }
@@ -91,8 +97,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/segtree_yosupo-judge.test.cpp"
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+#line 1 "kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/range_kth_smallest"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -213,111 +219,8 @@ inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/segtree_yosupo-judge.test.cpp"
+#line 4 "kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp"
 
-#line 1 "kyopro/library/others/modint.cpp"
-﻿/*
-* @title modint
-* @docs kyopro/docs/modint.md
-*/
-
-template<int mod>
-struct modint {
-	int val;
-
-	modint() : val(0) {};
-	modint(ll x) : val(x >= 0 ? x % mod : (mod + x % mod) % mod) {};
-
-	modint& operator=(const modint& x) {
-		val = x.val;
-		return *this;
-	}
-
-	modint& operator+=(const modint& x) {
-		val += x.val;
-		if (val >= mod)val -= mod;
-		return *this;
-	}
-
-	modint& operator-=(const modint& x) {
-		val += mod - x.val;
-		if (val >= mod)val -= mod;
-		return *this;
-	}
-
-	modint& operator*=(const modint& x) {
-		val = (int)((ll)val * (ll)x.val % mod);
-		return *this;
-	}
-
-	modint& operator/=(const modint& x) {
-		int a = x.val, b = mod, u = 1, v = 0, t;
-		while (b > 0) {
-			t = a / b;
-			swap(a -= t * b, b);
-			swap(u -= t * v, v);
-		}
-		*this *= modint(u);
-		return *this;
-	}
-
-	modint operator++() {
-		val = (val + 1 == mod ? 0 : val + 1);
-		return *this;
-	}
-
-	modint operator--() {
-		val = (val == 0 ? mod - 1 : val - 1);
-		return *this;
-	}
-
-	modint operator+(const modint& x) const {
-		return (modint(*this) += x);
-	}
-
-	modint operator-(const modint& x) const {
-		return (modint(*this) -= x);
-	}
-
-	modint operator*(const modint& x) const {
-		return (modint(*this) *= x);
-	}
-
-	modint operator/(const modint& x) const {
-		return (modint(*this) /= x);
-	}
-
-	bool operator==(const modint& x)const {
-		return (val == x.val);
-	}
-
-	bool operator!=(const modint& x)const {
-		return (val != x.val);
-	}
-
-	bool operator<(const modint& x)const {
-		return (val < x.val);
-	}
-
-	bool operator>(const modint& x)const {
-		return (val > x.val);
-	}
-
-	modint pow(ll n) {
-		modint ret(1), a(val);
-		while (n > 0) {
-			if (n % 2) ret *= a;
-			a *= a;
-			n /= 2;
-		}
-		return ret;
-	}
-
-	static int getmod() { return mod; };
-};
-
-using ModInt = modint<MOD>;
-using Modint = modint<mod>;
 #line 1 "kyopro/library/datastructure/segtree.cpp"
 ﻿/*
 * @title segment-tree
@@ -428,34 +331,103 @@ struct segtree {
 	}
 
 };
-#line 7 "kyopro/test/segtree_yosupo-judge.test.cpp"
+#line 1 "kyopro/library/others/mo.cpp"
+﻿/*
+* @title Mo's Algorithm
+* @docs kyopro/docs/mo.md
+*/
 
-using Modint = modint<998244353>;
+template<typename ADD_LEFT, typename DEL_LEFT, typename REM, typename ADD_RIGHT = ADD_LEFT, typename DEL_RIGHT = DEL_LEFT, typename T = int>
+struct mo {
+	int sqn, q, l, r, p;
+	T ret;
+	vector<tuple<int, int, int>> query;
+	vector<T> ans;
+
+	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
+
+	inline void insert(const int& l, const int& r) {
+		query[p] = { l, r, p++ };
+	}
+
+	inline void read(const bool& oneindexed) {
+		for (auto& [left, right, idx] : query) {
+			scanf("%d%d", &left, &right);
+			if (oneindexed)--left;
+			idx = p++;
+		}
+	}
+
+	void build() {
+		sort(all(query), [&](const tuple<int, int, int>& a, const tuple<int, int, int>& b) {
+			if (get<0>(a) / sqn != get<0>(b) / sqn)return get<0>(a) < get<0>(b);
+			return get<1>(a) < get<1>(b);
+			});
+	}
+
+	void run(const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {
+		for (const auto& [ql, qr, qo] : query) {
+			while (l > ql)add_left(--l, ret);
+			while (r < qr)add_right(r++, ret);
+			while (l < ql)del_left(l++, ret);
+			while (r > qr)del_right(--r, ret);
+			rem(qo, ans, ret);
+		}
+	}
+
+	void run(const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {
+		run(add, add, del, del, rem);
+	}
+
+	T operator [](const int& idx) {
+		return ans[idx];
+	}
+
+	void allrun(const bool& oneindexed, const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {
+		read(oneindexed);
+		build();
+		run(add_left, add_right, del_left, del_right, rem);
+	}
+
+	void allrun(const bool& oneindexed, const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {
+		allrun(oneindexed, add, add, del, del, rem, rem);
+	}
+
+};
+#line 7 "kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp"
 
 int main() {
 
 	int n, q;
 	scanf("%d%d", &n, &q);
-	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
-	rep(i, n) {
-		int a, b;
-		scanf("%d%d", &a, &b);
-		tree.set(i, { a, b });
+	vector<int> a(n), b;
+	rep(i, n)scanf("%d", &a[i]);
+	b = a;
+	sort(all(b));
+	b.erase(unique(all(b)), b.end());
+	rep(i, n)a[i] = distance(b.begin(), lower_bound(all(b), a[i]));
+	segtree<int, decltype(plus<int>())> seg(200001, 0, plus<int>());
+	seg.build();
+	auto f = [](const int& a, const int& b) {return a >= b; };
+	auto f2 = [](const int& a, const int& b) {return a - b; };
+	auto add = [&](const int& idx, int& ret) {
+		seg.update(a[idx], seg[a[idx]] + 1);
+	};
+	auto del = [&](const int& idx, int& ret) {
+		seg.update(a[idx], seg[a[idx]] - 1);
+	};
+	vector<tuple<int, int, int>> query(q);
+	auto rem = [&](const int& num, vector<int>& ans, int& ret) {
+		ans[num] = b[seg.find_left<decltype(f), decltype(f2)>(0, 200001, f, get<2>(query[num]) + 1, f2)];
+	};
+	mo<decltype(add), decltype(del), decltype(rem)> m(n, q);
+	for (auto& [l, r, k] : query) {
+		scanf("%d%d%d", &l, &r, &k);
+		m.insert(l, r);
 	}
-	tree.build();
-	int p, c, d, k;
-	rep(i, q) {
-		scanf("%d%d%d%d", &k, &p, &c, &d);
-		if (k) {
-			Modint x = d;
-			auto f = tree.query(p, c);
-			printf("%d\n", (x * f.first + f.second).val);
-		}
-		else {
-			tree.update(p, { c, d });
-		}
-	}
+	m.build();
+	m.run(add, del, rem);
+	rep(i, q)printf("%d\n", m[i]);
 
 	Please AC;
 }

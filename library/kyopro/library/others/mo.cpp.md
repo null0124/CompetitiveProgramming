@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Mo's Algorithm
+# :question: Mo's Algorithm
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -40,6 +40,7 @@ layout: default
 
 ## Verified with
 
+* :x: <a href="../../../../verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 
 
