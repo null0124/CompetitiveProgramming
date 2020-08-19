@@ -36,8 +36,8 @@ Be accepted!
 //using namespace boost::multiprecision;
 
 //#pragma GCC target ("avx2")
-#pragma GCC optimization ("Ofast")
-#pragma GCC optimization ("unroll-loops")
+//#pragma GCC optimization ("Ofast")
+//#pragma GCC optimization ("unroll-loops")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
