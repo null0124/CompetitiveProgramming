@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: Mo's Algorithm
+# :heavy_check_mark: Mo's Algorithm
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#3f8f1932cca0dd85953a1d1a98528004">kyopro/library/others</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/others/mo.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+    - Last commit date: 2020-08-21 21:46:23+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../../verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 
 
@@ -64,7 +64,8 @@ struct mo {
 	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
 
 	inline void insert(const int& l, const int& r) {
-		query[p] = { l, r, p++ };
+		query[p] = { l, r, p };
+		++p;
 	}
 
 	inline void read(const bool& oneindexed) {
@@ -133,7 +134,8 @@ struct mo {
 	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
 
 	inline void insert(const int& l, const int& r) {
-		query[p] = { l, r, p++ };
+		query[p] = { l, r, p };
+		++p;
 	}
 
 	inline void read(const bool& oneindexed) {

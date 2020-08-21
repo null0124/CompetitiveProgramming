@@ -54,7 +54,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
-* :question: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
+* :heavy_check_mark: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
 * :heavy_check_mark: <a href="library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
 
@@ -96,7 +96,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
 * :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
-* :question: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
+* :heavy_check_mark: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
 * :heavy_check_mark: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
 
 
@@ -104,7 +104,7 @@ layout: default
 
 ### kyopro/library/template
 
-* :question: <a href="library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Verify Files
@@ -113,7 +113,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
-* :x: <a href="verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/cumulative-sum_yosupo-judge.test.cpp.html">kyopro/test/cumulative-sum_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/mo_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+    - Last commit date: 2020-08-21 21:46:23+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/static_range_inversions_query">https://judge.yosupo.jp/problem/static_range_inversions_query</a>
@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
-* :question: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -278,7 +278,8 @@ struct mo {
 	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
 
 	inline void insert(const int& l, const int& r) {
-		query[p] = { l, r, p++ };
+		query[p] = { l, r, p };
+		++p;
 	}
 
 	inline void read(const bool& oneindexed) {
