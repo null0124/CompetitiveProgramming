@@ -13,7 +13,8 @@ struct mo {
 	mo(const int& n, const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}
 
 	inline void insert(const int& l, const int& r) {
-		query[p] = { l, r, p++ };
+		query[p] = { l, r, p };
+		++p;
 	}
 
 	inline void read(const bool& oneindexed) {
