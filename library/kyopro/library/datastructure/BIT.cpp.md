@@ -46,9 +46,9 @@ layout: default
 構造体  
 
 #### 宣言
-BIT<$T$> bit($N$);  
+BIT<$T$> bit($n$);  
 $T$: 型  
-$N$: 大きさ  
+$n$: 大きさ  
 
 #### 一点更新
 bit.add($i, a$)  
@@ -61,7 +61,7 @@ bit.sum($l, r$)
 
 ### 計算量
 - 一点更新・区間取得  
-${\rm O}(N \log N)$  
+${\rm O}(n \log n)$  
 
 
 
