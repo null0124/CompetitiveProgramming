@@ -1,0 +1,1 @@
+﻿//https://drken1215.hatenablog.com/entry/2018/09/24/194500

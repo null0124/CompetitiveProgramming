@@ -151,6 +151,9 @@
     <ClCompile Include="test\binary_search_on_segtree_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\math\fast-prime_factor.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
