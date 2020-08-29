@@ -330,6 +330,7 @@
     <None Include="docs\dijkstra_path.md" />
     <None Include="docs\doubling.md" />
     <None Include="docs\eulertour.md" />
+    <None Include="docs\fast-prime_factor.md" />
     <None Include="docs\gcd_lcm.md" />
     <None Include="docs\graph_template.md" />
     <None Include="docs\kth-shortest-path_yen.md" />

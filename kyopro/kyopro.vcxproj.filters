@@ -181,5 +181,6 @@
     <None Include="docs\topological_sort.md" />
     <None Include="docs\comb.md" />
     <None Include="docs\mo.md" />
+    <None Include="docs\fast-prime_factor.md" />
   </ItemGroup>
 </Project>
