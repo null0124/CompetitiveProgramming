@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/unionfind_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+    - Last commit date: 2020-08-30 03:39:02+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -205,10 +205,10 @@ inline T chmax(T& a, const T& b) {
 
 //0-indexed
 struct unionfind {
-	vector<ll> par, siz;
+	vector<int> par, siz;
 
-	unionfind(ll n) : par(n), siz(n) {
-		for (ll i = 0; i < n; ++i) {
+	unionfind(int n) : par(n), siz(n) {
+		for (int i = 0; i < n; ++i) {
 			//全部根で初期化
 			par[i] = i;
 			//サイズは1
@@ -216,10 +216,10 @@ struct unionfind {
 		}
 	}
 
-	void init(ll n) {
+	void init(int n) {
 		par.resize(n);
 		siz.resize(n);
-		for (ll i = 0; i < n; ++i) {
+		for (int i = 0; i < n; ++i) {
 			//全部根で初期化
 			par[i] = i;
 			//サイズは1
@@ -228,13 +228,13 @@ struct unionfind {
 	}
 
 	//根を返す
-	ll find(ll a) {
+	int find(int a) {
 		return par[a] == a ? a : par[a] = find(par[a]);
 	}
 
 	//くっつける。元から同じだったらfalseを返す
-	bool unite(ll a, ll b) {
-		ll x = find(a), y = find(b);
+	bool unite(int a, int b) {
+		int x = find(a), y = find(b);
 		if (x == y)return false;
 		else if (siz[x] < siz[y]) {
 			par[x] = y;
@@ -252,20 +252,20 @@ struct unionfind {
 	}
 
 	//同じ集合か判定する
-	bool same(ll a, ll b) {
+	bool same(int a, int b) {
 		return find(a) == find(b);
 	}
 
 	//サイズを返す
-	ll size(ll a) {
+	int size(int a) {
 		return siz[find(a)];
 	}
 
 	//同じ集合に属す葉を纏めて返す
-	vector<ll> leaf(ll a) {
-		vector<ll> x;
-		ll n = par.size();
-		for (ll i = 0; i < n; ++i)if (same(a, i))x.push_back(i);
+	vector<int> leaf(int a) {
+		vector<int> x;
+		int n = par.size();
+		for (int i = 0; i < n; ++i)if (same(a, i))x.push_back(i);
 		return x;
 	}
 
