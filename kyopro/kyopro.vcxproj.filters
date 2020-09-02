@@ -145,6 +145,15 @@
     <ClCompile Include="test\lazysegtree_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="test\mo_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\binary_search_on_segtree_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\math\fast-prime_factor.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -172,5 +181,6 @@
     <None Include="docs\topological_sort.md" />
     <None Include="docs\comb.md" />
     <None Include="docs\mo.md" />
+    <None Include="docs\fast-prime_factor.md" />
   </ItemGroup>
 </Project>
