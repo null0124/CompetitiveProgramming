@@ -45,7 +45,7 @@ layout: default
 
 ### kyopro/library/algorithm
 
-* :x: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
+* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
 
 
 <div id="2b68642ad9f56b522be9061078c930ba"></div>
@@ -72,14 +72,14 @@ layout: default
 
 * :heavy_check_mark: <a href="library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
-* :x: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
-* :question: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
 * :heavy_check_mark: <a href="library/kyopro/library/graph/scc.cpp.html">strongly connected components(強連結成分分解)</a>
 * :warning: <a href="library/kyopro/library/graph/topological_sort.cpp.html">topological-sort</a>
-* :x: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
+* :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
 
 
 <div id="ba3c8997ace2fe23a0c99dabed45cad7"></div>
@@ -88,7 +88,7 @@ layout: default
 
 * :warning: <a href="library/kyopro/library/math/Comb.cpp.html">combination</a>
 * :warning: <a href="library/kyopro/library/math/fast-prime_factor.cpp.html">高速素因数分解</a>
-* :x: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
+* :heavy_check_mark: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
 * :warning: <a href="library/kyopro/library/math/prime_factor.cpp.html">kyopro/library/math/prime_factor.cpp</a>
 
 
@@ -106,7 +106,7 @@ layout: default
 
 ### kyopro/library/template
 
-* :question: <a href="library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Verify Files
@@ -114,20 +114,20 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/BIT_yosupo-judge.test.cpp.html">kyopro/test/BIT_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
-* :x: <a href="verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/cumulative-sum_yosupo-judge.test.cpp.html">kyopro/test/cumulative-sum_yosupo-judge.test.cpp</a>
-* :x: <a href="verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
-* :x: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
-* :x: <a href="verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
 
 

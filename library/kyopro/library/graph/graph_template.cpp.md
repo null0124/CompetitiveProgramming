@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: template(graph)
+# :heavy_check_mark: template(graph)
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -42,7 +42,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
-* :x: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>

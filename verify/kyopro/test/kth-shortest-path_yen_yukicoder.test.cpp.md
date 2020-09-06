@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/LIS_dp_aoj.test.cpp
+# :heavy_check_mark: kyopro/test/LIS_dp_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code

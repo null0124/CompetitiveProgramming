@@ -37,7 +37,7 @@ layout: default
 
 
 ﻿
-## なに
+## 説明
 splay tree 
 
 ## 使い方
