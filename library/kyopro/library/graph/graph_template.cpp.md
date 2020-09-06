@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: template(graph)
+# :question: template(graph)
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -47,6 +47,8 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_aoj.test.cpp.html">kyopro/test/scc_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/tree-diameter_aoj.test.cpp.html">kyopro/test/tree-diameter_aoj.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/tree-diameter_yosupo-judge.test.cpp.html">kyopro/test/tree-diameter_yosupo-judge.test.cpp</a>
 
 
 ## Code

@@ -25,23 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/LCA_weighted_yukicoder.test.cpp
+# :heavy_check_mark: kyopro/test/tree-diameter_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 14:13:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/tree-diameter_aoj.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-07 03:43:07+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A">https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
 * :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :question: <a href="../../../library/kyopro/library/graph/tree-diameter.cpp.html">tree diameter(木の直径)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -50,41 +49,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
+﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A"
 
 #include "../library/template/template.cpp"
+
 #include "../library/graph/graph_template.cpp"
-
-#include "../library/datastructure/sparsetable.cpp"
-
-#include "../library/graph/LCA_weighted.cpp"
+#include "../library/graph/tree-diameter.cpp"
 
 int main() {
 
-	int n, q;
+	int n;
 	scanf("%d", &n);
-	graph tree(n, false, true);
-	tree.read(n - 1, true);
-	LCA lca(tree, n, 0);
-	int v, p;
-	scanf("%d", &q);
-	rep(i, q) {
-		scanf("%d%d", &p, &v);
-		--p, --v;
-		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
-	}
+	graph<int> g(n, false, true);
+	g.read(n - 1, false);
+	int ans = 0;
+	diameter(g, ans);
+	printf("%d\n", ans);
 
 	Please AC;
 }
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
+#line 1 "kyopro/test/tree-diameter_aoj.test.cpp"
+﻿#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -204,6 +195,8 @@ inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
+#line 4 "kyopro/test/tree-diameter_aoj.test.cpp"
+
 #line 1 "kyopro/library/graph/graph_template.cpp"
 ﻿/*
 * @title template(graph)
@@ -266,135 +259,51 @@ struct graph {
 	}
 
 };
-#line 5 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-
-#line 1 "kyopro/library/datastructure/sparsetable.cpp"
-/*
-* @title sparse-table
-* @docs kyopro/docs/sparsetable.md
-*/
-
-//RMQ <O(n log n), O(1)>
-template<typename T>
-struct sparsetable {
-
-	vector<vector<T>> table;
-	vector<int> logtable;
-	vector<int> a;
-	int n;
-
-	// 渡す配列, サイズ
-	sparsetable(const vector<T> a, int siz) : n(siz), a(a) {
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
-	}
-
-	//リストバージョン
-	sparsetable(initializer_list<T> init) {
-		a = init[0];
-		n = init[1];
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
-	}
-
-	//配列と大きさを渡して初期化
-	void init(const vector<T> aa, int siz) {
-		a = aa;
-		n = siz;
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
-	}
-
-	//構築 O(n log n)
-	void build() {
-		for (int k = 0; (1 << k) <= n; ++k) {
-			for (int i = 0; i + (1 << k) <= n; ++i) {
-				if (k) table[i][k] = (a[table[i][k - 1]] < a[table[i + (1 << (k - 1))][k - 1]] ? table[i][k - 1] : table[i + (1 << (k - 1))][k - 1]);
-				else table[i][k] = i;
-			}
-		}
-	}
-
-	//[l, r) の RMQ O(1)
-	int query(int l, int r) {
-		int k = logtable[r - l];
-		return (a[table[l][k]] < a[table[r - (1 << k)][k]] ? table[l][k] : table[r - (1 << k)][k]);
-	}
-
-};
-
-#line 7 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-
-#line 1 "kyopro/library/graph/LCA_weighted.cpp"
+#line 1 "kyopro/library/graph/tree-diameter.cpp"
 ﻿/*
-* @title lowest-common-ancestor(weighted)
-* @docs kyopro/docs/LCA_weighted.md
+* @title tree diameter(木の直径)
+* @docs kyopro/docs/tree-diameter.md
 */
 
-//重み付き
-
-template<typename T>
-void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
-	depth.emplace_back(d);
-	vs.emplace_back(now);
-	id[now] = min(id[now], cnt);
-	for (const auto& aa : graph[now]) {
-		if (aa.to != bef) {
-			++cnt;
-			eulertour(aa.to, now, cnt, graph, d + aa.cost, vs, depth, id);
-			++cnt;
-			depth.emplace_back(d);
-			vs.emplace_back(now);
-		}
-	}
+template<typename T = int>
+void diameter1(graph<T>& g, const int& cur, const int& bef, const T& cnt, T& ma, int& idx) {
+	if (cnt > ma)ma = cnt, idx = cur;
+	for (const auto& aa : g[cur]) if (aa.to != bef)diameter1<T>(g, aa.to, cur, cnt + aa.cost, ma, idx);
 }
 
-template<typename T>
-struct LCA {
-
-	vector<int> vs, depth, id, tmp = { 0 };
-	graph<T> tree;
-	sparsetable<int> table{ tmp, 0 };
-	int n, root;
-
-	//木,　大きさ, 根
-	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
-		id.assign(n, INF);
-		int cnt = 0, d = 0;
-		eulertour(root, -1, cnt, tree, d, vs, depth, id);
-		table.init(depth, depth.size());
-		table.build();
+template<typename T = int>
+void diameter2(graph<T>& g, const int& cur, const int& bef, vector<int>& ret, vector<int>& route, const T& cnt, T& cost) {
+	route.emplace_back(cur);
+	if (g[cur].size() == 1 and cost < cnt) {
+		cost = cnt;
+		ret = route;
 	}
+	for (const auto& aa : g[cur])if (aa.to != bef)diameter2<T>(g, aa.to, cur, ret, route, cnt + aa.cost, cost);
+	route.pop_back();
+}
 
-	//LCA である頂点を返す
-	int query(int l, int r) {
-		if (id[l] > id[r])swap(l, r);
-		return vs[table.query(id[l], id[r] + 1)];
-	}
-
-	int depthq(int n) {
-		return depth[id[n]];
-	}
-};
-#line 9 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
+template<typename T = int>
+vector<int> diameter(graph<T>& g, T& cost, const int& cur = 0) {
+	T ma = 0;
+	int idx = cur;
+	diameter1<T>(g, cur, -1, (T)0, ma, idx);
+	ma = 0;
+	vector<int> ret, route;
+	diameter2<T>(g, idx, -1, ret, route, 0, cost);
+	reverse(all(ret));
+	return ret;
+}
+#line 7 "kyopro/test/tree-diameter_aoj.test.cpp"
 
 int main() {
 
-	int n, q;
+	int n;
 	scanf("%d", &n);
-	graph tree(n, false, true);
-	tree.read(n - 1, true);
-	LCA lca(tree, n, 0);
-	int v, p;
-	scanf("%d", &q);
-	rep(i, q) {
-		scanf("%d%d", &p, &v);
-		--p, --v;
-		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
-	}
+	graph<int> g(n, false, true);
+	g.read(n - 1, false);
+	int ans = 0;
+	diameter(g, ans);
+	printf("%d\n", ans);
 
 	Please AC;
 }
