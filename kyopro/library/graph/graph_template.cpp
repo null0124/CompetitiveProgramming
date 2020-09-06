@@ -51,7 +51,7 @@ struct graph {
 		while (e--) {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
-				scanf(format, &c);
+				scanf(format.c_str(), &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);
