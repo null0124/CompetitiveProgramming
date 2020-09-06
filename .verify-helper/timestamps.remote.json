@@ -6,5 +6,11 @@
 "kyopro/test/cumulative-sum_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp": "2020-09-06 14:13:21 +0900",
-"kyopro/test/lazysegtree_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900"
+"kyopro/test/lazysegtree_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/mo_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/scc_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/segtree_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/sparsetable_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/template_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/unionfind_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900"
 }
