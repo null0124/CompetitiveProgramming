@@ -45,7 +45,7 @@ struct graph {
 		}
 	}
 
-	void read(int e, bool one_indexed, const string &format) {
+	void read(int e, bool one_indexed, const string& format) {
 		int a, b;
 		T c = T(1);
 		while (e--) {

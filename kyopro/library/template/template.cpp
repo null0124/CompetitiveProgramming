@@ -98,7 +98,6 @@ void scanc(char& str) {
 	str = c;
 }
 
-
 double acot(double x) {
 	return PI / 2 - atan(x);
 }
