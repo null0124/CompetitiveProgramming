@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: strongly connected components(強連結成分分解)
+# :heavy_check_mark: strongly connected components(強連結成分分解)
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../../verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
 
 
 ## Code

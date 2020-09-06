@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: binary-indexed-tree
+# :heavy_check_mark: binary-indexed-tree
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -68,7 +68,7 @@ ${\rm O}(n \log n)$
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/BIT_yosupo-judge.test.cpp.html">kyopro/test/BIT_yosupo-judge.test.cpp</a>
-* :x: <a href="../../../../verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
 
 
 ## Code

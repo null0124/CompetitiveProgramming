@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/sparsetable_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/sparsetable_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 

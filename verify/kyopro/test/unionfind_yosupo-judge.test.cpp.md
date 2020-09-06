@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: kyopro/test/unionfind_yosupo-judge.test.cpp
+# :heavy_check_mark: kyopro/test/unionfind_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
