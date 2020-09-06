@@ -25,23 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/LCA_weighted_yukicoder.test.cpp
+# :x: kyopro/test/scc_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LCA_weighted_yukicoder.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/scc_yosupo-judge.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-09-06 14:13:21+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1094">https://yukicoder.me/problems/no/1094</a>
+* see: <a href="https://judge.yosupo.jp/problem/scc">https://judge.yosupo.jp/problem/scc</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
 * :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :x: <a href="../../../library/kyopro/library/graph/scc.cpp.html">strongly connected components(強連結成分分解)</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
@@ -50,41 +49,38 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #include "../library/template/template.cpp"
+
 #include "../library/graph/graph_template.cpp"
-
-#include "../library/datastructure/sparsetable.cpp"
-
-#include "../library/graph/LCA_weighted.cpp"
+#include "../library/graph/scc.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d", &n);
-	graph tree(n, false, true);
-	tree.read(n - 1, true);
-	LCA lca(tree, n, 0);
-	int v, p;
-	scanf("%d", &q);
-	rep(i, q) {
-		scanf("%d%d", &p, &v);
-		--p, --v;
-		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
+	int n, m;
+	scanf("%d%d", &n, &m);
+	graph<int> g(n, true, false);
+	g.read(m, false);
+	stronglyconnectedcomponents s(n, g);
+	s.build();
+	printf("%d", s.size());
+	for (const auto& aa : s.vert) {
+		printf("\n%d", aa.size());
+		for (const auto& aaa : aa)printf(" %d", aaa);
 	}
+	puts("");
 
 	Please AC;
 }
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-﻿#define PROBLEM "https://yukicoder.me/problems/no/1094"
+#line 1 "kyopro/test/scc_yosupo-judge.test.cpp"
+﻿#define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -204,6 +200,8 @@ inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
+#line 4 "kyopro/test/scc_yosupo-judge.test.cpp"
+
 #line 1 "kyopro/library/graph/graph_template.cpp"
 ﻿/*
 * @title template(graph)
@@ -266,135 +264,97 @@ struct graph {
 	}
 
 };
-#line 5 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-
-#line 1 "kyopro/library/datastructure/sparsetable.cpp"
-/*
-* @title sparse-table
-* @docs kyopro/docs/sparsetable.md
+#line 1 "kyopro/library/graph/scc.cpp"
+﻿/*
+* @title strongly connected components(強連結成分分解)
+* @docs kyopro/docs/scc.md
 */
 
-//RMQ <O(n log n), O(1)>
-template<typename T>
-struct sparsetable {
+template<typename T = int>
+struct stronglyconnectedcomponents {
 
-	vector<vector<T>> table;
-	vector<int> logtable;
-	vector<int> a;
-	int n;
+	int n, cur = 0;
+	//g: 元のグラフ, gg: 逆張りグラフ, cg: 強連結成分で圧縮したグラフ, sg: 強連結成分だけのグラフ
+	graph<T> g, cg, sg, gg;
+	vector<int> num, siz;
+	vector<vector<int>> vert;
 
-	// 渡す配列, サイズ
-	sparsetable(const vector<T> a, int siz) : n(siz), a(a) {
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
+	stronglyconnectedcomponents(const int& n, graph<T>& g) : n(n), g(g), cg(n, g.directed, g.weighted), sg(n, g.directed, g.weighted), gg(n, g.directed, g.weighted), num(n) {
+		rep(i, n) for (const auto& aa : g[i])gg.add_edge(aa.to, aa.from, aa.cost);
 	}
 
-	//リストバージョン
-	sparsetable(initializer_list<T> init) {
-		a = init[0];
-		n = init[1];
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
+	void dfs(const int& now, stack<int>& st, vector<bool>& visited) {
+		visited[now] = true;
+		for (const auto& aa : g[now])if (not visited[aa.to])dfs(aa.to, st, visited);
+		st.push(now);
 	}
 
-	//配列と大きさを渡して初期化
-	void init(const vector<T> aa, int siz) {
-		a = aa;
-		n = siz;
-		logtable.assign(n + 1, 0);
-		for (int i = 2; i <= n; ++i)logtable[i] = logtable[i >> 1] + 1;
-		table.assign(n, vector<T>(logtable[n] + 1, 0));
-	}
-
-	//構築 O(n log n)
 	void build() {
-		for (int k = 0; (1 << k) <= n; ++k) {
-			for (int i = 0; i + (1 << k) <= n; ++i) {
-				if (k) table[i][k] = (a[table[i][k - 1]] < a[table[i + (1 << (k - 1))][k - 1]] ? table[i][k - 1] : table[i + (1 << (k - 1))][k - 1]);
-				else table[i][k] = i;
+		stack<int> s, st;
+		vector<bool> visited(n);
+		rep(i, n) {
+			if (not visited[i]) dfs(i, st, visited);
+		}
+		fill(all(visited), false);
+		while (not st.empty()) {
+			int v = st.top();
+			st.pop();
+			if (not visited[v]) {
+				s.push(v);
+				while (not s.empty()) {
+					int ver = s.top();
+					s.pop();
+					num[ver] = cur;
+					for (const auto& aa : gg[ver]) if (not visited[aa.to])s.push(aa.to);
+					visited[ver] = true;
+				}
+				++cur;
+			}
+		}
+		siz.assign(cur, 1);
+		vert.assign(cur, {});
+		fill(all(visited), false);
+		rep(i, n) {
+			if (not visited[i])vert[num[i]].push_back(i);
+			visited[i] = true;
+			for (const auto& aa : g[i]) {
+				if (num[aa.to] == num[i]) {
+					sg.add_edge(aa.from, aa.to, aa.cost);
+					if (not visited[aa.to]) {
+						++siz[num[aa.to]];
+						visited[aa.to] = true;
+						vert[num[i]].push_back(aa.to);
+					}
+				}
+				else {
+					cg.add_edge(num[aa.from], num[aa.to], aa.cost);
+				}
 			}
 		}
 	}
 
-	//[l, r) の RMQ O(1)
-	int query(int l, int r) {
-		int k = logtable[r - l];
-		return (a[table[l][k]] < a[table[r - (1 << k)][k]] ? table[l][k] : table[r - (1 << k)][k]);
-	}
+	int operator[](const int& i) { return num[i]; }
+
+	int size() { return cur; }
+	int size(const int& i) { return siz[i]; }
 
 };
-
-#line 7 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
-
-#line 1 "kyopro/library/graph/LCA_weighted.cpp"
-﻿/*
-* @title lowest-common-ancestor(weighted)
-* @docs kyopro/docs/LCA_weighted.md
-*/
-
-//重み付き
-
-template<typename T>
-void eulertour(const int& now, const int& bef, int& cnt, graph<T>& graph, const int& d, vector<int>& vs, vector<int>& depth, vector<int>& id) {
-	depth.emplace_back(d);
-	vs.emplace_back(now);
-	id[now] = min(id[now], cnt);
-	for (const auto& aa : graph[now]) {
-		if (aa.to != bef) {
-			++cnt;
-			eulertour(aa.to, now, cnt, graph, d + aa.cost, vs, depth, id);
-			++cnt;
-			depth.emplace_back(d);
-			vs.emplace_back(now);
-		}
-	}
-}
-
-template<typename T>
-struct LCA {
-
-	vector<int> vs, depth, id, tmp = { 0 };
-	graph<T> tree;
-	sparsetable<int> table{ tmp, 0 };
-	int n, root;
-
-	//木,　大きさ, 根
-	LCA(graph<T> tree, int n, int root) : tree(tree), n(n), root(root) {
-		id.assign(n, INF);
-		int cnt = 0, d = 0;
-		eulertour(root, -1, cnt, tree, d, vs, depth, id);
-		table.init(depth, depth.size());
-		table.build();
-	}
-
-	//LCA である頂点を返す
-	int query(int l, int r) {
-		if (id[l] > id[r])swap(l, r);
-		return vs[table.query(id[l], id[r] + 1)];
-	}
-
-	int depthq(int n) {
-		return depth[id[n]];
-	}
-};
-#line 9 "kyopro/test/LCA_weighted_yukicoder.test.cpp"
+#line 7 "kyopro/test/scc_yosupo-judge.test.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d", &n);
-	graph tree(n, false, true);
-	tree.read(n - 1, true);
-	LCA lca(tree, n, 0);
-	int v, p;
-	scanf("%d", &q);
-	rep(i, q) {
-		scanf("%d%d", &p, &v);
-		--p, --v;
-		printf("%d\n", lca.depthq(p) + lca.depthq(v) - 2 * lca.depthq(lca.query(p, v)));
+	int n, m;
+	scanf("%d%d", &n, &m);
+	graph<int> g(n, true, false);
+	g.read(m, false);
+	stronglyconnectedcomponents s(n, g);
+	s.build();
+	printf("%d", s.size());
+	for (const auto& aa : s.vert) {
+		printf("\n%d", aa.size());
+		for (const auto& aaa : aa)printf(" %d", aaa);
 	}
+	puts("");
 
 	Please AC;
 }

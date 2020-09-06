@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#051098662d3c936ca870ac78978e978a">kyopro/Source</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/Source/Source.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 21:15:43+09:00
+    - Last commit date: 2020-09-06 14:13:21+09:00
 
 
 
@@ -134,7 +134,6 @@ void scanc(char& str) {
 	}
 	str = c;
 }
-
 
 double acot(double x) {
 	return PI / 2 - atan(x);
@@ -264,7 +263,6 @@ void scanc(char& str) {
 	}
 	str = c;
 }
-
 
 double acot(double x) {
 	return PI / 2 - atan(x);

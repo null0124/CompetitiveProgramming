@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/topological_sort.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-03 02:19:54+09:00
+    - Last commit date: 2020-09-06 14:13:21+09:00
 
 
 
@@ -54,7 +54,7 @@ vector<int> topological_sort(graph<T>& g, const int& v) {
 
 	queue<int> que;
 	rep(i, v) for (const auto& aa : g[i])++in[aa.to];
-	rep(i, v)if (not in[i])que.push(i);
+	rep(i, v) if (not in[i])que.push(i);
 
 	while (not que.empty()) {
 		int top = que.front();
@@ -85,7 +85,7 @@ vector<int> topological_sort(graph<T>& g, const int& v) {
 
 	queue<int> que;
 	rep(i, v) for (const auto& aa : g[i])++in[aa.to];
-	rep(i, v)if (not in[i])que.push(i);
+	rep(i, v) if (not in[i])que.push(i);
 
 	while (not que.empty()) {
 		int top = que.front();

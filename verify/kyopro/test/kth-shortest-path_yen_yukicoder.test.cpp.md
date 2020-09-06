@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+    - Last commit date: 2020-09-06 14:13:21+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1069">https://yukicoder.me/problems/no/1069</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -196,7 +196,6 @@ void scanc(char& str) {
 	str = c;
 }
 
-
 double acot(double x) {
 	return PI / 2 - atan(x);
 }
@@ -262,7 +261,7 @@ struct graph {
 		}
 	}
 
-	void read(int e, bool one_indexed, const string &format) {
+	void read(int e, bool one_indexed, const string& format) {
 		int a, b;
 		T c = T(1);
 		while (e--) {

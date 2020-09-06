@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/mo_yosupo-judge.test.cpp
+# :x: kyopro/test/mo_yosupo-judge.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/mo_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-21 21:46:23+09:00
+    - Last commit date: 2020-09-06 14:13:21+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/static_range_inversions_query">https://judge.yosupo.jp/problem/static_range_inversions_query</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
+* :question: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -201,7 +201,6 @@ void scanc(char& str) {
 	}
 	str = c;
 }
-
 
 double acot(double x) {
 	return PI / 2 - atan(x);

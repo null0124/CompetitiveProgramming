@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/LIS_dp_aoj.test.cpp
+# :x: kyopro/test/LIS_dp_aoj.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/LIS_dp_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 22:28:59+09:00
+    - Last commit date: 2020-09-06 14:13:21+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/1/DPL_1_D</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :x: <a href="../../../library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -173,7 +173,6 @@ void scanc(char& str) {
 	}
 	str = c;
 }
-
 
 double acot(double x) {
 	return PI / 2 - atan(x);

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: longest-increasing-subsequence(dp)
+# :x: longest-increasing-subsequence(dp)
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -59,7 +59,7 @@ ${\rm O}(n \log n)$
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../../verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
+* :x: <a href="../../../../verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
 
 
 ## Code
