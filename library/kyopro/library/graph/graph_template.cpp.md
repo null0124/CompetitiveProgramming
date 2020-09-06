@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: template(graph)
+# :heavy_check_mark: template(graph)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#950d3b5531ccd296b32ebda74bb65534">kyopro/library/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/graph/graph_template.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 14:13:21+09:00
+    - Last commit date: 2020-09-07 03:51:47+09:00
 
 
 
@@ -48,7 +48,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_aoj.test.cpp.html">kyopro/test/scc_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/tree-diameter_aoj.test.cpp.html">kyopro/test/tree-diameter_aoj.test.cpp</a>
-* :x: <a href="../../../../verify/kyopro/test/tree-diameter_yosupo-judge.test.cpp.html">kyopro/test/tree-diameter_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/tree-diameter_yosupo-judge.test.cpp.html">kyopro/test/tree-diameter_yosupo-judge.test.cpp</a>
 
 
 ## Code
@@ -109,7 +109,7 @@ struct graph {
 		while (e--) {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
-				scanf(format, &c);
+				scanf(format.c_str(), &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);
@@ -177,7 +177,7 @@ struct graph {
 		while (e--) {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
-				scanf(format, &c);
+				scanf(format.c_str(), &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);

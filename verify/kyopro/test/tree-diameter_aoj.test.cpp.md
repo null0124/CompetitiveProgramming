@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/tree-diameter_aoj.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-07 03:43:07+09:00
+    - Last commit date: 2020-09-07 03:51:47+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A">https://onlinejudge.u-aizu.ac.jp/problems/GRL_5_A</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
-* :question: <a href="../../../library/kyopro/library/graph/tree-diameter.cpp.html">tree diameter(木の直径)</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/graph/tree-diameter.cpp.html">tree diameter(木の直径)</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
@@ -251,7 +251,7 @@ struct graph {
 		while (e--) {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
-				scanf(format, &c);
+				scanf(format.c_str(), &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);

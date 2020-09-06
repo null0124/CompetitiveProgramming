@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
-* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
