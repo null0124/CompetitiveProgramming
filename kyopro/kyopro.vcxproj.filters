@@ -154,6 +154,24 @@
     <ClCompile Include="library\math\fast-prime_factor.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\graph\scc.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\scc_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\scc_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\graph\tree-diameter.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tree-diameter_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tree-diameter_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -182,5 +200,7 @@
     <None Include="docs\comb.md" />
     <None Include="docs\mo.md" />
     <None Include="docs\fast-prime_factor.md" />
+    <None Include="docs\scc.md" />
+    <None Include="docs\tree-diameter.md" />
   </ItemGroup>
 </Project>

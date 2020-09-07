@@ -9,7 +9,7 @@ vector<int> topological_sort(graph<T>& g, const int& v) {
 
 	queue<int> que;
 	rep(i, v) for (const auto& aa : g[i])++in[aa.to];
-	rep(i, v)if (not in[i])que.push(i);
+	rep(i, v) if (not in[i])que.push(i);
 
 	while (not que.empty()) {
 		int top = que.front();

@@ -45,13 +45,13 @@ struct graph {
 		}
 	}
 
-	void read(int e, bool one_indexed, const string &format) {
+	void read(int e, bool one_indexed, const string& format) {
 		int a, b;
 		T c = T(1);
 		while (e--) {
 			scanf("%d%d", &a, &b);
 			if (weighted) {
-				scanf(format, &c);
+				scanf(format.c_str(), &c);
 			}
 			if (one_indexed)--a, --b;
 			add_edge(a, b, c);
