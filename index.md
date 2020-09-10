@@ -124,6 +124,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
+* :heavy_check_mark: <a href="verify/kyopro/test/scc-cg_aoj.test.cpp.html">kyopro/test/scc-cg_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/scc_aoj.test.cpp.html">kyopro/test/scc_aoj.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
