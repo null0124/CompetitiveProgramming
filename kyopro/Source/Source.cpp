@@ -116,7 +116,7 @@ inline T chmax(T& a, const T& b) {
 
 int main() {
 
-
+	
 
 	Please AC;
 }
