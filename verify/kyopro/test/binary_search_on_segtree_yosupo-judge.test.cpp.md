@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code

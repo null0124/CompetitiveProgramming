@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
 * :heavy_check_mark: <a href="../../../library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code

@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: kyopro/test/segtree_yosupo-judge.test.cpp
+# :x: kyopro/test/vector2D_yukicoder.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#ac19f652707ae266e4690ba676c8f462">kyopro/test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/segtree_yosupo-judge.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 14:13:21+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/kyopro/test/vector2D_yukicoder.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-12 00:22:40+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
+* see: <a href="https://yukicoder.me/problems/no/1144">https://yukicoder.me/problems/no/1144</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
+* :x: <a href="../../../library/kyopro/library/geometry/vector2D.cpp.html">vector(2D)</a>
 * :question: <a href="../../../library/kyopro/library/others/modint.cpp.html">modint</a>
 * :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
@@ -49,39 +49,38 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+﻿#define PROBLEM "https://yukicoder.me/problems/no/1144"
 
 #include "../library/template/template.cpp"
-
 #include "../library/others/modint.cpp"
-#include "../library/datastructure/segtree.cpp"
 
-using Modint = modint<998244353>;
+#include "../library/geometry/vector2D.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d%d", &n, &q);
-	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
+	int n;
+	scanf("%d", &n);
+	vector<pair<int, int>> p(n);
+	for (auto& [x, y] : p) scanf("%d%d", &x, &y);
+	modint<MOD> ans;
+	vector<vector2D> q;
 	rep(i, n) {
-		int a, b;
-		scanf("%d%d", &a, &b);
-		tree.set(i, { a, b });
-	}
-	tree.build();
-	int p, c, d, k;
-	rep(i, q) {
-		scanf("%d%d%d%d", &k, &p, &c, &d);
-		if (k) {
-			Modint x = d;
-			auto f = tree.query(p, c);
-			printf("%d\n", (x * f.first + f.second).val);
+		q.clear();
+		rep(j, n) {
+			if (i == j or p[i] == p[j])continue;
+			else if (p[j].second - p[i].second >= 0)q.emplace_back(vector2D(p[i].first, p[i].second, p[j].first, p[j].second));
+			else q.emplace_back(vector2D(p[i].first, p[i].second, p[j].first, p[j].second) * -1);
 		}
-		else {
-			tree.update(p, { c, d });
+		int m = q.size();
+		vector2D r;
+		sort(all(q), comp);
+		for (int j = m - 1; j >= 0; --j) {
+			r = r + q[j];
+			ans += vectorproduct(q[j], r);
 		}
 	}
+	ans /= 3;
+	printf("%d\n", ans.val);
 
 	Please AC;
 }
@@ -91,8 +90,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "kyopro/test/segtree_yosupo-judge.test.cpp"
-﻿#define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
+#line 1 "kyopro/test/vector2D_yukicoder.test.cpp"
+﻿#define PROBLEM "https://yukicoder.me/problems/no/1144"
 
 #line 1 "kyopro/library/template/template.cpp"
 ﻿/*
@@ -212,8 +211,6 @@ inline T chmax(T& a, const T& b) {
 	if (a < b)a = b;
 	return a;
 }
-#line 4 "kyopro/test/segtree_yosupo-judge.test.cpp"
-
 #line 1 "kyopro/library/others/modint.cpp"
 ﻿/*
 * @title modint
@@ -317,144 +314,82 @@ struct modint {
 
 using ModInt = modint<MOD>;
 using Modint = modint<mod>;
-#line 1 "kyopro/library/datastructure/segtree.cpp"
+#line 5 "kyopro/test/vector2D_yukicoder.test.cpp"
+
+#line 1 "kyopro/library/geometry/vector2D.cpp"
 ﻿/*
-* @title segment-tree
-* @docs kyopro/docs/segtree.md
+* @title vector(2D)
+* @docs kyopro/docs/vector2D.md
 */
 
 
-//セグ木/0-indexed/非再帰/(大きさ, 単位元)で初期化
-template<typename T, typename F>
-struct segtree {
-	//木を配列であらわしたもの
-	vector<T> seg;
-	//木の1/2の大きさ
-	int siz;
-	//単位元
-	const T e;
-	////比較関数の型
-	//using F = function<T(T, T)>;
-	//マージする関数
-	const F f;
 
-	//n の大きさ, a (単位元) で segtree を初期化する
-	segtree(int n, const T a, const F f) : e(a), f(f) {
-		siz = 1;
-		while (siz < n)siz <<= 1;
-		seg.assign(2 * siz - 1, e);
-		--siz;
-	}
+struct vector2D {
 
-	//k (0-indexed) 番目に t を代入
-	void set(int k, const T& t) {
-		seg[k + siz] = t;
-	}
+	ll x, y;
 
-	//f によって木を構築
-	void build() {
-		for (int i = siz - 1; i >= 0; --i) seg[i] = f(seg[i * 2 + 1], seg[i * 2 + 2]);
-	}
+	vector2D(ll x, ll y) : x(x), y(y) {}
+	vector2D(ll stx, ll sty, ll enx, ll eny) : x(enx - stx), y(eny - sty) {}
+	vector2D() : x(0), y(0) {}
 
-	//i 番目の要素を返す
-	T operator[](const int i) {
-		return seg[i + siz];
-	}
-
-	//k 番目の値を a に更新
-	void update(int k, T a) {
-		k += siz;
-		//必要であればここを変える
-		seg[k] = a;
-		while (k > 0) {
-			k = ((k - 1) >> 1);
-			seg[k] = f(seg[k * 2 + 1], seg[k * 2 + 2]);
-		}
-	}
-
-	//[a, b) について f した結果を返す
-	T query(int a, int b) {
-		T l = e, r = e;
-		for (a += siz, b += siz; a < b; a >>= 1, b >>= 1) {
-			if (!(a & 1))l = f(l, seg[a++]);
-			if (!(b & 1))r = f(seg[--b], r);
-		}
-		return f(l, r);
-	}
-
-	//[start, end) について、[l, r) を調べながら k 番目が check を満たすか二分探索 最後が true なら left, false なら right fの逆演算
-	template<typename C, typename FT>
-	int find(const int start, const int end, int l, int r, int k, const C check, T& checknum, const bool b, const FT revf) {
-		//cerr << checknum << '\n';
-		//範囲外またはそこがすでに満たさないとき
-		//cerr << k << ',' << checknum << '\n';
-		if (start <= l && r <= end && !check(seg[k], checknum)) {
-			checknum = revf(checknum, seg[k]);
-			return -1;
-		}
-		if ((r <= start || l >= end)) {
-			return -1;
-		}
-		//既に葉
-		if (k >= siz) {
-			return k - siz;
-		}
-		int res;
-		if (b) {
-			//左側を調べる
-			res = find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
-			//左側が適してたらそれが答え
-			if (res != -1)return (res);
-			return find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
-		}
-		else {
-			//右側を調べる
-			res = find< C, FT >(start, end, ((l + r) >> 1), r, (k << 1) + 2, check, checknum, b, revf);
-			//右側が適してたらそれが答え
-			if (res != -1)return (res);
-			return find< C, FT >(start, end, l, ((l + r) >> 1), (k << 1) + 1, check, checknum, b, revf);
-		}
-	}
-
-	template<typename C, typename FT>
-	int find_left(int start, int end, const C check, T checknum, FT revf) {
-		return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, true, revf);
-	}
-
-	template<typename C, typename FT>
-	int find_right(int start, int end, const C check, T checknum, FT revf) {
-		return find< C, FT >(start, end, 0, siz + 1, 0, check, checknum, false, revf);
-	}
+	vector2D operator+(const vector2D p) { return vector2D(x + p.x, y + p.y); }
+	vector2D operator-(const vector2D p) { return vector2D(x - p.x, y - p.y); }
+	// スカラー倍
+	vector2D operator*(const ll p) { return vector2D(x * p, y * p); }
 
 };
-#line 7 "kyopro/test/segtree_yosupo-judge.test.cpp"
 
-using Modint = modint<998244353>;
+//外積(のスカラ―)
+inline ll vectorproduct(vector2D p, vector2D q) { return abs(p.x * q.y - p.y * q.x); }
+
+//整数のみでの偏角比較関数
+inline bool comp(const vector2D& a, const vector2D& b) {
+	if (a.x == 0 and a.y == 0)return true;
+	else if (b.x == 0 and b.y == 0)return false;
+	else if (a.x < 0) {
+		if (b.x < 0) {
+			return vectorproduct(a, b) > 0;
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		if (b.x < 0) {
+			return true;
+		}
+		else {
+			return vectorproduct(a, b) > 0;
+		}
+	}
+}
+#line 7 "kyopro/test/vector2D_yukicoder.test.cpp"
 
 int main() {
 
-	int n, q;
-	scanf("%d%d", &n, &q);
-	auto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second + y.first * x.second); };
-	segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);
+	int n;
+	scanf("%d", &n);
+	vector<pair<int, int>> p(n);
+	for (auto& [x, y] : p) scanf("%d%d", &x, &y);
+	modint<MOD> ans;
+	vector<vector2D> q;
 	rep(i, n) {
-		int a, b;
-		scanf("%d%d", &a, &b);
-		tree.set(i, { a, b });
-	}
-	tree.build();
-	int p, c, d, k;
-	rep(i, q) {
-		scanf("%d%d%d%d", &k, &p, &c, &d);
-		if (k) {
-			Modint x = d;
-			auto f = tree.query(p, c);
-			printf("%d\n", (x * f.first + f.second).val);
+		q.clear();
+		rep(j, n) {
+			if (i == j or p[i] == p[j])continue;
+			else if (p[j].second - p[i].second >= 0)q.emplace_back(vector2D(p[i].first, p[i].second, p[j].first, p[j].second));
+			else q.emplace_back(vector2D(p[i].first, p[i].second, p[j].first, p[j].second) * -1);
 		}
-		else {
-			tree.update(p, { c, d });
+		int m = q.size();
+		vector2D r;
+		sort(all(q), comp);
+		for (int j = m - 1; j >= 0; --j) {
+			r = r + q[j];
+			ans += vectorproduct(q[j], r);
 		}
 	}
+	ans /= 3;
+	printf("%d\n", ans.val);
 
 	Please AC;
 }

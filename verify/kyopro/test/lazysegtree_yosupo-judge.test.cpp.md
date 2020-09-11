@@ -40,8 +40,8 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/others/modint.cpp.html">modint</a>
-* :heavy_check_mark: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
+* :question: <a href="../../../library/kyopro/library/others/modint.cpp.html">modint</a>
+* :question: <a href="../../../library/kyopro/library/template/template.cpp.html">template</a>
 
 
 ## Code
