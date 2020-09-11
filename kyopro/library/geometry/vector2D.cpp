@@ -3,8 +3,6 @@
 * @docs kyopro/docs/vector2D.md
 */
 
-
-
 struct vector2D {
 
 	ll x, y;
@@ -20,16 +18,15 @@ struct vector2D {
 
 };
 
-//外積(のスカラ―)
 inline ll vectorproduct(vector2D p, vector2D q) { return abs(p.x * q.y - p.y * q.x); }
+inline ll vectorproductcomp(vector2D p, vector2D q) { return p.x * q.y - p.y * q.x; }
 
-//整数のみでの偏角比較関数
 inline bool comp(const vector2D& a, const vector2D& b) {
 	if (a.x == 0 and a.y == 0)return true;
 	else if (b.x == 0 and b.y == 0)return false;
 	else if (a.x < 0) {
 		if (b.x < 0) {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 		else {
 			return false;
@@ -40,7 +37,7 @@ inline bool comp(const vector2D& a, const vector2D& b) {
 			return true;
 		}
 		else {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 	}
 }
