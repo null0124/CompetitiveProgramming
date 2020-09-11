@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :x: vector(2D)
+# :heavy_check_mark: vector(2D)
 
 <a href="../../../../index.html">Back to top page</a>
 
 * category: <a href="../../../../index.html#ca8a31a0bacda461c2e6da1fb48305c8">kyopro/library/geometry</a>
 * <a href="{{ site.github.repository_url }}/blob/master/kyopro/library/geometry/vector2D.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-12 00:22:40+09:00
+    - Last commit date: 2020-09-12 00:34:27+09:00
 
 
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../../verify/kyopro/test/vector2D_yukicoder.test.cpp.html">kyopro/test/vector2D_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/vector2D_yukicoder.test.cpp.html">kyopro/test/vector2D_yukicoder.test.cpp</a>
 
 
 ## Code
@@ -52,8 +52,6 @@ layout: default
 * @title vector(2D)
 * @docs kyopro/docs/vector2D.md
 */
-
-
 
 struct vector2D {
 
@@ -70,16 +68,15 @@ struct vector2D {
 
 };
 
-//外積(のスカラ―)
 inline ll vectorproduct(vector2D p, vector2D q) { return abs(p.x * q.y - p.y * q.x); }
+inline ll vectorproductcomp(vector2D p, vector2D q) { return p.x * q.y - p.y * q.x; }
 
-//整数のみでの偏角比較関数
 inline bool comp(const vector2D& a, const vector2D& b) {
 	if (a.x == 0 and a.y == 0)return true;
 	else if (b.x == 0 and b.y == 0)return false;
 	else if (a.x < 0) {
 		if (b.x < 0) {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 		else {
 			return false;
@@ -90,7 +87,7 @@ inline bool comp(const vector2D& a, const vector2D& b) {
 			return true;
 		}
 		else {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 	}
 }
@@ -106,8 +103,6 @@ inline bool comp(const vector2D& a, const vector2D& b) {
 * @docs kyopro/docs/vector2D.md
 */
 
-
-
 struct vector2D {
 
 	ll x, y;
@@ -123,16 +118,15 @@ struct vector2D {
 
 };
 
-//外積(のスカラ―)
 inline ll vectorproduct(vector2D p, vector2D q) { return abs(p.x * q.y - p.y * q.x); }
+inline ll vectorproductcomp(vector2D p, vector2D q) { return p.x * q.y - p.y * q.x; }
 
-//整数のみでの偏角比較関数
 inline bool comp(const vector2D& a, const vector2D& b) {
 	if (a.x == 0 and a.y == 0)return true;
 	else if (b.x == 0 and b.y == 0)return false;
 	else if (a.x < 0) {
 		if (b.x < 0) {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 		else {
 			return false;
@@ -143,7 +137,7 @@ inline bool comp(const vector2D& a, const vector2D& b) {
 			return true;
 		}
 		else {
-			return vectorproduct(a, b) > 0;
+			return vectorproductcomp(a, b) > 0;
 		}
 	}
 }

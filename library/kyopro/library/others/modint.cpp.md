@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../../assets/css/copy-button.css" />
 
 
-# :question: modint
+# :heavy_check_mark: modint
 
 <a href="../../../../index.html">Back to top page</a>
 
@@ -42,7 +42,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
 * :heavy_check_mark: <a href="../../../../verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
-* :x: <a href="../../../../verify/kyopro/test/vector2D_yukicoder.test.cpp.html">kyopro/test/vector2D_yukicoder.test.cpp</a>
+* :heavy_check_mark: <a href="../../../../verify/kyopro/test/vector2D_yukicoder.test.cpp.html">kyopro/test/vector2D_yukicoder.test.cpp</a>
 
 
 ## Code
