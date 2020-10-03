@@ -3,7 +3,7 @@
 * @docs kyopro/docs/modint.md
 */
 
-template<int mod>
+template<int &mod>
 struct modint {
 	int val;
 
