@@ -1,146 +1,183 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: kyopro/Source
+    pages:
+    - icon: ':warning:'
+      path: kyopro/Source/Source.cpp
+      title: kyopro/Source/Source.cpp
+  - name: kyopro/library/algorithm
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/algorithm/LIS_dp.cpp
+      title: longest-increasing-subsequence(dp)
+  - name: kyopro/library/datastructure/BBST
+    pages:
+    - icon: ':warning:'
+      path: kyopro/library/datastructure/BBST/splaytree.cpp
+      title: splay-tree
+  - name: kyopro/library/datastructure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/datastructure/BIT.cpp
+      title: binary-indexed-tree
+    - icon: ':x:'
+      path: kyopro/library/datastructure/lazysegtree.cpp
+      title: lazy-segment-tree
+    - icon: ':question:'
+      path: kyopro/library/datastructure/segtree.cpp
+      title: segment-tree
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/datastructure/sparsetable.cpp
+      title: sparse-table
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/datastructure/unionfind.cpp
+      title: unionfind
+  - name: kyopro/library/geometry
+    pages:
+    - icon: ':x:'
+      path: kyopro/library/geometry/vector2D.cpp
+      title: vector(2D)
+  - name: kyopro/library/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/LCA.cpp
+      title: lowest-common-ancestor
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/LCA_weighted.cpp
+      title: lowest-common-ancestor(weighted)
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/dijkstra.cpp
+      title: dijkstra
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/dijkstra_path.cpp
+      title: "dijkstra(\u7D4C\u8DEF\u5FA9\u5143)"
+    - icon: ':warning:'
+      path: kyopro/library/graph/eulertour.cpp
+      title: euler-tour
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/graph_template.cpp
+      title: template(graph)
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/kth-shortest-path_yen.cpp
+      title: kth-shortest-path(yen's algorithm)
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/scc.cpp
+      title: "strongly connected components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+        )"
+    - icon: ':warning:'
+      path: kyopro/library/graph/topological_sort.cpp
+      title: topological-sort
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/tree-diameter.cpp
+      title: "tree diameter(\u6728\u306E\u76F4\u5F84)"
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/graph/warshallfloyd.cpp
+      title: warshallfloyd
+  - name: kyopro/library/math
+    pages:
+    - icon: ':warning:'
+      path: kyopro/library/math/Comb.cpp
+      title: combination
+    - icon: ':warning:'
+      path: kyopro/library/math/fast-prime_factor.cpp
+      title: "\u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3"
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/math/gcd_lcm.cpp
+      title: gcd-lcm
+    - icon: ':warning:'
+      path: kyopro/library/math/prime_factor.cpp
+      title: kyopro/library/math/prime_factor.cpp
+  - name: kyopro/library/others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/others/cumulative-sum.cpp
+      title: "\u7D2F\u7A4D\u548C"
+    - icon: ':warning:'
+      path: kyopro/library/others/doubling.cpp
+      title: doubling
+    - icon: ':heavy_check_mark:'
+      path: kyopro/library/others/mo.cpp
+      title: Mo's Algorithm
+    - icon: ':x:'
+      path: kyopro/library/others/modint.cpp
+      title: modint
+  - name: kyopro/library/template
+    pages:
+    - icon: ':question:'
+      path: kyopro/library/template/template.cpp
+      title: template
+  verificationCategories:
+  - name: kyopro/test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/BIT_yosupo-judge.test.cpp
+      title: kyopro/test/BIT_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/LCA_weighted_yukicoder.test.cpp
+      title: kyopro/test/LCA_weighted_yukicoder.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/LCA_yosupo-judge.test.cpp
+      title: kyopro/test/LCA_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/LIS_dp_aoj.test.cpp
+      title: kyopro/test/LIS_dp_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
+      title: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
+      title: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/dijkstra_aoj.test.cpp
+      title: kyopro/test/dijkstra_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+      title: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
+      title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
+    - icon: ':x:'
+      path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
+      title: kyopro/test/lazysegtree_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/lcm_aoj.test.cpp
+      title: kyopro/test/lcm_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/mo_yosupo-judge.test.cpp
+      title: kyopro/test/mo_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/scc-cg_aoj.test.cpp
+      title: kyopro/test/scc-cg_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/scc_aoj.test.cpp
+      title: kyopro/test/scc_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/scc_yosupo-judge.test.cpp
+      title: kyopro/test/scc_yosupo-judge.test.cpp
+    - icon: ':x:'
+      path: kyopro/test/segtree_yosupo-judge.test.cpp
+      title: kyopro/test/segtree_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/sparsetable_yosupo-judge.test.cpp
+      title: kyopro/test/sparsetable_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/template_yosupo-judge.test.cpp
+      title: kyopro/test/template_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/tree-diameter_aoj.test.cpp
+      title: kyopro/test/tree-diameter_aoj.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
+      title: kyopro/test/tree-diameter_yosupo-judge.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/unionfind_yosupo-judge.test.cpp
+      title: kyopro/test/unionfind_yosupo-judge.test.cpp
+    - icon: ':x:'
+      path: kyopro/test/vector2D_yukicoder.test.cpp
+      title: kyopro/test/vector2D_yukicoder.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: kyopro/test/warshallfloyd_aoj.test.cpp
+      title: kyopro/test/warshallfloyd_aoj.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="051098662d3c936ca870ac78978e978a"></div>
-
-### kyopro/Source
-
-* :warning: <a href="library/kyopro/Source/Source.cpp.html">kyopro/Source/Source.cpp</a>
-
-
-<div id="1e7f6f770d19fb8d844d8fd4ade9dc2c"></div>
-
-### kyopro/library/algorithm
-
-* :heavy_check_mark: <a href="library/kyopro/library/algorithm/LIS_dp.cpp.html">longest-increasing-subsequence(dp)</a>
-
-
-<div id="2b68642ad9f56b522be9061078c930ba"></div>
-
-### kyopro/library/datastructure
-
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/BIT.cpp.html">binary-indexed-tree</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/lazysegtree.cpp.html">lazy-segment-tree</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/segtree.cpp.html">segment-tree</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/sparsetable.cpp.html">sparse-table</a>
-* :heavy_check_mark: <a href="library/kyopro/library/datastructure/unionfind.cpp.html">unionfind</a>
-
-
-<div id="69df2a6b39f1dc68c8ea69e0fa166f43"></div>
-
-### kyopro/library/datastructure/BBST
-
-* :warning: <a href="library/kyopro/library/datastructure/BBST/splaytree.cpp.html">splay-tree</a>
-
-
-<div id="ca8a31a0bacda461c2e6da1fb48305c8"></div>
-
-### kyopro/library/geometry
-
-* :heavy_check_mark: <a href="library/kyopro/library/geometry/vector2D.cpp.html">vector(2D)</a>
-
-
-<div id="950d3b5531ccd296b32ebda74bb65534"></div>
-
-### kyopro/library/graph
-
-* :heavy_check_mark: <a href="library/kyopro/library/graph/LCA.cpp.html">lowest-common-ancestor</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/LCA_weighted.cpp.html">lowest-common-ancestor(weighted)</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra.cpp.html">dijkstra</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/dijkstra_path.cpp.html">dijkstra(経路復元)</a>
-* :warning: <a href="library/kyopro/library/graph/eulertour.cpp.html">euler-tour</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/graph_template.cpp.html">template(graph)</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/kth-shortest-path_yen.cpp.html">kth-shortest-path(yen's algorithm)</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/scc.cpp.html">strongly connected components(強連結成分分解)</a>
-* :warning: <a href="library/kyopro/library/graph/topological_sort.cpp.html">topological-sort</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/tree-diameter.cpp.html">tree diameter(木の直径)</a>
-* :heavy_check_mark: <a href="library/kyopro/library/graph/warshallfloyd.cpp.html">warshallfloyd</a>
-
-
-<div id="ba3c8997ace2fe23a0c99dabed45cad7"></div>
-
-### kyopro/library/math
-
-* :warning: <a href="library/kyopro/library/math/Comb.cpp.html">combination</a>
-* :warning: <a href="library/kyopro/library/math/fast-prime_factor.cpp.html">高速素因数分解</a>
-* :heavy_check_mark: <a href="library/kyopro/library/math/gcd_lcm.cpp.html">gcd-lcm</a>
-* :warning: <a href="library/kyopro/library/math/prime_factor.cpp.html">kyopro/library/math/prime_factor.cpp</a>
-
-
-<div id="3f8f1932cca0dd85953a1d1a98528004"></div>
-
-### kyopro/library/others
-
-* :heavy_check_mark: <a href="library/kyopro/library/others/cumulative-sum.cpp.html">累積和</a>
-* :warning: <a href="library/kyopro/library/others/doubling.cpp.html">doubling</a>
-* :heavy_check_mark: <a href="library/kyopro/library/others/mo.cpp.html">Mo's Algorithm</a>
-* :heavy_check_mark: <a href="library/kyopro/library/others/modint.cpp.html">modint</a>
-
-
-<div id="555f11034b492b610373485649bb8a76"></div>
-
-### kyopro/library/template
-
-* :heavy_check_mark: <a href="library/kyopro/library/template/template.cpp.html">template</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/kyopro/test/BIT_yosupo-judge.test.cpp.html">kyopro/test/BIT_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/LCA_weighted_yukicoder.test.cpp.html">kyopro/test/LCA_weighted_yukicoder.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/LCA_yosupo-judge.test.cpp.html">kyopro/test/LCA_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/LIS_dp_aoj.test.cpp.html">kyopro/test/LIS_dp_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp.html">kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/cumulative-sum_yosupo-judge.test.cpp.html">kyopro/test/cumulative-sum_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_aoj.test.cpp.html">kyopro/test/dijkstra_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/dijkstra_path_yosupo-judge.test.cpp.html">kyopro/test/dijkstra_path_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp.html">kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/lazysegtree_yosupo-judge.test.cpp.html">kyopro/test/lazysegtree_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/lcm_aoj.test.cpp.html">kyopro/test/lcm_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/mo_yosupo-judge.test.cpp.html">kyopro/test/mo_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/scc-cg_aoj.test.cpp.html">kyopro/test/scc-cg_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/scc_aoj.test.cpp.html">kyopro/test/scc_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/scc_yosupo-judge.test.cpp.html">kyopro/test/scc_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/segtree_yosupo-judge.test.cpp.html">kyopro/test/segtree_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/sparsetable_yosupo-judge.test.cpp.html">kyopro/test/sparsetable_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/template_yosupo-judge.test.cpp.html">kyopro/test/template_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/tree-diameter_aoj.test.cpp.html">kyopro/test/tree-diameter_aoj.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/tree-diameter_yosupo-judge.test.cpp.html">kyopro/test/tree-diameter_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html">kyopro/test/unionfind_yosupo-judge.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/vector2D_yukicoder.test.cpp.html">kyopro/test/vector2D_yukicoder.test.cpp</a>
-* :heavy_check_mark: <a href="verify/kyopro/test/warshallfloyd_aoj.test.cpp.html">kyopro/test/warshallfloyd_aoj.test.cpp</a>
-
-
