@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/kth-shortest-path_yen.cpp
     title: kth-shortest-path(yen's algorithm)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

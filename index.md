@@ -21,10 +21,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/BIT.cpp
       title: binary-indexed-tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/lazysegtree.cpp
       title: lazy-segment-tree
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/segtree.cpp
       title: segment-tree
     - icon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
       title: unionfind
   - name: kyopro/library/geometry
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/geometry/vector2D.cpp
       title: vector(2D)
   - name: kyopro/library/graph
@@ -99,12 +99,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/library/others/mo.cpp
       title: Mo's Algorithm
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/others/modint.cpp
       title: modint
   - name: kyopro/library/template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/template/template.cpp
       title: template
   verificationCategories:
@@ -137,7 +137,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
       title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
       title: kyopro/test/lazysegtree_yosupo-judge.test.cpp
     - icon: ':heavy_check_mark:'
@@ -155,7 +155,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/scc_yosupo-judge.test.cpp
       title: kyopro/test/scc_yosupo-judge.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/test/segtree_yosupo-judge.test.cpp
       title: kyopro/test/segtree_yosupo-judge.test.cpp
     - icon: ':heavy_check_mark:'
@@ -173,7 +173,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/unionfind_yosupo-judge.test.cpp
       title: kyopro/test/unionfind_yosupo-judge.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/test/vector2D_yukicoder.test.cpp
       title: kyopro/test/vector2D_yukicoder.test.cpp
     - icon: ':heavy_check_mark:'

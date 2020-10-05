@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/others/cumulative-sum.cpp
     title: "\u7D2F\u7A4D\u548C"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

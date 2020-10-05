@@ -3,23 +3,23 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
     title: kyopro/test/lazysegtree_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/segtree_yosupo-judge.test.cpp
     title: kyopro/test/segtree_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/vector2D_yukicoder.test.cpp
     title: kyopro/test/vector2D_yukicoder.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/modint.md
     document_title: modint
     links: []
   bundledCode: "#line 1 \"kyopro/library/others/modint.cpp\"\n\uFEFF/*\n* @title modint\n\
-    * @docs kyopro/docs/modint.md\n*/\n\ntemplate<int &mod>\nstruct modint {\n\tint\
+    * @docs kyopro/docs/modint.md\n*/\n\ntemplate<int mod>\nstruct modint {\n\tint\
     \ val;\n\n\tmodint() : val(0) {};\n\tmodint(ll x) : val(x >= 0 ? x % mod : (mod\
     \ + x % mod) % mod) {};\n\n\tmodint& operator=(const modint& x) {\n\t\tval = x.val;\n\
     \t\treturn *this;\n\t}\n\n\tmodint& operator+=(const modint& x) {\n\t\tval +=\
@@ -45,7 +45,7 @@ data:
     \ta *= a;\n\t\t\tn /= 2;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tstatic int getmod()\
     \ { return mod; };\n};\n\nusing ModInt = modint<MOD>;\nusing Modint = modint<mod>;\n"
   code: "\uFEFF/*\n* @title modint\n* @docs kyopro/docs/modint.md\n*/\n\ntemplate<int\
-    \ &mod>\nstruct modint {\n\tint val;\n\n\tmodint() : val(0) {};\n\tmodint(ll x)\
+    \ mod>\nstruct modint {\n\tint val;\n\n\tmodint() : val(0) {};\n\tmodint(ll x)\
     \ : val(x >= 0 ? x % mod : (mod + x % mod) % mod) {};\n\n\tmodint& operator=(const\
     \ modint& x) {\n\t\tval = x.val;\n\t\treturn *this;\n\t}\n\n\tmodint& operator+=(const\
     \ modint& x) {\n\t\tval += x.val;\n\t\tif (val >= mod)val -= mod;\n\t\treturn\
@@ -68,13 +68,13 @@ data:
     \ modint& x)const {\n\t\treturn (val > x.val);\n\t}\n\n\tmodint pow(ll n) {\n\t\
     \tmodint ret(1), a(val);\n\t\twhile (n > 0) {\n\t\t\tif (n % 2) ret *= a;\n\t\t\
     \ta *= a;\n\t\t\tn /= 2;\n\t\t}\n\t\treturn ret;\n\t}\n\n\tstatic int getmod()\
-    \ { return mod; };\n};\n\nusing ModInt = modint<MOD>;\nusing Modint = modint<mod>;"
+    \ { return mod; };\n};\n\nusing ModInt = modint<MOD>;\nusing Modint = modint<mod>;\n"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/library/others/modint.cpp
   requiredBy: []
-  timestamp: '2020-10-04 03:14:08+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-10-06 00:21:34+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/vector2D_yukicoder.test.cpp
   - kyopro/test/segtree_yosupo-judge.test.cpp

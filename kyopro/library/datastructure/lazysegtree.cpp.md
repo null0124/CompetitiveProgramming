@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
     title: kyopro/test/lazysegtree_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/lazysegtree.md
     document_title: lazy-segment-tree
@@ -206,7 +206,7 @@ data:
   path: kyopro/library/datastructure/lazysegtree.cpp
   requiredBy: []
   timestamp: '2020-08-14 03:45:21+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/lazysegtree_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/lazysegtree.cpp

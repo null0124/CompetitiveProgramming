@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
     title: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/segtree_yosupo-judge.test.cpp
     title: kyopro/test/segtree_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/segtree.md
     document_title: segment-tree
@@ -121,7 +121,7 @@ data:
   path: kyopro/library/datastructure/segtree.cpp
   requiredBy: []
   timestamp: '2020-08-10 07:56:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
   - kyopro/test/segtree_yosupo-judge.test.cpp

@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/geometry/vector2D.cpp
     title: vector(2D)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/others/modint.cpp
     title: modint
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1144
@@ -65,7 +65,7 @@ data:
     \ b) {\n\tif (a > b)a = b;\n\treturn a;\n}\n\ntemplate<typename T>\ninline T chmax(T&\
     \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n#line 1 \"kyopro/library/others/modint.cpp\"\
     \n\uFEFF/*\n* @title modint\n* @docs kyopro/docs/modint.md\n*/\n\ntemplate<int\
-    \ &mod>\nstruct modint {\n\tint val;\n\n\tmodint() : val(0) {};\n\tmodint(ll x)\
+    \ mod>\nstruct modint {\n\tint val;\n\n\tmodint() : val(0) {};\n\tmodint(ll x)\
     \ : val(x >= 0 ? x % mod : (mod + x % mod) % mod) {};\n\n\tmodint& operator=(const\
     \ modint& x) {\n\t\tval = x.val;\n\t\treturn *this;\n\t}\n\n\tmodint& operator+=(const\
     \ modint& x) {\n\t\tval += x.val;\n\t\tif (val >= mod)val -= mod;\n\t\treturn\
@@ -133,8 +133,8 @@ data:
   isVerificationFile: true
   path: kyopro/test/vector2D_yukicoder.test.cpp
   requiredBy: []
-  timestamp: '2020-10-04 03:14:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-06 00:21:34+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/vector2D_yukicoder.test.cpp
 layout: document

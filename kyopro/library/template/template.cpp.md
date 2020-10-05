@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
     title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
     title: kyopro/test/lazysegtree_yosupo-judge.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,7 +48,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/scc_yosupo-judge.test.cpp
     title: kyopro/test/scc_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/segtree_yosupo-judge.test.cpp
     title: kyopro/test/segtree_yosupo-judge.test.cpp
   - icon: ':heavy_check_mark:'
@@ -66,14 +66,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/unionfind_yosupo-judge.test.cpp
     title: kyopro/test/unionfind_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/vector2D_yukicoder.test.cpp
     title: kyopro/test/vector2D_yukicoder.test.cpp
   - icon: ':heavy_check_mark:'
     path: kyopro/test/warshallfloyd_aoj.test.cpp
     title: kyopro/test/warshallfloyd_aoj.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/template.md
     document_title: template
@@ -169,7 +169,7 @@ data:
   path: kyopro/library/template/template.cpp
   requiredBy: []
   timestamp: '2020-09-06 14:13:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/warshallfloyd_aoj.test.cpp
   - kyopro/test/scc_yosupo-judge.test.cpp
