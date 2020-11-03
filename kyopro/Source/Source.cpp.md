@@ -21,7 +21,7 @@ data:
     #include <cassert>\n#include <iomanip>\n#include <set>\n#include <stack>\n#include\
     \ <bitset>\n\n////\u591A\u500D\u9577\u6574\u6570, cpp_int\u3067\u5BA3\u8A00\n\
     //#include <boost/multiprecision/cpp_int.hpp>\n//using namespace boost::multiprecision;\n\
-    //\n#pragma GCC target (\"avx2\")\n#pragma GCC optimization (\"O3\")\n#pragma\
+    //\n//#pragma GCC target (\"avx2\")\n//#pragma GCC optimization (\"O3\")\n//#pragma\
     \ GCC optimization (\"unroll-loops\")\n//#pragma GCC target(\"sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native\"\
     )\n#define repeat(i, n, m) for(int i = n; i < (m); ++i)\n#define rep(i, n) for(int\
     \ i = 0; i < (n); ++i)\n#define printynl(a) printf(a ? \"yes\\n\" : \"no\\n\"\
@@ -48,7 +48,7 @@ data:
     }\n\ndouble acot(double x) {\n\treturn PI / 2 - atan(x);\n}\n\nll LSB(ll n) {\
     \ return (n & (-n)); }\n\ntemplate<typename T>\ninline T chmin(T& a, const T&\
     \ b) {\n\tif (a > b)a = b;\n\treturn a;\n}\n\ntemplate<typename T>\ninline T chmax(T&\
-    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n////atcoder library\n\
+    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n//atcoder library\n\
     //#include <atcoder/all>\n//using namespace atcoder;\n\n/*-----------------------------------------\u3053\
     \u3053\u304B\u3089\u30B3\u30FC\u30C9-----------------------------------------*/\n\
     \n\n\nint main() {\n\n\n\n\tPlease AC;\n}\n"
@@ -65,8 +65,8 @@ data:
     #include <complex>\n#include <list>\n#include <cassert>\n#include <iomanip>\n\
     #include <set>\n#include <stack>\n#include <bitset>\n\n////\u591A\u500D\u9577\u6574\
     \u6570, cpp_int\u3067\u5BA3\u8A00\n//#include <boost/multiprecision/cpp_int.hpp>\n\
-    //using namespace boost::multiprecision;\n//\n#pragma GCC target (\"avx2\")\n\
-    #pragma GCC optimization (\"O3\")\n#pragma GCC optimization (\"unroll-loops\"\
+    //using namespace boost::multiprecision;\n//\n//#pragma GCC target (\"avx2\")\n\
+    //#pragma GCC optimization (\"O3\")\n//#pragma GCC optimization (\"unroll-loops\"\
     )\n//#pragma GCC target(\"sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native\"\
     )\n#define repeat(i, n, m) for(int i = n; i < (m); ++i)\n#define rep(i, n) for(int\
     \ i = 0; i < (n); ++i)\n#define printynl(a) printf(a ? \"yes\\n\" : \"no\\n\"\
@@ -93,15 +93,15 @@ data:
     }\n\ndouble acot(double x) {\n\treturn PI / 2 - atan(x);\n}\n\nll LSB(ll n) {\
     \ return (n & (-n)); }\n\ntemplate<typename T>\ninline T chmin(T& a, const T&\
     \ b) {\n\tif (a > b)a = b;\n\treturn a;\n}\n\ntemplate<typename T>\ninline T chmax(T&\
-    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n////atcoder library\n\
+    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n//atcoder library\n\
     //#include <atcoder/all>\n//using namespace atcoder;\n\n/*-----------------------------------------\u3053\
     \u3053\u304B\u3089\u30B3\u30FC\u30C9-----------------------------------------*/\n\
-    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}\n"
+    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/Source/Source.cpp
   requiredBy: []
-  timestamp: '2020-10-04 03:14:08+09:00'
+  timestamp: '2020-11-03 18:36:49+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: kyopro/Source/Source.cpp

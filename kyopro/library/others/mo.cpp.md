@@ -73,8 +73,8 @@ data:
   timestamp: '2020-08-21 21:46:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/mo_yosupo-judge.test.cpp
   - kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
+  - kyopro/test/mo_yosupo-judge.test.cpp
 documentation_of: kyopro/library/others/mo.cpp
 layout: document
 redirect_from:

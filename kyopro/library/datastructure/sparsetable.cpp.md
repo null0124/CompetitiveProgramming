@@ -68,9 +68,9 @@ data:
   timestamp: '2020-05-19 18:09:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/sparsetable_yosupo-judge.test.cpp
   - kyopro/test/LCA_weighted_yukicoder.test.cpp
   - kyopro/test/LCA_yosupo-judge.test.cpp
+  - kyopro/test/sparsetable_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/sparsetable.cpp
 layout: document
 redirect_from:

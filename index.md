@@ -86,6 +86,9 @@ data:
       path: kyopro/library/math/gcd_lcm.cpp
       title: gcd-lcm
     - icon: ':warning:'
+      path: kyopro/library/math/kth_permutation.cpp
+      title: kth_permutation
+    - icon: ':warning:'
       path: kyopro/library/math/prime_factor.cpp
       title: kyopro/library/math/prime_factor.cpp
   - name: kyopro/library/others
