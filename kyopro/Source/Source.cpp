@@ -35,9 +35,9 @@ Be accepted!
 //#include <boost/multiprecision/cpp_int.hpp>
 //using namespace boost::multiprecision;
 //
-#pragma GCC target ("avx2")
-#pragma GCC optimization ("O3")
-#pragma GCC optimization ("unroll-loops")
+//#pragma GCC target ("avx2")
+//#pragma GCC optimization ("O3")
+//#pragma GCC optimization ("unroll-loops")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
@@ -110,7 +110,7 @@ inline T chmax(T& a, const T& b) {
 	return a;
 }
 
-////atcoder library
+//atcoder library
 //#include <atcoder/all>
 //using namespace atcoder;
 
