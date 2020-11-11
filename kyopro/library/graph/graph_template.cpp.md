@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/LCA_yosupo-judge.test.cpp
     title: kyopro/test/LCA_yosupo-judge.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: kyopro/test/dijkstra_aoj.test.cpp
     title: kyopro/test/dijkstra_aoj.test.cpp
   - icon: ':heavy_check_mark:'
@@ -34,7 +34,7 @@ data:
     path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
     title: kyopro/test/tree-diameter_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: kyopro/docs/graph_template.md
     document_title: template(graph)
@@ -78,7 +78,7 @@ data:
   path: kyopro/library/graph/graph_template.cpp
   requiredBy: []
   timestamp: '2020-09-07 03:51:47+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - kyopro/test/scc_aoj.test.cpp
   - kyopro/test/scc_yosupo-judge.test.cpp

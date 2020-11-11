@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
   - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/scc.cpp
     title: "strongly connected components(\u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
       )"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

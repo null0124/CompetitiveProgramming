@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/warshallfloyd.cpp
     title: warshallfloyd
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

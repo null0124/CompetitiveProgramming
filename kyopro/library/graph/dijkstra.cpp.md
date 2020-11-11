@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: kyopro/test/dijkstra_aoj.test.cpp
     title: kyopro/test/dijkstra_aoj.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: kyopro/docs/dijkstra.md
     document_title: dijkstra
@@ -18,23 +18,25 @@ data:
     priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;\n\
     \tvector<T> res(n);\n\tfill(all(res), Inf);\n\tpriq.push({ 0, v });\n\tres[v]\
     \ = 0;\n\tint top;\n\twhile (!priq.empty()) {\n\t\ttop = priq.top().second;\n\t\
-    \tpriq.pop();\n\t\tfor (const auto& aa : g[top]) {\n\t\t\tif (res[top] + aa.cost\
-    \ >= res[aa.to])continue;\n\t\t\tres[aa.to] = aa.cost + res[top];\n\t\t\tpriq.push({\
-    \ res[aa.to], aa.to });\n\t\t}\n\t}\n\treturn res;\n}\n"
+    \tpriq.pop();\n\t\tif (cost > res[top])continue;\n\t\tfor (const auto& aa : g[top])\
+    \ {\n\t\t\tif (res[top] + aa.cost >= res[aa.to])continue;\n\t\t\tres[aa.to] =\
+    \ aa.cost + res[top];\n\t\t\tpriq.push({ res[aa.to], aa.to });\n\t\t}\n\t}\n\t\
+    return res;\n}\n"
   code: "\uFEFF/*\n* @title dijkstra\n* @docs kyopro/docs/dijkstra.md\n*/\n\n\ntemplate<typename\
     \ T = int>\nvector<T> dijkstra(graph<T>& g, const int& v, const int& n, const\
     \ T Inf) {\n\tpriority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
     \ int>>> priq;\n\tvector<T> res(n);\n\tfill(all(res), Inf);\n\tpriq.push({ 0,\
     \ v });\n\tres[v] = 0;\n\tint top;\n\twhile (!priq.empty()) {\n\t\ttop = priq.top().second;\n\
-    \t\tpriq.pop();\n\t\tfor (const auto& aa : g[top]) {\n\t\t\tif (res[top] + aa.cost\
-    \ >= res[aa.to])continue;\n\t\t\tres[aa.to] = aa.cost + res[top];\n\t\t\tpriq.push({\
-    \ res[aa.to], aa.to });\n\t\t}\n\t}\n\treturn res;\n}\n"
+    \t\tpriq.pop();\n\t\tif (cost > res[top])continue;\n\t\tfor (const auto& aa :\
+    \ g[top]) {\n\t\t\tif (res[top] + aa.cost >= res[aa.to])continue;\n\t\t\tres[aa.to]\
+    \ = aa.cost + res[top];\n\t\t\tpriq.push({ res[aa.to], aa.to });\n\t\t}\n\t}\n\
+    \treturn res;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/library/graph/dijkstra.cpp
   requiredBy: []
-  timestamp: '2020-08-02 04:31:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-11-11 13:05:15+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - kyopro/test/dijkstra_aoj.test.cpp
 documentation_of: kyopro/library/graph/dijkstra.cpp

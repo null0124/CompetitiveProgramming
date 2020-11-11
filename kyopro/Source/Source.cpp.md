@@ -96,12 +96,12 @@ data:
     \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n//atcoder library\n\
     //#include <atcoder/all>\n//using namespace atcoder;\n\n/*-----------------------------------------\u3053\
     \u3053\u304B\u3089\u30B3\u30FC\u30C9-----------------------------------------*/\n\
-    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}"
+    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/Source/Source.cpp
   requiredBy: []
-  timestamp: '2020-11-03 18:36:49+09:00'
+  timestamp: '2020-11-11 13:05:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: kyopro/Source/Source.cpp

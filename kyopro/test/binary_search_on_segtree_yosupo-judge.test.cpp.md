@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/others/mo.cpp
     title: Mo's Algorithm
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

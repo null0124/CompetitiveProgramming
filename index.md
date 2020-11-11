@@ -46,7 +46,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/library/graph/LCA_weighted.cpp
       title: lowest-common-ancestor(weighted)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/library/graph/dijkstra.cpp
       title: dijkstra
     - icon: ':heavy_check_mark:'
@@ -55,7 +55,7 @@ data:
     - icon: ':warning:'
       path: kyopro/library/graph/eulertour.cpp
       title: euler-tour
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/graph/graph_template.cpp
       title: template(graph)
     - icon: ':heavy_check_mark:'
@@ -107,7 +107,7 @@ data:
       title: modint
   - name: kyopro/library/template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/template/template.cpp
       title: template
   verificationCategories:
@@ -131,7 +131,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
       title: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/dijkstra_aoj.test.cpp
       title: kyopro/test/dijkstra_aoj.test.cpp
     - icon: ':heavy_check_mark:'

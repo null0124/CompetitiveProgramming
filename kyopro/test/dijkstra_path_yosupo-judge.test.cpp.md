@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/dijkstra_path.cpp
     title: "dijkstra(\u7D4C\u8DEF\u5FA9\u5143)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
