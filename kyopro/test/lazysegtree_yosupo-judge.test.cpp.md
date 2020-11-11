@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/others/modint.cpp
     title: modint
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

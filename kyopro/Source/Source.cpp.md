@@ -6,6 +6,8 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
+    _deprecated_at_docs: kyopro/docs/dijkstra.md
+    document_title: template(graph)
     links: []
   bundledCode: "#line 1 \"kyopro/Source/Source.cpp\"\n\uFEFF/*\n\u3053\u306E\u30B3\
     \u30FC\u30C9\u3001\u3068\uFF5E\u304A\u308C!\nBe accepted!\n\u2227\uFF3F\u2227\u3000\
@@ -51,7 +53,32 @@ data:
     \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n//atcoder library\n\
     //#include <atcoder/all>\n//using namespace atcoder;\n\n/*-----------------------------------------\u3053\
     \u3053\u304B\u3089\u30B3\u30FC\u30C9-----------------------------------------*/\n\
-    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}\n"
+    \n/*\n* @title template(graph)\n* @docs kyopro/docs/graph_template.md\n*/\n\n\
+    template<typename T>\nstruct edge {\n\tT cost;\n\tint from, to;\n\n\tedge(int\
+    \ from, int to) : from(from), to(to), cost(T(1)) {}\n\tedge(int from, int to,\
+    \ T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<typename T = int>\n\
+    struct graph {\n\n\tint n;\n\tbool directed, weighted;\n\n\tvector<vector<edge<T>>>\
+    \ g;\n\n\tgraph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed),\
+    \ weighted(weighted) {}\n\n\tvoid add_edge(int from, int to, T cost = T(1)) {\n\
+    \t\tg[from].emplace_back(from, to, cost);\n\t\tif (not directed) {\n\t\t\tg[to].emplace_back(to,\
+    \ from, cost);\n\t\t}\n\t}\n\n\tvector<edge<T>>& operator[](const int& idx) {\n\
+    \t\treturn g[idx];\n\t}\n\n\tvoid read(int e, bool one_indexed) {\n\t\tint a,\
+    \ b, c = 1;\n\t\twhile (e--) {\n\t\t\tscanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted)\
+    \ {\n\t\t\t\tscanf(\"%d\", &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\
+    \tadd_edge(a, b, c);\n\t\t}\n\t}\n\n\tvoid read(int e, bool one_indexed, const\
+    \ string& format) {\n\t\tint a, b;\n\t\tT c = T(1);\n\t\twhile (e--) {\n\t\t\t\
+    scanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted) {\n\t\t\t\tscanf(format.c_str(),\
+    \ &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\tadd_edge(a, b, c);\n\t\
+    \t}\n\t}\n\n};\n\n/*\n* @title dijkstra\n* @docs kyopro/docs/dijkstra.md\n*/\n\
+    \n\ntemplate<typename T = int>\nvector<T> dijkstra(graph<T>& g, const int& v,\
+    \ const int& n, const T Inf) {\n\tpriority_queue<pair<T, int>, vector<pair<T,\
+    \ int>>, greater<pair<T, int>>> priq;\n\tvector<T> res(n);\n\tfill(all(res), Inf);\n\
+    \tpriq.push({ 0, v });\n\tres[v] = 0;\n\tint top;\n\twhile (!priq.empty()) {\n\
+    \t\ttop = priq.top().second;\n\t\tT cost = priq.top().first;\n\t\tpriq.pop();\n\
+    \t\tif (cost > res[top])continue;\n\t\tfor (const auto& aa : g[top]) {\n\t\t\t\
+    if (res[top] + aa.cost >= res[aa.to])continue;\n\t\t\tres[aa.to] = aa.cost + res[top];\n\
+    \t\t\tpriq.push({ res[aa.to], aa.to });\n\t\t}\n\t}\n\treturn res;\n}\n\n\nint\
+    \ main() {\n\n\tint n, m;\n\tscanf(\"%d%d\", &n, &m);\n\n\n\tPlease AC;\n}\n"
   code: "\uFEFF/*\n\u3053\u306E\u30B3\u30FC\u30C9\u3001\u3068\uFF5E\u304A\u308C!\n\
     Be accepted!\n\u2227\uFF3F\u2227\u3000\n\uFF08\uFF61\uFF65\u03C9\uFF65\uFF61)\u3064\
     \u2501\u2606\u30FB*\u3002\n\u2282\u3000\u3000 \u30CE \u3000\u3000\u3000\u30FB\u309C\
@@ -96,12 +123,37 @@ data:
     \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n//atcoder library\n\
     //#include <atcoder/all>\n//using namespace atcoder;\n\n/*-----------------------------------------\u3053\
     \u3053\u304B\u3089\u30B3\u30FC\u30C9-----------------------------------------*/\n\
-    \n\n\nint main() {\n\n\n\n\tPlease AC;\n}\n"
+    \n/*\n* @title template(graph)\n* @docs kyopro/docs/graph_template.md\n*/\n\n\
+    template<typename T>\nstruct edge {\n\tT cost;\n\tint from, to;\n\n\tedge(int\
+    \ from, int to) : from(from), to(to), cost(T(1)) {}\n\tedge(int from, int to,\
+    \ T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<typename T = int>\n\
+    struct graph {\n\n\tint n;\n\tbool directed, weighted;\n\n\tvector<vector<edge<T>>>\
+    \ g;\n\n\tgraph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed),\
+    \ weighted(weighted) {}\n\n\tvoid add_edge(int from, int to, T cost = T(1)) {\n\
+    \t\tg[from].emplace_back(from, to, cost);\n\t\tif (not directed) {\n\t\t\tg[to].emplace_back(to,\
+    \ from, cost);\n\t\t}\n\t}\n\n\tvector<edge<T>>& operator[](const int& idx) {\n\
+    \t\treturn g[idx];\n\t}\n\n\tvoid read(int e, bool one_indexed) {\n\t\tint a,\
+    \ b, c = 1;\n\t\twhile (e--) {\n\t\t\tscanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted)\
+    \ {\n\t\t\t\tscanf(\"%d\", &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\
+    \tadd_edge(a, b, c);\n\t\t}\n\t}\n\n\tvoid read(int e, bool one_indexed, const\
+    \ string& format) {\n\t\tint a, b;\n\t\tT c = T(1);\n\t\twhile (e--) {\n\t\t\t\
+    scanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted) {\n\t\t\t\tscanf(format.c_str(),\
+    \ &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\tadd_edge(a, b, c);\n\t\
+    \t}\n\t}\n\n};\n\n/*\n* @title dijkstra\n* @docs kyopro/docs/dijkstra.md\n*/\n\
+    \n\ntemplate<typename T = int>\nvector<T> dijkstra(graph<T>& g, const int& v,\
+    \ const int& n, const T Inf) {\n\tpriority_queue<pair<T, int>, vector<pair<T,\
+    \ int>>, greater<pair<T, int>>> priq;\n\tvector<T> res(n);\n\tfill(all(res), Inf);\n\
+    \tpriq.push({ 0, v });\n\tres[v] = 0;\n\tint top;\n\twhile (!priq.empty()) {\n\
+    \t\ttop = priq.top().second;\n\t\tT cost = priq.top().first;\n\t\tpriq.pop();\n\
+    \t\tif (cost > res[top])continue;\n\t\tfor (const auto& aa : g[top]) {\n\t\t\t\
+    if (res[top] + aa.cost >= res[aa.to])continue;\n\t\t\tres[aa.to] = aa.cost + res[top];\n\
+    \t\t\tpriq.push({ res[aa.to], aa.to });\n\t\t}\n\t}\n\treturn res;\n}\n\n\nint\
+    \ main() {\n\n\tint n, m;\n\tscanf(\"%d%d\", &n, &m);\n\n\n\tPlease AC;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/Source/Source.cpp
   requiredBy: []
-  timestamp: '2020-11-11 13:05:28+09:00'
+  timestamp: '2020-11-11 13:35:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: kyopro/Source/Source.cpp
@@ -109,5 +161,6 @@ layout: document
 redirect_from:
 - /library/kyopro/Source/Source.cpp
 - /library/kyopro/Source/Source.cpp.html
-title: kyopro/Source/Source.cpp
+title: template(graph)
 ---
+﻿

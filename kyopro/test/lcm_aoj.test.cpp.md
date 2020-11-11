@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/math/gcd_lcm.cpp
     title: gcd-lcm
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

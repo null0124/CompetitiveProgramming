@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/dijkstra.cpp
     title: dijkstra
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A
@@ -86,14 +86,14 @@ data:
     \ T Inf) {\n\tpriority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T,\
     \ int>>> priq;\n\tvector<T> res(n);\n\tfill(all(res), Inf);\n\tpriq.push({ 0,\
     \ v });\n\tres[v] = 0;\n\tint top;\n\twhile (!priq.empty()) {\n\t\ttop = priq.top().second;\n\
-    \t\tpriq.pop();\n\t\tif (cost > res[top])continue;\n\t\tfor (const auto& aa :\
-    \ g[top]) {\n\t\t\tif (res[top] + aa.cost >= res[aa.to])continue;\n\t\t\tres[aa.to]\
-    \ = aa.cost + res[top];\n\t\t\tpriq.push({ res[aa.to], aa.to });\n\t\t}\n\t}\n\
-    \treturn res;\n}\n#line 7 \"kyopro/test/dijkstra_aoj.test.cpp\"\n\nint main()\
-    \ {\n\n\tint v, e, r;\n\tscanf(\"%d%d%d\", &v, &e, &r);\n\tgraph<ll> g(v, true,\
-    \ true);\n\tg.read(e, false);\n\tfor (const auto& aa : dijkstra<ll>(g, r, v, LINF))\
-    \ {\n\t\tif (aa == LINF)puts(\"INF\");\n\t\telse printf(\"%lld\\n\", aa);\n\t\
-    }\n\n\n\tPlease AC;\n}\n"
+    \t\tT cost = priq.top().first;\n\t\tpriq.pop();\n\t\tif (cost > res[top])continue;\n\
+    \t\tfor (const auto& aa : g[top]) {\n\t\t\tif (res[top] + aa.cost >= res[aa.to])continue;\n\
+    \t\t\tres[aa.to] = aa.cost + res[top];\n\t\t\tpriq.push({ res[aa.to], aa.to });\n\
+    \t\t}\n\t}\n\treturn res;\n}\n#line 7 \"kyopro/test/dijkstra_aoj.test.cpp\"\n\n\
+    int main() {\n\n\tint v, e, r;\n\tscanf(\"%d%d%d\", &v, &e, &r);\n\tgraph<ll>\
+    \ g(v, true, true);\n\tg.read(e, false);\n\tfor (const auto& aa : dijkstra<ll>(g,\
+    \ r, v, LINF)) {\n\t\tif (aa == LINF)puts(\"INF\");\n\t\telse printf(\"%lld\\\
+    n\", aa);\n\t}\n\n\n\tPlease AC;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A\"\
     \n\n#include \"../library/template/template.cpp\"\n#include \"../library/graph/graph_template.cpp\"\
     \n\n#include \"../library/graph/dijkstra.cpp\"\n\nint main() {\n\n\tint v, e,\
@@ -108,8 +108,8 @@ data:
   isVerificationFile: true
   path: kyopro/test/dijkstra_aoj.test.cpp
   requiredBy: []
-  timestamp: '2020-11-11 13:05:15+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-11-11 13:35:45+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/dijkstra_aoj.test.cpp
 layout: document

@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
     title: kyopro/test/cumulative-sum_yosupo-judge.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/dijkstra_aoj.test.cpp
     title: kyopro/test/dijkstra_aoj.test.cpp
   - icon: ':heavy_check_mark:'
@@ -73,7 +73,7 @@ data:
     path: kyopro/test/warshallfloyd_aoj.test.cpp
     title: kyopro/test/warshallfloyd_aoj.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/template.md
     document_title: template
@@ -169,7 +169,7 @@ data:
   path: kyopro/library/template/template.cpp
   requiredBy: []
   timestamp: '2020-09-06 14:13:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/LIS_dp_aoj.test.cpp
   - kyopro/test/scc_aoj.test.cpp
