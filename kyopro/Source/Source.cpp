@@ -116,10 +116,101 @@ inline T chmax(T& a, const T& b) {
 
 /*-----------------------------------------ここからコード-----------------------------------------*/
 
+/*
+* @title template(graph)
+* @docs kyopro/docs/graph_template.md
+*/
+
+template<typename T>
+struct edge {
+	T cost;
+	int from, to;
+
+	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
+	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
+};
+
+template<typename T = int>
+struct graph {
+
+	int n;
+	bool directed, weighted;
+
+	vector<vector<edge<T>>> g;
+
+	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
+
+	void add_edge(int from, int to, T cost = T(1)) {
+		g[from].emplace_back(from, to, cost);
+		if (not directed) {
+			g[to].emplace_back(to, from, cost);
+		}
+	}
+
+	vector<edge<T>>& operator[](const int& idx) {
+		return g[idx];
+	}
+
+	void read(int e, bool one_indexed) {
+		int a, b, c = 1;
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf("%d", &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+	void read(int e, bool one_indexed, const string& format) {
+		int a, b;
+		T c = T(1);
+		while (e--) {
+			scanf("%d%d", &a, &b);
+			if (weighted) {
+				scanf(format.c_str(), &c);
+			}
+			if (one_indexed)--a, --b;
+			add_edge(a, b, c);
+		}
+	}
+
+};
+
+/*
+* @title dijkstra
+* @docs kyopro/docs/dijkstra.md
+*/
+
+
+template<typename T = int>
+vector<T> dijkstra(graph<T>& g, const int& v, const int& n, const T Inf) {
+	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
+	vector<T> res(n);
+	fill(all(res), Inf);
+	priq.push({ 0, v });
+	res[v] = 0;
+	int top;
+	while (!priq.empty()) {
+		top = priq.top().second;
+		T cost = priq.top().first;
+		priq.pop();
+		if (cost > res[top])continue;
+		for (const auto& aa : g[top]) {
+			if (res[top] + aa.cost >= res[aa.to])continue;
+			res[aa.to] = aa.cost + res[top];
+			priq.push({ res[aa.to], aa.to });
+		}
+	}
+	return res;
+}
 
 
 int main() {
 
+	int n, m;
+	scanf("%d%d", &n, &m);
 
 
 	Please AC;
