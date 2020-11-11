@@ -5,6 +5,7 @@
 "kyopro/test/LIS_dp_aoj.test.cpp": "2020-09-06 14:13:21 +0900",
 "kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
 "kyopro/test/cumulative-sum_yosupo-judge.test.cpp": "2020-09-06 14:13:21 +0900",
+"kyopro/test/dijkstra_aoj.test.cpp": "2020-11-11 13:35:45 +0900",
 "kyopro/test/dijkstra_path_yosupo-judge.test.cpp": "2020-09-07 03:51:47 +0900",
 "kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp": "2020-09-07 03:51:47 +0900",
 "kyopro/test/lazysegtree_yosupo-judge.test.cpp": "2020-10-06 00:21:34 +0900",
