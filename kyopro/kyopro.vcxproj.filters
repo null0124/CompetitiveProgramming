@@ -172,6 +172,18 @@
     <ClCompile Include="test\tree-diameter_aoj.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="test\scc-cg_aoj.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\geometry\vector2D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\vector2D_yukicoder.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="library\math\kth_permutation.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -202,5 +214,7 @@
     <None Include="docs\fast-prime_factor.md" />
     <None Include="docs\scc.md" />
     <None Include="docs\tree-diameter.md" />
+    <None Include="docs\vector2D.md" />
+    <None Include="docs\kth_permutaiton.md" />
   </ItemGroup>
 </Project>
