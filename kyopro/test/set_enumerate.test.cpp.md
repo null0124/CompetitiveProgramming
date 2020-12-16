@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: kyopro/library/datastructure/set_enumerate.cpp
+    title: set_enumerate
   - icon: ':question:'
     path: kyopro/library/datastructure/unionfind.cpp
     title: unionfind
@@ -10,14 +13,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/unionfind
+    PROBLEM: https://yukicoder.me/problems/no/1293
     links:
-    - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"kyopro/test/unionfind_yosupo-judge.test.cpp\"\n\uFEFF#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#line 1 \"kyopro/library/template/template.cpp\"\
+    - https://yukicoder.me/problems/no/1293
+  bundledCode: "#line 1 \"kyopro/test/set_enumerate.test.cpp\"\n\uFEFF#define PROBLEM\
+    \ \"https://yukicoder.me/problems/no/1293\"\n\n#line 1 \"kyopro/library/template/template.cpp\"\
     \n\uFEFF/*\n* @title template\n* @docs kyopro/docs/template.md\n*/\n\n\n/*\n\u3053\
     \u306E\u30B3\u30FC\u30C9\u3001\u3068\uFF5E\u304A\u308C!\nBe accepted!\n\u2227\uFF3F\
     \u2227\u3000\n\uFF08\uFF61\uFF65\u03C9\uFF65\uFF61)\u3064\u2501\u2606\u30FB*\u3002\
@@ -60,7 +63,7 @@ data:
     //using namespace boost::multiprecision;\n\n//atcoder library\n//#include <atcoder/all>\n\
     //using namespace atcoder;\n\n//random_device seed_gen;\n//mt19937 engine(seed_gen());\n\
     //uniform_distribution dist(-1.0, 1.0);\n\n/*----------------------------------------------------------------------------------*/\n\
-    #line 4 \"kyopro/test/unionfind_yosupo-judge.test.cpp\"\n\n#line 1 \"kyopro/library/datastructure/unionfind.cpp\"\
+    #line 4 \"kyopro/test/set_enumerate.test.cpp\"\n\n#line 1 \"kyopro/library/datastructure/unionfind.cpp\"\
     \n\uFEFF/*\n* @title unionfind\n* @docs kyopro/docs/unionfind.md\n*/\n\n//0-indexed\n\
     struct unionfind {\n\tvector<int> par, siz;\n\n\tunionfind(int n) : par(n), siz(n)\
     \ {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\t//\u5168\u90E8\u6839\u3067\u521D\
@@ -78,30 +81,56 @@ data:
     \ siz[x];\n\t\t}\n\t\treturn true;\n\t}\n\n\t//\u540C\u3058\u96C6\u5408\u304B\u5224\
     \u5B9A\u3059\u308B\n\tbool same(int a, int b) {\n\t\treturn find(a) == find(b);\n\
     \t}\n\n\t//\u30B5\u30A4\u30BA\u3092\u8FD4\u3059\n\tint size(int a) {\n\t\treturn\
-    \ siz[find(a)];\n\t}\n\n};\n#line 6 \"kyopro/test/unionfind_yosupo-judge.test.cpp\"\
-    \n\nint main() {\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\tunionfind uni(n);\n\
-    \twhile (q--) {\n\t\tint t, u, v;\n\t\tscanf(\"%d%d%d\", &t, &u, &v);\n\t\tif\
-    \ (t)printf(\"%d\\n\", uni.same(u, v));\n\t\telse uni.unite(u, v);\n\t}\n\n\t\
-    Please AC;\n}\n"
-  code: "\uFEFF#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
+    \ siz[find(a)];\n\t}\n\n};\n#line 1 \"kyopro/library/datastructure/set_enumerate.cpp\"\
+    \n\uFEFF/*\n* @title set_enumerate\n* @docs kyopro/docs/set_enumerate.md\n*/\n\
+    \nstruct set_enumerate {\n\n\tint n;\n\tvector<int> next;\n\tunionfind uni;\n\n\
+    \tset_enumerate(int siz) : n(siz), next(siz), uni(n) {\n\t\tnext.assign(siz, 0);\n\
+    \t\trep(i, siz)next[i] = i;\n\t}\n\n\tint size() {\n\t\treturn n;\n\t}\n\n\tvector<int>\
+    \ enumerate(const int x) {\n\t\tvector<int> ret;\n\t\tint cur = x;\n\t\tdo {\n\
+    \t\t\tret.emplace_back(cur);\n\t\t\tcur = next[cur];\n\t\t} while (cur != x);\n\
+    \t\treturn ret;\n\t}\n\n\tvector<vector<int>> get_all() {\n\t\tvector<vector<int>>\
+    \ ret;\n\t\tvector<bool> visited(n);\n\t\trep(i, n) {\n\t\t\tif (not visited[i])\
+    \ {\n\t\t\t\tret.emplace_back(enumerate(i));\n\t\t\t\tfor (const auto& i : ret.back())visited[i]\
+    \ = true;\n\t\t\t}\n\t\t}\n\t\treturn ret;\n\t}\n\n\tvoid unite(const int x, const\
+    \ int y) {\n\t\tif (not uni.same(x, y)) swap(next[x], next[y]);\n\t\tuni.unite(x,\
+    \ y);\n\t}\n\n\tbool same(int a, int b) { return uni.same(a, b); }\n\n\tint find(int\
+    \ a) { return uni.find(a); }\n\n\tint size(int i) { return uni.size(i); }\n\n\
+    };\n#line 7 \"kyopro/test/set_enumerate.test.cpp\"\n\nint main() {\n\n\tint n,\
+    \ d, w;\n\tscanf(\"%d%d%d\", &n, &d, &w);\n\tset_enumerate car(n), walk(n);\n\t\
+    ll ans = 0;\n\trep(i, d) {\n\t\tint a, b;\n\t\tscanf(\"%d%d\", &a, &b);\n\t\t\
+    car.unite(a - 1, b - 1);\n\t}\n\trep(i, w) {\n\t\tint a, b;\n\t\tscanf(\"%d%d\"\
+    , &a, &b);\n\t\twalk.unite(a - 1, b - 1);\n\t}\n\tvector<bool> flag(n);\n\trep(i,\
+    \ n) {\n\t\tif (not flag[i]) {\n\t\t\tauto ushi = car.enumerate(i);\n\t\t\tll\
+    \ m = 0, x = car.size(i);\n\t\t\tset<int> b;\n\t\t\tfor (const auto& aa : ushi)b.insert(walk.find(aa)),\
+    \ flag[aa] = true;\n\t\t\tfor (const auto& aa : b)m += walk.size(aa);\n\t\t\t\
+    ans += m * x;\n\t\t\tflag[i] = true;\n\t\t}\n\t}\n\tprintf(\"%lld\\n\", ans -\
+    \ (ll)n);\n\n\tPlease AC;\n}\n"
+  code: "\uFEFF#define PROBLEM \"https://yukicoder.me/problems/no/1293\"\n\n#include\
     \ \"../library/template/template.cpp\"\n\n#include \"../library/datastructure/unionfind.cpp\"\
-    \n\nint main() {\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\tunionfind uni(n);\n\
-    \twhile (q--) {\n\t\tint t, u, v;\n\t\tscanf(\"%d%d%d\", &t, &u, &v);\n\t\tif\
-    \ (t)printf(\"%d\\n\", uni.same(u, v));\n\t\telse uni.unite(u, v);\n\t}\n\n\t\
-    Please AC;\n}"
+    \n#include \"../library/datastructure/set_enumerate.cpp\"\n\nint main() {\n\n\t\
+    int n, d, w;\n\tscanf(\"%d%d%d\", &n, &d, &w);\n\tset_enumerate car(n), walk(n);\n\
+    \tll ans = 0;\n\trep(i, d) {\n\t\tint a, b;\n\t\tscanf(\"%d%d\", &a, &b);\n\t\t\
+    car.unite(a - 1, b - 1);\n\t}\n\trep(i, w) {\n\t\tint a, b;\n\t\tscanf(\"%d%d\"\
+    , &a, &b);\n\t\twalk.unite(a - 1, b - 1);\n\t}\n\tvector<bool> flag(n);\n\trep(i,\
+    \ n) {\n\t\tif (not flag[i]) {\n\t\t\tauto ushi = car.enumerate(i);\n\t\t\tll\
+    \ m = 0, x = car.size(i);\n\t\t\tset<int> b;\n\t\t\tfor (const auto& aa : ushi)b.insert(walk.find(aa)),\
+    \ flag[aa] = true;\n\t\t\tfor (const auto& aa : b)m += walk.size(aa);\n\t\t\t\
+    ans += m * x;\n\t\t\tflag[i] = true;\n\t\t}\n\t}\n\tprintf(\"%lld\\n\", ans -\
+    \ (ll)n);\n\n\tPlease AC;\n}"
   dependsOn:
   - kyopro/library/template/template.cpp
   - kyopro/library/datastructure/unionfind.cpp
+  - kyopro/library/datastructure/set_enumerate.cpp
   isVerificationFile: true
-  path: kyopro/test/unionfind_yosupo-judge.test.cpp
+  path: kyopro/test/set_enumerate.test.cpp
   requiredBy: []
   timestamp: '2020-12-17 00:26:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: kyopro/test/unionfind_yosupo-judge.test.cpp
+documentation_of: kyopro/test/set_enumerate.test.cpp
 layout: document
 redirect_from:
-- /verify/kyopro/test/unionfind_yosupo-judge.test.cpp
-- /verify/kyopro/test/unionfind_yosupo-judge.test.cpp.html
-title: kyopro/test/unionfind_yosupo-judge.test.cpp
+- /verify/kyopro/test/set_enumerate.test.cpp
+- /verify/kyopro/test/set_enumerate.test.cpp.html
+title: kyopro/test/set_enumerate.test.cpp
 ---

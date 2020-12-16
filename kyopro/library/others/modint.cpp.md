@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/segtree_yosupo-judge.test.cpp
     title: kyopro/test/segtree_yosupo-judge.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: kyopro/test/vector2D_yukicoder.test.cpp
     title: kyopro/test/vector2D_yukicoder.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: kyopro/docs/modint.md
     document_title: modint
@@ -74,7 +74,7 @@ data:
   path: kyopro/library/others/modint.cpp
   requiredBy: []
   timestamp: '2020-10-06 00:21:34+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - kyopro/test/lazysegtree_yosupo-judge.test.cpp
   - kyopro/test/segtree_yosupo-judge.test.cpp

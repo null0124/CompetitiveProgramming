@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: kyopro/test/vector2D_yukicoder.test.cpp
     title: kyopro/test/vector2D_yukicoder.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: kyopro/docs/vector2D.md
     document_title: vector(2D)
@@ -46,7 +46,7 @@ data:
   path: kyopro/library/geometry/vector2D.cpp
   requiredBy: []
   timestamp: '2020-09-12 00:34:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - kyopro/test/vector2D_yukicoder.test.cpp
 documentation_of: kyopro/library/geometry/vector2D.cpp

@@ -4,10 +4,13 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: kyopro/test/set_enumerate.test.cpp
+    title: kyopro/test/set_enumerate.test.cpp
+  - icon: ':x:'
     path: kyopro/test/unionfind_yosupo-judge.test.cpp
     title: kyopro/test/unionfind_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: kyopro/docs/unionfind.md
     document_title: unionfind
@@ -30,10 +33,7 @@ data:
     \ siz[x];\n\t\t}\n\t\treturn true;\n\t}\n\n\t//\u540C\u3058\u96C6\u5408\u304B\u5224\
     \u5B9A\u3059\u308B\n\tbool same(int a, int b) {\n\t\treturn find(a) == find(b);\n\
     \t}\n\n\t//\u30B5\u30A4\u30BA\u3092\u8FD4\u3059\n\tint size(int a) {\n\t\treturn\
-    \ siz[find(a)];\n\t}\n\n\t//\u540C\u3058\u96C6\u5408\u306B\u5C5E\u3059\u8449\u3092\
-    \u7E8F\u3081\u3066\u8FD4\u3059\n\tvector<int> leaf(int a) {\n\t\tvector<int> x;\n\
-    \t\tint n = par.size();\n\t\tfor (int i = 0; i < n; ++i)if (same(a, i))x.push_back(i);\n\
-    \t\treturn x;\n\t}\n\n};\n"
+    \ siz[find(a)];\n\t}\n\n};\n"
   code: "\uFEFF/*\n* @title unionfind\n* @docs kyopro/docs/unionfind.md\n*/\n\n//0-indexed\n\
     struct unionfind {\n\tvector<int> par, siz;\n\n\tunionfind(int n) : par(n), siz(n)\
     \ {\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\t//\u5168\u90E8\u6839\u3067\u521D\
@@ -51,18 +51,16 @@ data:
     \ siz[x];\n\t\t}\n\t\treturn true;\n\t}\n\n\t//\u540C\u3058\u96C6\u5408\u304B\u5224\
     \u5B9A\u3059\u308B\n\tbool same(int a, int b) {\n\t\treturn find(a) == find(b);\n\
     \t}\n\n\t//\u30B5\u30A4\u30BA\u3092\u8FD4\u3059\n\tint size(int a) {\n\t\treturn\
-    \ siz[find(a)];\n\t}\n\n\t//\u540C\u3058\u96C6\u5408\u306B\u5C5E\u3059\u8449\u3092\
-    \u7E8F\u3081\u3066\u8FD4\u3059\n\tvector<int> leaf(int a) {\n\t\tvector<int> x;\n\
-    \t\tint n = par.size();\n\t\tfor (int i = 0; i < n; ++i)if (same(a, i))x.push_back(i);\n\
-    \t\treturn x;\n\t}\n\n};\n"
+    \ siz[find(a)];\n\t}\n\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/library/datastructure/unionfind.cpp
   requiredBy: []
-  timestamp: '2020-08-30 03:39:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-12-17 00:26:22+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - kyopro/test/unionfind_yosupo-judge.test.cpp
+  - kyopro/test/set_enumerate.test.cpp
 documentation_of: kyopro/library/datastructure/unionfind.cpp
 layout: document
 redirect_from:

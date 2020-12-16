@@ -7,10 +7,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/LCA.cpp
     title: lowest-common-ancestor
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
@@ -36,25 +36,20 @@ data:
     #include <iostream>\n#include <random>\n#include <map>\n#include <unordered_map>\n\
     #include <queue>\n#include <regex>\n#include <functional>\n#include <complex>\n\
     #include <list>\n#include <cassert>\n#include <iomanip>\n#include <set>\n#include\
-    \ <stack>\n#include <bitset>\n\n////\u591A\u500D\u9577\u6574\u6570, cpp_int\u3067\
-    \u5BA3\u8A00\n//#include <boost/multiprecision/cpp_int.hpp>\n//using namespace\
-    \ boost::multiprecision;\n\n//#pragma GCC target (\"avx2\")\n//#pragma GCC optimization\
-    \ (\"O3\")\n//#pragma GCC optimization (\"unroll-loops\")\n//#pragma GCC target(\"\
-    sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native\")\n#define repeat(i,\
-    \ n, m) for(int i = n; i < (m); ++i)\n#define rep(i, n) for(int i = 0; i < (n);\
-    \ ++i)\n#define printynl(a) printf(a ? \"yes\\n\" : \"no\\n\")\n#define printyn(a)\
-    \ printf(a ? \"Yes\\n\" : \"No\\n\")\n#define printYN(a) printf(a ? \"YES\\n\"\
-    \ : \"NO\\n\")\n#define printim(a) printf(a ? \"possible\\n\" : \"imposible\\\
-    n\")\n#define printdb(a) printf(\"%.50lf\\n\", a) //\u5C11\u6570\u51FA\u529B\n\
-    #define printLdb(a) printf(\"%.50Lf\\n\", a) //\u5C11\u6570\u51FA\u529B\n#define\
-    \ printdbd(a) printf(\"%.16lf\\n\", a) //\u5C11\u6570\u51FA\u529B(\u6841\u5C11\
-    \u306A\u3081)\n#define prints(s) printf(\"%s\\n\", s.c_str()) //string\u51FA\u529B\
-    \n#define all(x) (x).begin(), (x).end()\n#define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)\n\
-    #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)\n#define Please return\n#define\
-    \ AC 0\n#define manhattan_dist(a, b, c, d) (abs(a - c) + abs(b - d)) /*(a, b)\
-    \ \u304B\u3089 (c, d) \u306E\u30DE\u30F3\u30CF\u30C3\u30BF\u30F3\u8DDD\u96E2 */\n\
-    #define inf numeric_limits<double>::infinity();\n#define linf numeric_limits<long\
-    \ double>::infinity()\n\nusing ll = long long;\nusing ull = unsigned long long;\n\
+    \ <stack>\n#include <bitset>\n#include <array>\n#include <chrono>\n\n//#pragma\
+    \ GCC target(\"arch=skylake-avx512\")\n//#pragma GCC target (\"avx2\")\n//#pragma\
+    \ GCC optimize (\"O3\")\n//#pragma GCC target (\"sse4\")\n//#pragma GCC optimize\
+    \ (\"unroll-loops\")\n//#pragma GCC target(\"sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native\"\
+    )\n#define repeat(i, n, m) for(int i = n; i < (m); ++i)\n#define rep(i, n) for(int\
+    \ i = 0; i < (n); ++i)\n#define printynl(a) printf(a ? \"yes\\n\" : \"no\\n\"\
+    )\n#define printyn(a) printf(a ? \"Yes\\n\" : \"No\\n\")\n#define printYN(a) printf(a\
+    \ ? \"YES\\n\" : \"NO\\n\")\n#define printim(a) printf(a ? \"possible\\n\" : \"\
+    imposible\\n\")\n#define printdb(a) printf(\"%.50lf\\n\", a)\n#define printLdb(a)\
+    \ printf(\"%.50Lf\\n\", a)\n#define printdbd(a) printf(\"%.16lf\\n\", a)\n#define\
+    \ prints(s) printf(\"%s\\n\", s.c_str())\n#define all(x) (x).begin(), (x).end()\n\
+    #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)\n#define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)\n\
+    #define Please return\n#define AC 0\n#define manhattan_dist(a, b, c, d) (abs(a\
+    \ - c) + abs(b - d))\n\nusing ll = long long;\nusing ull = unsigned long long;\n\
     \nconstexpr int INF = 1073741823;\nconstexpr int MINF = -1073741823;\nconstexpr\
     \ ll LINF = ll(4661686018427387903);\nconstexpr ll MOD = 1e9 + 7;\nconstexpr ll\
     \ mod = 998244353;\nconstexpr long double eps = 1e-6;\nconst long double PI =\
@@ -66,26 +61,30 @@ data:
     }\n\ndouble acot(double x) {\n\treturn PI / 2 - atan(x);\n}\n\nll LSB(ll n) {\
     \ return (n & (-n)); }\n\ntemplate<typename T>\ninline T chmin(T& a, const T&\
     \ b) {\n\tif (a > b)a = b;\n\treturn a;\n}\n\ntemplate<typename T>\ninline T chmax(T&\
-    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n#line 1 \"kyopro/library/graph/graph_template.cpp\"\
-    \n\uFEFF/*\n* @title template(graph)\n* @docs kyopro/docs/graph_template.md\n\
-    */\n\ntemplate<typename T>\nstruct edge {\n\tT cost;\n\tint from, to;\n\n\tedge(int\
-    \ from, int to) : from(from), to(to), cost(T(1)) {}\n\tedge(int from, int to,\
-    \ T cost) : from(from), to(to), cost(cost) {}\n};\n\ntemplate<typename T = int>\n\
-    struct graph {\n\n\tint n;\n\tbool directed, weighted;\n\n\tvector<vector<edge<T>>>\
-    \ g;\n\n\tgraph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed),\
-    \ weighted(weighted) {}\n\n\tvoid add_edge(int from, int to, T cost = T(1)) {\n\
-    \t\tg[from].emplace_back(from, to, cost);\n\t\tif (not directed) {\n\t\t\tg[to].emplace_back(to,\
-    \ from, cost);\n\t\t}\n\t}\n\n\tvector<edge<T>>& operator[](const int& idx) {\n\
-    \t\treturn g[idx];\n\t}\n\n\tvoid read(int e, bool one_indexed) {\n\t\tint a,\
-    \ b, c = 1;\n\t\twhile (e--) {\n\t\t\tscanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted)\
-    \ {\n\t\t\t\tscanf(\"%d\", &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\
-    \tadd_edge(a, b, c);\n\t\t}\n\t}\n\n\tvoid read(int e, bool one_indexed, const\
-    \ string& format) {\n\t\tint a, b;\n\t\tT c = T(1);\n\t\twhile (e--) {\n\t\t\t\
-    scanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted) {\n\t\t\t\tscanf(format.c_str(),\
-    \ &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\tadd_edge(a, b, c);\n\t\
-    \t}\n\t}\n\n};\n#line 5 \"kyopro/test/LCA_yosupo-judge.test.cpp\"\n\n#line 1 \"\
-    kyopro/library/datastructure/sparsetable.cpp\"\n/*\n* @title sparse-table\n* @docs\
-    \ kyopro/docs/sparsetable.md\n*/\n\n//RMQ <O(n log n), O(1)>\ntemplate<typename\
+    \ a, const T& b) {\n\tif (a < b)a = b;\n\treturn a;\n}\n\n////cpp_int\n//#include\
+    \ <boost/multiprecision/cpp_int.hpp>\n//#include <boost/multiprecision/cpp_dec_float.hpp>\n\
+    //using namespace boost::multiprecision;\n\n//atcoder library\n//#include <atcoder/all>\n\
+    //using namespace atcoder;\n\n//random_device seed_gen;\n//mt19937 engine(seed_gen());\n\
+    //uniform_distribution dist(-1.0, 1.0);\n\n/*----------------------------------------------------------------------------------*/\n\
+    #line 1 \"kyopro/library/graph/graph_template.cpp\"\n\uFEFF/*\n* @title template(graph)\n\
+    * @docs kyopro/docs/graph_template.md\n*/\n\ntemplate<typename T>\nstruct edge\
+    \ {\n\tT cost;\n\tint from, to;\n\n\tedge(int from, int to) : from(from), to(to),\
+    \ cost(T(1)) {}\n\tedge(int from, int to, T cost) : from(from), to(to), cost(cost)\
+    \ {}\n};\n\ntemplate<typename T = int>\nstruct graph {\n\n\tint n;\n\tbool directed,\
+    \ weighted;\n\n\tvector<vector<edge<T>>> g;\n\n\tgraph(int n, bool directed, bool\
+    \ weighted) : g(n), n(n), directed(directed), weighted(weighted) {}\n\n\tvoid\
+    \ add_edge(int from, int to, T cost = T(1)) {\n\t\tg[from].emplace_back(from,\
+    \ to, cost);\n\t\tif (not directed) {\n\t\t\tg[to].emplace_back(to, from, cost);\n\
+    \t\t}\n\t}\n\n\tvector<edge<T>>& operator[](const int& idx) {\n\t\treturn g[idx];\n\
+    \t}\n\n\tvoid read(int e, bool one_indexed) {\n\t\tint a, b, c = 1;\n\t\twhile\
+    \ (e--) {\n\t\t\tscanf(\"%d%d\", &a, &b);\n\t\t\tif (weighted) {\n\t\t\t\tscanf(\"\
+    %d\", &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a, --b;\n\t\t\tadd_edge(a, b, c);\n\
+    \t\t}\n\t}\n\n\tvoid read(int e, bool one_indexed, const string& format) {\n\t\
+    \tint a, b;\n\t\tT c = T(1);\n\t\twhile (e--) {\n\t\t\tscanf(\"%d%d\", &a, &b);\n\
+    \t\t\tif (weighted) {\n\t\t\t\tscanf(format.c_str(), &c);\n\t\t\t}\n\t\t\tif (one_indexed)--a,\
+    \ --b;\n\t\t\tadd_edge(a, b, c);\n\t\t}\n\t}\n\n};\n#line 5 \"kyopro/test/LCA_yosupo-judge.test.cpp\"\
+    \n\n#line 1 \"kyopro/library/datastructure/sparsetable.cpp\"\n/*\n* @title sparse-table\n\
+    * @docs kyopro/docs/sparsetable.md\n*/\n\n//RMQ <O(n log n), O(1)>\ntemplate<typename\
     \ T>\nstruct sparsetable {\n\n\tvector<vector<T>> table;\n\tvector<int> logtable;\n\
     \tvector<int> a;\n\tint n;\n\n\t// \u6E21\u3059\u914D\u5217, \u30B5\u30A4\u30BA\
     \n\tsparsetable(const vector<T> a, int siz) : n(siz), a(a) {\n\t\tlogtable.assign(n\
@@ -142,7 +141,7 @@ data:
   isVerificationFile: true
   path: kyopro/test/LCA_yosupo-judge.test.cpp
   requiredBy: []
-  timestamp: '2020-09-07 03:51:47+09:00'
+  timestamp: '2020-12-17 00:26:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/LCA_yosupo-judge.test.cpp

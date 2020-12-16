@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: kyopro/Source/Source.cpp
-      title: template(graph)
+      title: kyopro/Source/Source.cpp
   - name: kyopro/library/algorithm
     pages:
     - icon: ':heavy_check_mark:'
@@ -28,14 +28,17 @@ data:
       path: kyopro/library/datastructure/segtree.cpp
       title: segment-tree
     - icon: ':heavy_check_mark:'
+      path: kyopro/library/datastructure/set_enumerate.cpp
+      title: set_enumerate
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/sparsetable.cpp
       title: sparse-table
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/datastructure/unionfind.cpp
       title: unionfind
   - name: kyopro/library/geometry
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/library/geometry/vector2D.cpp
       title: vector(2D)
   - name: kyopro/library/graph
@@ -55,10 +58,10 @@ data:
     - icon: ':warning:'
       path: kyopro/library/graph/eulertour.cpp
       title: euler-tour
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/graph/graph_template.cpp
       title: template(graph)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/library/graph/kth-shortest-path_yen.cpp
       title: kth-shortest-path(yen's algorithm)
     - icon: ':heavy_check_mark:'
@@ -68,10 +71,10 @@ data:
     - icon: ':warning:'
       path: kyopro/library/graph/topological_sort.cpp
       title: topological-sort
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/library/graph/tree-diameter.cpp
       title: "tree diameter(\u6728\u306E\u76F4\u5F84)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/library/graph/warshallfloyd.cpp
       title: warshallfloyd
   - name: kyopro/library/math
@@ -102,12 +105,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/library/others/mo.cpp
       title: Mo's Algorithm
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/others/modint.cpp
       title: modint
   - name: kyopro/library/template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: kyopro/library/template/template.cpp
       title: template
   verificationCategories:
@@ -137,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
       title: kyopro/test/dijkstra_path_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
       title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
     - icon: ':heavy_check_mark:'
@@ -162,24 +165,27 @@ data:
       path: kyopro/test/segtree_yosupo-judge.test.cpp
       title: kyopro/test/segtree_yosupo-judge.test.cpp
     - icon: ':heavy_check_mark:'
+      path: kyopro/test/set_enumerate.test.cpp
+      title: kyopro/test/set_enumerate.test.cpp
+    - icon: ':heavy_check_mark:'
       path: kyopro/test/sparsetable_yosupo-judge.test.cpp
       title: kyopro/test/sparsetable_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/template_yosupo-judge.test.cpp
       title: kyopro/test/template_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/tree-diameter_aoj.test.cpp
       title: kyopro/test/tree-diameter_aoj.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
       title: kyopro/test/tree-diameter_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/unionfind_yosupo-judge.test.cpp
       title: kyopro/test/unionfind_yosupo-judge.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/vector2D_yukicoder.test.cpp
       title: kyopro/test/vector2D_yukicoder.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: kyopro/test/warshallfloyd_aoj.test.cpp
       title: kyopro/test/warshallfloyd_aoj.test.cpp
 layout: toppage

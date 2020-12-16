@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: kyopro/test/warshallfloyd_aoj.test.cpp
     title: kyopro/test/warshallfloyd_aoj.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: kyopro/docs/warshallfloyd.md
     document_title: warshallfloyd
@@ -28,7 +28,7 @@ data:
   path: kyopro/library/graph/warshallfloyd.cpp
   requiredBy: []
   timestamp: '2020-05-19 18:09:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - kyopro/test/warshallfloyd_aoj.test.cpp
 documentation_of: kyopro/library/graph/warshallfloyd.cpp
