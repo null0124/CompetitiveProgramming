@@ -28,7 +28,7 @@ int main() {
 	}
 	vector<vector<int>> path(k);
 	vector<long double> ans;
-	ksp<long double>(g, n, x, y, k, path, ans, linf);
+	ksp<long double>(g, n, x, y, k, path, ans, numeric_limits<double>::infinity());
 	rep(i, k)printLdb(ans[i]);
 
 	Please AC;
