@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/tree-diameter_aoj.test.cpp
     title: kyopro/test/tree-diameter_aoj.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
     title: kyopro/test/tree-diameter_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/tree-diameter.md
     document_title: "tree diameter(\u6728\u306E\u76F4\u5F84)"
@@ -47,7 +47,7 @@ data:
   path: kyopro/library/graph/tree-diameter.cpp
   requiredBy: []
   timestamp: '2020-09-07 03:43:07+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/tree-diameter_yosupo-judge.test.cpp
   - kyopro/test/tree-diameter_aoj.test.cpp

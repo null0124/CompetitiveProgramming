@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/warshallfloyd.cpp
     title: warshallfloyd
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_C
@@ -92,7 +92,7 @@ data:
   path: kyopro/test/warshallfloyd_aoj.test.cpp
   requiredBy: []
   timestamp: '2020-12-17 00:26:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/warshallfloyd_aoj.test.cpp
 layout: document

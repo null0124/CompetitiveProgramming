@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
     title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/kth-shortest-path_yen.md
     document_title: kth-shortest-path(yen's algorithm)
@@ -118,7 +118,7 @@ data:
   path: kyopro/library/graph/kth-shortest-path_yen.cpp
   requiredBy: []
   timestamp: '2020-08-02 04:57:13+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
 documentation_of: kyopro/library/graph/kth-shortest-path_yen.cpp

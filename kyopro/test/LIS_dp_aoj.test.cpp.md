@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/algorithm/LIS_dp.cpp
     title: longest-increasing-subsequence(dp)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []

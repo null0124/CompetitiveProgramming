@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/set_enumerate.test.cpp
     title: kyopro/test/set_enumerate.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/unionfind_yosupo-judge.test.cpp
     title: kyopro/test/unionfind_yosupo-judge.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/unionfind.md
     document_title: unionfind
@@ -57,7 +57,7 @@ data:
   path: kyopro/library/datastructure/unionfind.cpp
   requiredBy: []
   timestamp: '2020-12-17 00:26:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/unionfind_yosupo-judge.test.cpp
   - kyopro/test/set_enumerate.test.cpp

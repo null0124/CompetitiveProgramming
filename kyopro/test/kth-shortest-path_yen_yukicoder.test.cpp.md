@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/kth-shortest-path_yen.cpp
     title: kth-shortest-path(yen's algorithm)
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     ERROR: 1e-4
@@ -140,8 +140,8 @@ data:
     %d%d\", &p, &q);\n\t\t--p; --q;\n\t\tlong double a = xy[p].first, b = xy[p].second,\
     \ c = xy[q].first, d = xy[q].second;\n\t\tg.add_edge(p, q, sqrt((c - a) * (c -\
     \ a) + (d - b) * (d - b)));\n\t}\n\tvector<vector<int>> path(k);\n\tvector<long\
-    \ double> ans;\n\tksp<long double>(g, n, x, y, k, path, ans, linf);\n\trep(i,\
-    \ k)printLdb(ans[i]);\n\n\tPlease AC;\n}\n"
+    \ double> ans;\n\tksp<long double>(g, n, x, y, k, path, ans, numeric_limits<double>::infinity());\n\
+    \trep(i, k)printLdb(ans[i]);\n\n\tPlease AC;\n}\n"
   code: "\uFEFF#define PROBLEM \"https://yukicoder.me/problems/no/1069\"\n\n#define\
     \ ERROR 1e-4\n\n#include \"../library/template/template.cpp\"\n#include \"../library/graph/graph_template.cpp\"\
     \n\n#include \"../library/graph/kth-shortest-path_yen.cpp\"\n\nint main() {\n\n\
@@ -152,7 +152,8 @@ data:
     \t\tlong double a = xy[p].first, b = xy[p].second, c = xy[q].first, d = xy[q].second;\n\
     \t\tg.add_edge(p, q, sqrt((c - a) * (c - a) + (d - b) * (d - b)));\n\t}\n\tvector<vector<int>>\
     \ path(k);\n\tvector<long double> ans;\n\tksp<long double>(g, n, x, y, k, path,\
-    \ ans, linf);\n\trep(i, k)printLdb(ans[i]);\n\n\tPlease AC;\n}"
+    \ ans, numeric_limits<double>::infinity());\n\trep(i, k)printLdb(ans[i]);\n\n\t\
+    Please AC;\n}"
   dependsOn:
   - kyopro/library/template/template.cpp
   - kyopro/library/graph/graph_template.cpp
@@ -160,8 +161,8 @@ data:
   isVerificationFile: true
   path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
   requiredBy: []
-  timestamp: '2020-12-17 00:26:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-17 00:59:26+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
 layout: document

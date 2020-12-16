@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/graph_template.cpp
     title: template(graph)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/graph/tree-diameter.cpp
     title: "tree diameter(\u6728\u306E\u76F4\u5F84)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
@@ -114,7 +114,7 @@ data:
   path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
   requiredBy: []
   timestamp: '2020-12-17 00:26:22+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/tree-diameter_yosupo-judge.test.cpp
 layout: document

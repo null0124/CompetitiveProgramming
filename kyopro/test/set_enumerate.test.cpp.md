@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/library/datastructure/set_enumerate.cpp
     title: set_enumerate
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/datastructure/unionfind.cpp
     title: unionfind
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: kyopro/library/template/template.cpp
     title: template
   _extendedRequiredBy: []
