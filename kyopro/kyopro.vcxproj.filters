@@ -184,6 +184,12 @@
     <ClCompile Include="library\math\kth_permutation.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\datastructure\set_enumerate.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\set_enumerate.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -216,5 +222,6 @@
     <None Include="docs\tree-diameter.md" />
     <None Include="docs\vector2D.md" />
     <None Include="docs\kth_permutaiton.md" />
+    <None Include="docs\set_enumerate.md" />
   </ItemGroup>
 </Project>

@@ -30,14 +30,14 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
+#include <array>
+#include <chrono>
 
-////多倍長整数, cpp_intで宣言
-//#include <boost/multiprecision/cpp_int.hpp>
-//using namespace boost::multiprecision;
-//
+//#pragma GCC target("arch=skylake-avx512")
 //#pragma GCC target ("avx2")
-//#pragma GCC optimization ("O3")
-//#pragma GCC optimization ("unroll-loops")
+//#pragma GCC optimize ("O3")
+//#pragma GCC target ("sse4")
+//#pragma GCC optimize ("unroll-loops")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
@@ -45,18 +45,16 @@ Be accepted!
 #define printyn(a) printf(a ? "Yes\n" : "No\n")
 #define printYN(a) printf(a ? "YES\n" : "NO\n")
 #define printim(a) printf(a ? "possible\n" : "imposible\n")
-#define printdb(a) printf("%.50lf\n", a) //少数出力
-#define printLdb(a) printf("%.50Lf\n", a) //少数出力
-#define printdbd(a) printf("%.16lf\n", a) //少数出力(桁少なめ)
-#define prints(s) printf("%s\n", s.c_str()) //string出力
+#define printdb(a) printf("%.50lf\n", a)
+#define printLdb(a) printf("%.50Lf\n", a)
+#define printdbd(a) printf("%.16lf\n", a)
+#define prints(s) printf("%s\n", s.c_str())
 #define all(x) (x).begin(), (x).end()
 #define deg_to_rad(deg) (((deg)/360.0L)*2.0L*PI)
 #define rad_to_deg(rad) (((rad)/2.0L/PI)*360.0L)
 #define Please return
 #define AC 0
-#define manhattan_dist(a, b, c, d) (abs(a - c) + abs(b - d)) /*(a, b) から (c, d) のマンハッタン距離 */
-#define inf numeric_limits<double>::infinity();
-#define linf numeric_limits<long double>::infinity()
+#define manhattan_dist(a, b, c, d) (abs(a - c) + abs(b - d))
 
 using ll = long long;
 using ull = unsigned long long;
@@ -110,16 +108,25 @@ inline T chmax(T& a, const T& b) {
 	return a;
 }
 
+////cpp_int
+//#include <boost/multiprecision/cpp_int.hpp>
+//#include <boost/multiprecision/cpp_dec_float.hpp>
+//using namespace boost::multiprecision;
+
 //atcoder library
 //#include <atcoder/all>
 //using namespace atcoder;
 
-/*-----------------------------------------ここからコード-----------------------------------------*/
+//random_device seed_gen;
+//mt19937 engine(seed_gen());
+//uniform_distribution dist(-1.0, 1.0);
+
+/*----------------------------------------------------------------------------------*/
 
 
 
 int main() {
-
+	
 
 
 	Please AC;
