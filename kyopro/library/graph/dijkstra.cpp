@@ -14,7 +14,9 @@ vector<T> dijkstra(graph<T>& g, const int& v, const int& n, const T Inf) {
 	int top;
 	while (!priq.empty()) {
 		top = priq.top().second;
+		T cost = priq.top().first;
 		priq.pop();
+		if (cost > res[top])continue;
 		for (const auto& aa : g[top]) {
 			if (res[top] + aa.cost >= res[aa.to])continue;
 			res[aa.to] = aa.cost + res[top];
