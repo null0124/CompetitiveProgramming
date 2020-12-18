@@ -76,9 +76,9 @@ data:
   timestamp: '2020-10-06 00:21:34+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/lazysegtree_yosupo-judge.test.cpp
   - kyopro/test/segtree_yosupo-judge.test.cpp
   - kyopro/test/vector2D_yukicoder.test.cpp
+  - kyopro/test/lazysegtree_yosupo-judge.test.cpp
 documentation_of: kyopro/library/others/modint.cpp
 layout: document
 redirect_from:
