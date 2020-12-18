@@ -61,12 +61,4 @@ struct unionfind {
 		return siz[find(a)];
 	}
 
-	//同じ集合に属す葉を纏めて返す
-	vector<int> leaf(int a) {
-		vector<int> x;
-		int n = par.size();
-		for (int i = 0; i < n; ++i)if (same(a, i))x.push_back(i);
-		return x;
-	}
-
 };
