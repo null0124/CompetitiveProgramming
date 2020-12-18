@@ -30,13 +30,17 @@ Be accepted!
 #include <set>
 #include <stack>
 #include <bitset>
+#include <array>
 
 ////多倍長整数, cpp_intで宣言
 //#include <boost/multiprecision/cpp_int.hpp>
+//#include <boost/multiprecision/cpp_dec_float.hpp>
 //using namespace boost::multiprecision;
 //
-//#pragma GCC target ("avx2")
-//#pragma GCC optimization ("O3")
+#pragma GCC target ("avx2")
+//#pragma GCC target("arch=skylake-avx512")
+//#pragma GCC optimiz ("O3")
+//#pragma GCC target ("sse4")
 //#pragma GCC optimization ("unroll-loops")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
@@ -114,103 +118,16 @@ inline T chmax(T& a, const T& b) {
 //#include <atcoder/all>
 //using namespace atcoder;
 
+//random_device seed_gen;
+//mt19937 engine(seed_gen());
+//uniform_distribution dist(-1.0, 1.0);
+
 /*-----------------------------------------ここからコード-----------------------------------------*/
 
-/*
-* @title template(graph)
-* @docs kyopro/docs/graph_template.md
-*/
-
-template<typename T>
-struct edge {
-	T cost;
-	int from, to;
-
-	edge(int from, int to) : from(from), to(to), cost(T(1)) {}
-	edge(int from, int to, T cost) : from(from), to(to), cost(cost) {}
-};
-
-template<typename T = int>
-struct graph {
-
-	int n;
-	bool directed, weighted;
-
-	vector<vector<edge<T>>> g;
-
-	graph(int n, bool directed, bool weighted) : g(n), n(n), directed(directed), weighted(weighted) {}
-
-	void add_edge(int from, int to, T cost = T(1)) {
-		g[from].emplace_back(from, to, cost);
-		if (not directed) {
-			g[to].emplace_back(to, from, cost);
-		}
-	}
-
-	vector<edge<T>>& operator[](const int& idx) {
-		return g[idx];
-	}
-
-	void read(int e, bool one_indexed) {
-		int a, b, c = 1;
-		while (e--) {
-			scanf("%d%d", &a, &b);
-			if (weighted) {
-				scanf("%d", &c);
-			}
-			if (one_indexed)--a, --b;
-			add_edge(a, b, c);
-		}
-	}
-
-	void read(int e, bool one_indexed, const string& format) {
-		int a, b;
-		T c = T(1);
-		while (e--) {
-			scanf("%d%d", &a, &b);
-			if (weighted) {
-				scanf(format.c_str(), &c);
-			}
-			if (one_indexed)--a, --b;
-			add_edge(a, b, c);
-		}
-	}
-
-};
-
-/*
-* @title dijkstra
-* @docs kyopro/docs/dijkstra.md
-*/
-
-
-template<typename T = int>
-vector<T> dijkstra(graph<T>& g, const int& v, const int& n, const T Inf) {
-	priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> priq;
-	vector<T> res(n);
-	fill(all(res), Inf);
-	priq.push({ 0, v });
-	res[v] = 0;
-	int top;
-	while (!priq.empty()) {
-		top = priq.top().second;
-		T cost = priq.top().first;
-		priq.pop();
-		if (cost > res[top])continue;
-		for (const auto& aa : g[top]) {
-			if (res[top] + aa.cost >= res[aa.to])continue;
-			res[aa.to] = aa.cost + res[top];
-			priq.push({ res[aa.to], aa.to });
-		}
-	}
-	return res;
-}
 
 
 int main() {
 
-	int n, m;
-	scanf("%d%d", &n, &m);
 
 
 	Please AC;
