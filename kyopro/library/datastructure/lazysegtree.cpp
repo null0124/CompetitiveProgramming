@@ -186,3 +186,8 @@ struct lazysegtree {
 	//}
 
 };
+
+template<typename T, typename U, typename F, typename F2, typename F3, typename F4>
+lazysegtree<T, U, F, F2, F3, F4> get_lazy_segtree(int n, const T& se, const F& f, const U& le, const F2& f2, const F3& f3, const F4& f4) {
+	return { n, se, f, le, f2, f3, f4 };
+}

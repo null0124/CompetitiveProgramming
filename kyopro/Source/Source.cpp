@@ -33,11 +33,12 @@ Be accepted!
 #include <array>
 #include <chrono>
 
-//#pragma GCC target("arch=skylake-avx512")
-//#pragma GCC target ("avx2")
-//#pragma GCC optimize ("O3")
-//#pragma GCC target ("sse4")
-//#pragma GCC optimize ("unroll-loops")
+////#pragma GCC target("arch=skylake-avx512")
+#pragma GCC target("avx2")
+//#pragma GCC optimize("O3")
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse4")
+#pragma GCC optimize("unroll-loops")
 //#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #define repeat(i, n, m) for(int i = n; i < (m); ++i)
 #define rep(i, n) for(int i = 0; i < (n); ++i)
@@ -119,14 +120,16 @@ inline T chmax(T& a, const T& b) {
 
 //random_device seed_gen;
 //mt19937 engine(seed_gen());
-//uniform_distribution dist(-1.0, 1.0);
+//uniform_int_distribution dist(1, 100);
 
 /*----------------------------------------------------------------------------------*/
 
 
 
+
+
 int main() {
-	
+
 
 
 	Please AC;

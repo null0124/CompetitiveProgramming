@@ -107,3 +107,8 @@ struct segtree {
 	}
 
 };
+
+template<typename T, typename F>
+segtree<T, F> get_segtree(int n, const T& e, const F& f) {
+	return { n, e, f };
+}
