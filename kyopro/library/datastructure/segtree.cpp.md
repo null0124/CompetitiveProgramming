@@ -65,7 +65,9 @@ data:
     \ FT revf) {\n\t\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
     \ true, revf);\n\t}\n\n\ttemplate<typename C, typename FT>\n\tint find_right(int\
     \ start, int end, const C check, T checknum, FT revf) {\n\t\treturn find< C, FT\
-    \ >(start, end, 0, siz + 1, 0, check, checknum, false, revf);\n\t}\n\n};\n"
+    \ >(start, end, 0, siz + 1, 0, check, checknum, false, revf);\n\t}\n\n};\n\ntemplate<typename\
+    \ T, typename F>\nsegtree<T, F> get_segtree(int n, const T& e, const F& f) {\n\
+    \treturn { n, e, f };\n}\n"
   code: "\uFEFF/*\n* @title segment-tree\n* @docs kyopro/docs/segtree.md\n*/\n\n\n\
     //\u30BB\u30B0\u6728/0-indexed/\u975E\u518D\u5E30/(\u5927\u304D\u3055, \u5358\u4F4D\
     \u5143)\u3067\u521D\u671F\u5316\ntemplate<typename T, typename F>\nstruct segtree\
@@ -115,12 +117,14 @@ data:
     \ FT revf) {\n\t\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
     \ true, revf);\n\t}\n\n\ttemplate<typename C, typename FT>\n\tint find_right(int\
     \ start, int end, const C check, T checknum, FT revf) {\n\t\treturn find< C, FT\
-    \ >(start, end, 0, siz + 1, 0, check, checknum, false, revf);\n\t}\n\n};"
+    \ >(start, end, 0, siz + 1, 0, check, checknum, false, revf);\n\t}\n\n};\n\ntemplate<typename\
+    \ T, typename F>\nsegtree<T, F> get_segtree(int n, const T& e, const F& f) {\n\
+    \treturn { n, e, f };\n}"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/library/datastructure/segtree.cpp
   requiredBy: []
-  timestamp: '2020-08-10 07:56:48+09:00'
+  timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp

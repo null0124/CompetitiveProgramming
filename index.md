@@ -15,7 +15,7 @@ data:
     pages:
     - icon: ':warning:'
       path: kyopro/library/datastructure/BBST/splaytree.cpp
-      title: splay-tree
+      title: kyopro/library/datastructure/BBST/splaytree.cpp
   - name: kyopro/library/datastructure
     pages:
     - icon: ':heavy_check_mark:'

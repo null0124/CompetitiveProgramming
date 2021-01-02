@@ -184,19 +184,22 @@ data:
     \ true, revf);\n\t//}\n\n\t//template<typename C, typename FT>\n\t//int find_right(int\
     \ start, int end, const C check, T checknum, FT revf) {\n\t//\treturn find< C,\
     \ FT >(start, end, 0, siz + 1, 0, check, checknum, false, revf);\n\t//}\n\n};\n\
-    #line 7 \"kyopro/test/lazysegtree_yosupo-judge.test.cpp\"\n\ninline auto f2 =\
-    \ [](pair<Modint, Modint> a, pair<Modint, Modint> b) {\n\treturn make_pair(a.first\
-    \ * b.first, a.second * b.first + b.second);\n};\ninline auto f3 = [](Modint a,\
-    \ pair<Modint, Modint> b) {\n\treturn a * b.first + b.second;\n};\ninline auto\
-    \ f4 = [](pair<Modint, Modint> a, int siz) {\n\treturn make_pair(a.first, a.second\
-    \ * siz);\n};\n\nint main() {\n\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\tlazysegtree<Modint,\
-    \ pair<Modint, Modint>, decltype(plus<Modint>()), decltype(f2), decltype(f3),\
-    \ decltype(f4)> seg(n, 0, plus<Modint>(), make_pair(1, 0), f2, f3, f4);\n\tModint\
-    \ tmp;\n\trep(i, n) {\n\t\tscanf(\"%d\", &tmp.val);\n\t\tseg.set(i, tmp);\n\t\
-    }\n\tseg.build();\n\tint type, l, r, b, c;\n\twhile (q--) {\n\t\tscanf(\"%d%d%d\"\
-    , &type, &l, &r);\n\t\tif (type) {\n\t\t\tprintf(\"%d\\n\", seg.query(l, r).val);\n\
-    \t\t}\n\t\telse {\n\t\t\tscanf(\"%d%d\", &b, &c);\n\t\t\tseg.update(l, r, make_pair(b,\
-    \ c));\n\t\t}\n\t}\n\n\tPlease AC;\n}\n"
+    \ntemplate<typename T, typename U, typename F, typename F2, typename F3, typename\
+    \ F4>\nlazysegtree<T, U, F, F2, F3, F4> get_lazy_segtree(int n, const T& se, const\
+    \ F& f, const U& le, const F2& f2, const F3& f3, const F4& f4) {\n\treturn { n,\
+    \ se, f, le, f2, f3, f4 };\n}\n#line 7 \"kyopro/test/lazysegtree_yosupo-judge.test.cpp\"\
+    \n\ninline auto f2 = [](pair<Modint, Modint> a, pair<Modint, Modint> b) {\n\t\
+    return make_pair(a.first * b.first, a.second * b.first + b.second);\n};\ninline\
+    \ auto f3 = [](Modint a, pair<Modint, Modint> b) {\n\treturn a * b.first + b.second;\n\
+    };\ninline auto f4 = [](pair<Modint, Modint> a, int siz) {\n\treturn make_pair(a.first,\
+    \ a.second * siz);\n};\n\nint main() {\n\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\
+    \tlazysegtree<Modint, pair<Modint, Modint>, decltype(plus<Modint>()), decltype(f2),\
+    \ decltype(f3), decltype(f4)> seg(n, 0, plus<Modint>(), make_pair(1, 0), f2, f3,\
+    \ f4);\n\tModint tmp;\n\trep(i, n) {\n\t\tscanf(\"%d\", &tmp.val);\n\t\tseg.set(i,\
+    \ tmp);\n\t}\n\tseg.build();\n\tint type, l, r, b, c;\n\twhile (q--) {\n\t\tscanf(\"\
+    %d%d%d\", &type, &l, &r);\n\t\tif (type) {\n\t\t\tprintf(\"%d\\n\", seg.query(l,\
+    \ r).val);\n\t\t}\n\t\telse {\n\t\t\tscanf(\"%d%d\", &b, &c);\n\t\t\tseg.update(l,\
+    \ r, make_pair(b, c));\n\t\t}\n\t}\n\n\tPlease AC;\n}\n"
   code: "\uFEFF#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n\n#include \"../library/template/template.cpp\"\n\n#include \"../library/others/modint.cpp\"\
     \n#include \"../library/datastructure/lazysegtree.cpp\"\n\ninline auto f2 = [](pair<Modint,\
@@ -219,7 +222,7 @@ data:
   isVerificationFile: true
   path: kyopro/test/lazysegtree_yosupo-judge.test.cpp
   requiredBy: []
-  timestamp: '2020-12-17 00:26:22+09:00'
+  timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/lazysegtree_yosupo-judge.test.cpp

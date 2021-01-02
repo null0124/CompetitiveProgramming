@@ -106,7 +106,10 @@ data:
     \ end, 0, siz + 1, 0, check, checknum, true, revf);\n\t//}\n\n\t//template<typename\
     \ C, typename FT>\n\t//int find_right(int start, int end, const C check, T checknum,\
     \ FT revf) {\n\t//\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
-    \ false, revf);\n\t//}\n\n};\n"
+    \ false, revf);\n\t//}\n\n};\n\ntemplate<typename T, typename U, typename F, typename\
+    \ F2, typename F3, typename F4>\nlazysegtree<T, U, F, F2, F3, F4> get_lazy_segtree(int\
+    \ n, const T& se, const F& f, const U& le, const F2& f2, const F3& f3, const F4&\
+    \ f4) {\n\treturn { n, se, f, le, f2, f3, f4 };\n}\n"
   code: "\uFEFF/*\n* @title lazy-segment-tree\n* @docs kyopro/docs/lazysegtree.md\n\
     */\n\n//\u30BB\u30B0\u6728/0-indexed/\u975E\u518D\u5E30/n \u306E\u5927\u304D\u3055\
     , a (\u5358\u4F4D\u5143), \u672C\u4F53\u306E\u30DE\u30FC\u30B8\u95A2\u6570, \u9045\
@@ -200,12 +203,15 @@ data:
     \ end, 0, siz + 1, 0, check, checknum, true, revf);\n\t//}\n\n\t//template<typename\
     \ C, typename FT>\n\t//int find_right(int start, int end, const C check, T checknum,\
     \ FT revf) {\n\t//\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
-    \ false, revf);\n\t//}\n\n};\n"
+    \ false, revf);\n\t//}\n\n};\n\ntemplate<typename T, typename U, typename F, typename\
+    \ F2, typename F3, typename F4>\nlazysegtree<T, U, F, F2, F3, F4> get_lazy_segtree(int\
+    \ n, const T& se, const F& f, const U& le, const F2& f2, const F3& f3, const F4&\
+    \ f4) {\n\treturn { n, se, f, le, f2, f3, f4 };\n}"
   dependsOn: []
   isVerificationFile: false
   path: kyopro/library/datastructure/lazysegtree.cpp
   requiredBy: []
-  timestamp: '2020-08-14 03:45:21+09:00'
+  timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - kyopro/test/lazysegtree_yosupo-judge.test.cpp

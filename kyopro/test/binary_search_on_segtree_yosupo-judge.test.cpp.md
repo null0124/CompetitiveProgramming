@@ -115,32 +115,33 @@ data:
     \ >(start, end, 0, siz + 1, 0, check, checknum, true, revf);\n\t}\n\n\ttemplate<typename\
     \ C, typename FT>\n\tint find_right(int start, int end, const C check, T checknum,\
     \ FT revf) {\n\t\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
-    \ false, revf);\n\t}\n\n};\n#line 1 \"kyopro/library/others/mo.cpp\"\n\uFEFF/*\n\
-    * @title Mo's Algorithm\n* @docs kyopro/docs/mo.md\n*/\n\ntemplate<typename ADD_LEFT,\
-    \ typename DEL_LEFT, typename REM, typename ADD_RIGHT = ADD_LEFT, typename DEL_RIGHT\
-    \ = DEL_LEFT, typename T = int>\nstruct mo {\n\tint sqn, q, l, r, p;\n\tT ret;\n\
-    \tvector<tuple<int, int, int>> query;\n\tvector<T> ans;\n\n\tmo(const int& n,\
-    \ const int& q) : sqn((int)sqrt(n)), q(q), l(0), r(0), p(0), ret(T(0)), query(q),\
-    \ ans(q) {}\n\n\tinline void insert(const int& l, const int& r) {\n\t\tquery[p]\
-    \ = { l, r, p };\n\t\t++p;\n\t}\n\n\tinline void read(const bool& oneindexed)\
-    \ {\n\t\tfor (auto& [left, right, idx] : query) {\n\t\t\tscanf(\"%d%d\", &left,\
-    \ &right);\n\t\t\tif (oneindexed)--left;\n\t\t\tidx = p++;\n\t\t}\n\t}\n\n\tvoid\
-    \ build() {\n\t\tsort(all(query), [&](const tuple<int, int, int>& a, const tuple<int,\
-    \ int, int>& b) {\n\t\t\tif (get<0>(a) / sqn != get<0>(b) / sqn)return get<0>(a)\
-    \ < get<0>(b);\n\t\t\treturn get<1>(a) < get<1>(b);\n\t\t\t});\n\t}\n\n\tvoid\
-    \ run(const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left,\
-    \ const DEL_RIGHT& del_right, const REM& rem) {\n\t\tfor (const auto& [ql, qr,\
-    \ qo] : query) {\n\t\t\twhile (l > ql)add_left(--l, ret);\n\t\t\twhile (r < qr)add_right(r++,\
-    \ ret);\n\t\t\twhile (l < ql)del_left(l++, ret);\n\t\t\twhile (r > qr)del_right(--r,\
-    \ ret);\n\t\t\trem(qo, ans, ret);\n\t\t}\n\t}\n\n\tvoid run(const ADD_LEFT& add,\
-    \ const DEL_LEFT& del, const REM& rem) {\n\t\trun(add, add, del, del, rem);\n\t\
-    }\n\n\tT operator [](const int& idx) {\n\t\treturn ans[idx];\n\t}\n\n\tvoid allrun(const\
-    \ bool& oneindexed, const ADD_LEFT& add_left, const ADD_RIGHT& add_right, const\
-    \ DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {\n\t\tread(oneindexed);\n\
-    \t\tbuild();\n\t\trun(add_left, add_right, del_left, del_right, rem);\n\t}\n\n\
-    \tvoid allrun(const bool& oneindexed, const ADD_LEFT& add, const DEL_LEFT& del,\
-    \ const REM& rem) {\n\t\tallrun(oneindexed, add, add, del, del, rem, rem);\n\t\
-    }\n\n};\n#line 7 \"kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp\"\
+    \ false, revf);\n\t}\n\n};\n\ntemplate<typename T, typename F>\nsegtree<T, F>\
+    \ get_segtree(int n, const T& e, const F& f) {\n\treturn { n, e, f };\n}\n#line\
+    \ 1 \"kyopro/library/others/mo.cpp\"\n\uFEFF/*\n* @title Mo's Algorithm\n* @docs\
+    \ kyopro/docs/mo.md\n*/\n\ntemplate<typename ADD_LEFT, typename DEL_LEFT, typename\
+    \ REM, typename ADD_RIGHT = ADD_LEFT, typename DEL_RIGHT = DEL_LEFT, typename\
+    \ T = int>\nstruct mo {\n\tint sqn, q, l, r, p;\n\tT ret;\n\tvector<tuple<int,\
+    \ int, int>> query;\n\tvector<T> ans;\n\n\tmo(const int& n, const int& q) : sqn((int)sqrt(n)),\
+    \ q(q), l(0), r(0), p(0), ret(T(0)), query(q), ans(q) {}\n\n\tinline void insert(const\
+    \ int& l, const int& r) {\n\t\tquery[p] = { l, r, p };\n\t\t++p;\n\t}\n\n\tinline\
+    \ void read(const bool& oneindexed) {\n\t\tfor (auto& [left, right, idx] : query)\
+    \ {\n\t\t\tscanf(\"%d%d\", &left, &right);\n\t\t\tif (oneindexed)--left;\n\t\t\
+    \tidx = p++;\n\t\t}\n\t}\n\n\tvoid build() {\n\t\tsort(all(query), [&](const tuple<int,\
+    \ int, int>& a, const tuple<int, int, int>& b) {\n\t\t\tif (get<0>(a) / sqn !=\
+    \ get<0>(b) / sqn)return get<0>(a) < get<0>(b);\n\t\t\treturn get<1>(a) < get<1>(b);\n\
+    \t\t\t});\n\t}\n\n\tvoid run(const ADD_LEFT& add_left, const ADD_RIGHT& add_right,\
+    \ const DEL_LEFT& del_left, const DEL_RIGHT& del_right, const REM& rem) {\n\t\t\
+    for (const auto& [ql, qr, qo] : query) {\n\t\t\twhile (l > ql)add_left(--l, ret);\n\
+    \t\t\twhile (r < qr)add_right(r++, ret);\n\t\t\twhile (l < ql)del_left(l++, ret);\n\
+    \t\t\twhile (r > qr)del_right(--r, ret);\n\t\t\trem(qo, ans, ret);\n\t\t}\n\t\
+    }\n\n\tvoid run(const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {\n\t\
+    \trun(add, add, del, del, rem);\n\t}\n\n\tT operator [](const int& idx) {\n\t\t\
+    return ans[idx];\n\t}\n\n\tvoid allrun(const bool& oneindexed, const ADD_LEFT&\
+    \ add_left, const ADD_RIGHT& add_right, const DEL_LEFT& del_left, const DEL_RIGHT&\
+    \ del_right, const REM& rem) {\n\t\tread(oneindexed);\n\t\tbuild();\n\t\trun(add_left,\
+    \ add_right, del_left, del_right, rem);\n\t}\n\n\tvoid allrun(const bool& oneindexed,\
+    \ const ADD_LEFT& add, const DEL_LEFT& del, const REM& rem) {\n\t\tallrun(oneindexed,\
+    \ add, add, del, del, rem, rem);\n\t}\n\n};\n#line 7 \"kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp\"\
     \n\nint main() {\n\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\tvector<int> a(n),\
     \ b;\n\trep(i, n)scanf(\"%d\", &a[i]);\n\tb = a;\n\tsort(all(b));\n\tb.erase(unique(all(b)),\
     \ b.end());\n\trep(i, n)a[i] = distance(b.begin(), lower_bound(all(b), a[i]));\n\
@@ -179,7 +180,7 @@ data:
   isVerificationFile: true
   path: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
   requiredBy: []
-  timestamp: '2020-12-17 00:26:22+09:00'
+  timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp

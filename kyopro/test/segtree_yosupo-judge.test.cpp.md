@@ -140,16 +140,18 @@ data:
     \ >(start, end, 0, siz + 1, 0, check, checknum, true, revf);\n\t}\n\n\ttemplate<typename\
     \ C, typename FT>\n\tint find_right(int start, int end, const C check, T checknum,\
     \ FT revf) {\n\t\treturn find< C, FT >(start, end, 0, siz + 1, 0, check, checknum,\
-    \ false, revf);\n\t}\n\n};\n#line 7 \"kyopro/test/segtree_yosupo-judge.test.cpp\"\
-    \n\nusing Modint = modint<998244353>;\n\nint main() {\n\n\tint n, q;\n\tscanf(\"\
-    %d%d\", &n, &q);\n\tauto f = [](pair<Modint, Modint> x, pair<Modint, Modint> y)\
-    \ {return make_pair(x.first * y.first, y.second + y.first * x.second); };\n\t\
-    segtree<pair<Modint, Modint>, decltype(f)> tree(n, { 1, 0 }, f);\n\trep(i, n)\
-    \ {\n\t\tint a, b;\n\t\tscanf(\"%d%d\", &a, &b);\n\t\ttree.set(i, { a, b });\n\
-    \t}\n\ttree.build();\n\tint p, c, d, k;\n\trep(i, q) {\n\t\tscanf(\"%d%d%d%d\"\
-    , &k, &p, &c, &d);\n\t\tif (k) {\n\t\t\tModint x = d;\n\t\t\tauto f = tree.query(p,\
-    \ c);\n\t\t\tprintf(\"%d\\n\", (x * f.first + f.second).val);\n\t\t}\n\t\telse\
-    \ {\n\t\t\ttree.update(p, { c, d });\n\t\t}\n\t}\n\n\tPlease AC;\n}\n"
+    \ false, revf);\n\t}\n\n};\n\ntemplate<typename T, typename F>\nsegtree<T, F>\
+    \ get_segtree(int n, const T& e, const F& f) {\n\treturn { n, e, f };\n}\n#line\
+    \ 7 \"kyopro/test/segtree_yosupo-judge.test.cpp\"\n\nusing Modint = modint<998244353>;\n\
+    \nint main() {\n\n\tint n, q;\n\tscanf(\"%d%d\", &n, &q);\n\tauto f = [](pair<Modint,\
+    \ Modint> x, pair<Modint, Modint> y) {return make_pair(x.first * y.first, y.second\
+    \ + y.first * x.second); };\n\tsegtree<pair<Modint, Modint>, decltype(f)> tree(n,\
+    \ { 1, 0 }, f);\n\trep(i, n) {\n\t\tint a, b;\n\t\tscanf(\"%d%d\", &a, &b);\n\t\
+    \ttree.set(i, { a, b });\n\t}\n\ttree.build();\n\tint p, c, d, k;\n\trep(i, q)\
+    \ {\n\t\tscanf(\"%d%d%d%d\", &k, &p, &c, &d);\n\t\tif (k) {\n\t\t\tModint x =\
+    \ d;\n\t\t\tauto f = tree.query(p, c);\n\t\t\tprintf(\"%d\\n\", (x * f.first +\
+    \ f.second).val);\n\t\t}\n\t\telse {\n\t\t\ttree.update(p, { c, d });\n\t\t}\n\
+    \t}\n\n\tPlease AC;\n}\n"
   code: "\uFEFF#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include \"../library/template/template.cpp\"\n\n#include \"../library/others/modint.cpp\"\
     \n#include \"../library/datastructure/segtree.cpp\"\n\nusing Modint = modint<998244353>;\n\
@@ -169,7 +171,7 @@ data:
   isVerificationFile: true
   path: kyopro/test/segtree_yosupo-judge.test.cpp
   requiredBy: []
-  timestamp: '2020-12-17 00:26:22+09:00'
+  timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: kyopro/test/segtree_yosupo-judge.test.cpp
