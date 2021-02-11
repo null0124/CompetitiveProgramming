@@ -190,6 +190,12 @@
     <ClCompile Include="test\set_enumerate.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="library\datastructure\segtree_2D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="test\segtree_2D_yosupo-judge.test.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -223,5 +229,6 @@
     <None Include="docs\vector2D.md" />
     <None Include="docs\kth_permutaiton.md" />
     <None Include="docs\set_enumerate.md" />
+    <None Include="docs\segtree_2d.md" />
   </ItemGroup>
 </Project>
