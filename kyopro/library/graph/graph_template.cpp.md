@@ -33,6 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/tree-diameter_yosupo-judge.test.cpp
     title: kyopro/test/tree-diameter_yosupo-judge.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -80,16 +81,16 @@ data:
   timestamp: '2020-09-07 03:51:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/LCA_yosupo-judge.test.cpp
+  - kyopro/test/scc_aoj.test.cpp
   - kyopro/test/dijkstra_aoj.test.cpp
   - kyopro/test/tree-diameter_yosupo-judge.test.cpp
-  - kyopro/test/dijkstra_path_yosupo-judge.test.cpp
-  - kyopro/test/scc-cg_aoj.test.cpp
   - kyopro/test/LCA_weighted_yukicoder.test.cpp
-  - kyopro/test/tree-diameter_aoj.test.cpp
   - kyopro/test/scc_yosupo-judge.test.cpp
+  - kyopro/test/dijkstra_path_yosupo-judge.test.cpp
+  - kyopro/test/LCA_yosupo-judge.test.cpp
+  - kyopro/test/tree-diameter_aoj.test.cpp
   - kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
-  - kyopro/test/scc_aoj.test.cpp
+  - kyopro/test/scc-cg_aoj.test.cpp
 documentation_of: kyopro/library/graph/graph_template.cpp
 layout: document
 redirect_from:

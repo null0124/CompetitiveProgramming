@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/dijkstra_aoj.test.cpp
     title: kyopro/test/dijkstra_aoj.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

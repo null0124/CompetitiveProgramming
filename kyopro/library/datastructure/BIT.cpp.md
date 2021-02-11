@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/mo_yosupo-judge.test.cpp
     title: kyopro/test/mo_yosupo-judge.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -46,8 +47,8 @@ data:
   timestamp: '2020-08-16 22:28:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/mo_yosupo-judge.test.cpp
   - kyopro/test/BIT_yosupo-judge.test.cpp
+  - kyopro/test/mo_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/BIT.cpp
 layout: document
 redirect_from:

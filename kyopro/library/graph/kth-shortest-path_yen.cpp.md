@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
     title: kyopro/test/kth-shortest-path_yen_yukicoder.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

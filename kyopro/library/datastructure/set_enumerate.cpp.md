@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/set_enumerate.test.cpp
     title: kyopro/test/set_enumerate.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

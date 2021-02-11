@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/vector2D_yukicoder.test.cpp
     title: kyopro/test/vector2D_yukicoder.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: kyopro/test/unionfind_yosupo-judge.test.cpp
     title: kyopro/test/unionfind_yosupo-judge.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -59,8 +60,8 @@ data:
   timestamp: '2020-12-17 00:26:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/unionfind_yosupo-judge.test.cpp
   - kyopro/test/set_enumerate.test.cpp
+  - kyopro/test/unionfind_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/unionfind.cpp
 layout: document
 redirect_from:
