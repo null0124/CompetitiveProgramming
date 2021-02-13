@@ -33,7 +33,7 @@ Be accepted!
 #include <array>
 #include <chrono>
 
-////#pragma GCC target("arch=skylake-avx512")
+//#pragma GCC target("arch=skylake-avx512")
 #pragma GCC target("avx2")
 //#pragma GCC optimize("O3")
 #pragma GCC optimize("Ofast")
@@ -109,22 +109,29 @@ inline T chmax(T& a, const T& b) {
 	return a;
 }
 
-////cpp_int
-//#include <boost/multiprecision/cpp_int.hpp>
-//#include <boost/multiprecision/cpp_dec_float.hpp>
-//using namespace boost::multiprecision;
+//cpp_int
+#if __has_include(<boost/multiprecision/cpp_int.hpp>)
+#include <boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_dec_float.hpp>
+using namespace boost::multiprecision;
+#else
+using cpp_int = ll;
+#endif
 
 //atcoder library
+#if __has_include(<atcoder/all>)
 //#include <atcoder/all>
 //using namespace atcoder;
+#endif
 
-//random_device seed_gen;
-//mt19937 engine(seed_gen());
-//uniform_int_distribution dist(1, 100);
+/*
+	random_device seed_gen;
+	mt19937 engine(seed_gen());
+	uniform_int_distribution dist(1, 100);
+*/
+
 
 /*----------------------------------------------------------------------------------*/
-
-
 
 
 
