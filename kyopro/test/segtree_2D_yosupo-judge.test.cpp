@@ -3,7 +3,7 @@
 #include "../library/template/template.cpp"
 
 #include "../library/datastructure/segtree.cpp"
-#include "../library/datastructure/segtree_2d.cpp"
+#include "../library/datastructure/segtree_2D.cpp"
 
 int main() {
 
