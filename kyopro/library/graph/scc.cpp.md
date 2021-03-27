@@ -84,9 +84,9 @@ data:
   timestamp: '2020-09-06 14:13:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/scc_aoj.test.cpp
   - kyopro/test/scc_yosupo-judge.test.cpp
   - kyopro/test/scc-cg_aoj.test.cpp
+  - kyopro/test/scc_aoj.test.cpp
 documentation_of: kyopro/library/graph/scc.cpp
 layout: document
 redirect_from:

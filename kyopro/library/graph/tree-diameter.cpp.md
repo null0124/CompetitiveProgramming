@@ -50,8 +50,8 @@ data:
   timestamp: '2020-09-07 03:43:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/tree-diameter_yosupo-judge.test.cpp
   - kyopro/test/tree-diameter_aoj.test.cpp
+  - kyopro/test/tree-diameter_yosupo-judge.test.cpp
 documentation_of: kyopro/library/graph/tree-diameter.cpp
 layout: document
 redirect_from:

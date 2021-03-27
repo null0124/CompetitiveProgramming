@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':warning:'
       path: kyopro/Source/Source.cpp
-      title: segment-tree
+      title: kyopro/Source/Source.cpp
   - name: kyopro/library/algorithm
     pages:
     - icon: ':heavy_check_mark:'
@@ -27,7 +27,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/segtree.cpp
       title: segment-tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/library/datastructure/segtree_2D.cpp
       title: segment-tree-2D
     - icon: ':heavy_check_mark:'
@@ -164,7 +164,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: kyopro/test/scc_yosupo-judge.test.cpp
       title: kyopro/test/scc_yosupo-judge.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: kyopro/test/segtree_2D_yosupo-judge.test.cpp
       title: kyopro/test/segtree_2D_yosupo-judge.test.cpp
     - icon: ':heavy_check_mark:'

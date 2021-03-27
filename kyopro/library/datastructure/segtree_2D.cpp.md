@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: kyopro/test/segtree_2D_yosupo-judge.test.cpp
+    title: kyopro/test/segtree_2D_yosupo-judge.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: kyopro/docs/segtree_2d.md
     document_title: segment-tree-2D
@@ -78,8 +81,9 @@ data:
   path: kyopro/library/datastructure/segtree_2D.cpp
   requiredBy: []
   timestamp: '2021-02-11 16:56:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - kyopro/test/segtree_2D_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/segtree_2D.cpp
 layout: document
 redirect_from:

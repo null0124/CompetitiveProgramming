@@ -60,8 +60,8 @@ data:
   timestamp: '2020-12-17 00:26:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/set_enumerate.test.cpp
   - kyopro/test/unionfind_yosupo-judge.test.cpp
+  - kyopro/test/set_enumerate.test.cpp
 documentation_of: kyopro/library/datastructure/unionfind.cpp
 layout: document
 redirect_from:

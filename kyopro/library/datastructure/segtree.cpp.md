@@ -7,6 +7,9 @@ data:
     path: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
     title: kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
   - icon: ':heavy_check_mark:'
+    path: kyopro/test/segtree_2D_yosupo-judge.test.cpp
+    title: kyopro/test/segtree_2D_yosupo-judge.test.cpp
+  - icon: ':heavy_check_mark:'
     path: kyopro/test/segtree_yosupo-judge.test.cpp
     title: kyopro/test/segtree_yosupo-judge.test.cpp
   _isVerificationFailed: false
@@ -128,8 +131,9 @@ data:
   timestamp: '2021-01-03 04:54:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
+  - kyopro/test/segtree_2D_yosupo-judge.test.cpp
   - kyopro/test/segtree_yosupo-judge.test.cpp
+  - kyopro/test/binary_search_on_segtree_yosupo-judge.test.cpp
 documentation_of: kyopro/library/datastructure/segtree.cpp
 layout: document
 redirect_from:
