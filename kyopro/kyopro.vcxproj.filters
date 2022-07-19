@@ -213,7 +213,6 @@
     <None Include="docs\LCA.md" />
     <None Include="docs\LCA_weighted.md" />
     <None Include="docs\wershallfloyd.md" />
-    <None Include="docs\gcd_lcm.md" />
     <None Include="docs\doubling.md" />
     <None Include="docs\modint.md" />
     <None Include="docs\kth-shortest-path_yen.md" />
