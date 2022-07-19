@@ -202,6 +202,12 @@
     <ClCompile Include="library\datastructure\set_enumerate.cpp">
       <Filter>Library\DataStructure</Filter>
     </ClCompile>
+    <ClCompile Include="library\math\fastfouriertransform.cpp">
+      <Filter>Library\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="test\fastfouriertransform_atcoder.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="docs\BIT.md">
@@ -295,6 +301,9 @@
       <Filter>Library\markdown</Filter>
     </None>
     <None Include="docs\floydwarshall.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\fastfouriertransform.md">
       <Filter>Library\markdown</Filter>
     </None>
   </ItemGroup>
