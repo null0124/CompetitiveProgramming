@@ -20,18 +20,18 @@
     <Filter Include="Library\Math">
       <UniqueIdentifier>{057a12bf-614b-4da8-8086-a92d54cc74b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Library\verify">
+      <UniqueIdentifier>{f1556d6d-fd6b-4b04-9480-1f0408323052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library\markdown">
+      <UniqueIdentifier>{b2cbffb3-dea3-4bd4-b3ee-6aaee12f8270}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Library\Other">
       <UniqueIdentifier>{b33fc26d-d106-4468-8892-250d72feb40b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Source.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\template_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\unionfind_yosupo-judge.test.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="library\datastructure\lazysegtree.cpp">
@@ -55,17 +55,11 @@
     <ClCompile Include="library\graph\eulertour.cpp">
       <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="library\graph\warshallfloyd.cpp">
+    <ClCompile Include="library\graph\floydwarshall.cpp">
       <Filter>Library\Graph</Filter>
-    </ClCompile>
-    <ClCompile Include="library\math\gcd_lcm.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="library\others\modint.cpp">
       <Filter>Library\Other</Filter>
-    </ClCompile>
-    <ClCompile Include="library\template\template.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Library\Graph\LCA.cpp">
       <Filter>Library\Graph</Filter>
@@ -79,155 +73,229 @@
     <ClCompile Include="Library\Algorithm\LIS_dp.cpp">
       <Filter>Library\Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="test\sparsetable_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\LIS_dp_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\LCA_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\dijkstra_path_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\dijkstra_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\BIT_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\lcm_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\others\doubling.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\warshallfloyd_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\datastructure\BBST\splaytree.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\segtree_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\kth-shortest-path_yen_yukicoder.test.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="library\math\Comb.cpp">
+      <Filter>Library\Math</Filter>
     </ClCompile>
     <ClCompile Include="library\others\cumulative-sum.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\cumulative-sum_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\math\prime_factor.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\graph\graph_template.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\LCA_weighted_yukicoder.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\graph\topological_sort.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\math\Comb.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\others\mo.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\lazysegtree_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\mo_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Library\Algorithm</Filter>
     </ClCompile>
     <ClCompile Include="test\binary_search_on_segtree_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\BIT_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\cumulative-sum_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\dijkstra_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\dijkstra_path_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="library\others\doubling.cpp">
+      <Filter>Library\Algorithm</Filter>
     </ClCompile>
     <ClCompile Include="library\math\fast-prime_factor.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Library\Math</Filter>
     </ClCompile>
-    <ClCompile Include="library\graph\scc.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="library\math\gcd_lcm.cpp">
+      <Filter>Library\Math</Filter>
     </ClCompile>
-    <ClCompile Include="test\scc_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\scc_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\graph\tree-diameter.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\tree-diameter_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\tree-diameter_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\scc-cg_aoj.test.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="library\geometry\vector2D.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="test\vector2D_yukicoder.test.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="library\graph\graph_template.cpp">
+      <Filter>Library\Graph</Filter>
     </ClCompile>
     <ClCompile Include="library\math\kth_permutation.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Library\Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="library\datastructure\set_enumerate.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="library\graph\kth-shortest-path_yen.cpp">
+      <Filter>Library\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="test\set_enumerate.test.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="test\kth-shortest-path_yen_yukicoder.test.cpp">
+      <Filter>Library\verify</Filter>
     </ClCompile>
-    <ClCompile Include="library\datastructure\segtree_2D.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="test\lazysegtree_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\LCA_weighted_yukicoder.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\LCA_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\lcm_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\LIS_dp_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\mo_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\scc_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\scc_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\scc-cg_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
     </ClCompile>
     <ClCompile Include="test\segtree_2D_yosupo-judge.test.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\segtree_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\set_enumerate.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\sparsetable_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\template_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tree-diameter_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\unionfind_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\tree-diameter_yosupo-judge.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\vector2D_yukicoder.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="test\floydwarshall_aoj.test.cpp">
+      <Filter>Library\verify</Filter>
+    </ClCompile>
+    <ClCompile Include="library\others\mo.cpp">
+      <Filter>Library\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="library\math\prime_factor.cpp">
+      <Filter>Library\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="library\graph\scc.cpp">
+      <Filter>Library\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="library\datastructure\segtree_2D.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="library\geometry\vector2D.cpp">
+      <Filter>Library\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="library\graph\tree-diameter.cpp">
+      <Filter>Library\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="library\graph\topological_sort.cpp">
+      <Filter>Library\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="library\template\template.cpp">
+      <Filter>Library\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="library\datastructure\BBST\splaytree.cpp">
+      <Filter>Library\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="library\datastructure\set_enumerate.cpp">
+      <Filter>Library\DataStructure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
-    <None Include="docs\template.md" />
-    <None Include="docs\LIS_dp.md" />
-    <None Include="docs\splaytree.md" />
-    <None Include="docs\BIT.md" />
-    <None Include="docs\lazysegtree.md" />
-    <None Include="docs\segtree.md" />
-    <None Include="docs\sparsetable.md" />
-    <None Include="docs\unionfind.md" />
-    <None Include="docs\dijkstra.md" />
-    <None Include="docs\dijkstra_path.md" />
-    <None Include="docs\eulertour.md" />
-    <None Include="docs\LCA.md" />
-    <None Include="docs\LCA_weighted.md" />
-    <None Include="docs\wershallfloyd.md" />
-    <None Include="docs\doubling.md" />
-    <None Include="docs\modint.md" />
-    <None Include="docs\kth-shortest-path_yen.md" />
-    <None Include="docs\cumulative-sum.md" />
-    <None Include="docs\prime_factor.md" />
-    <None Include="docs\graph_template.md" />
-    <None Include="docs\topological_sort.md" />
-    <None Include="docs\comb.md" />
-    <None Include="docs\mo.md" />
-    <None Include="docs\fast-prime_factor.md" />
-    <None Include="docs\scc.md" />
-    <None Include="docs\tree-diameter.md" />
-    <None Include="docs\vector2D.md" />
-    <None Include="docs\kth_permutaiton.md" />
-    <None Include="docs\set_enumerate.md" />
-    <None Include="docs\segtree_2d.md" />
+    <None Include="docs\BIT.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\comb.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\cumulative-sum.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="cpp.hint">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\dijkstra.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\dijkstra_path.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\doubling.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\eulertour.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\fast-prime_factor.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\graph_template.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\kth_permutaiton.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\kth-shortest-path_yen.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\lazysegtree.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\LCA.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\LIS_dp.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\LCA_weighted.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\modint.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\mo.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\scc.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\prime_factor.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\segtree.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\segtree_2d.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\set_enumerate.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\sparsetable.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\splaytree.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\template.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\topological_sort.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\tree-diameter.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\unionfind.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\vector2D.md">
+      <Filter>Library\markdown</Filter>
+    </None>
+    <None Include="docs\floydwarshall.md">
+      <Filter>Library\markdown</Filter>
+    </None>
   </ItemGroup>
 </Project>
